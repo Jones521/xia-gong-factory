@@ -1,0 +1,9 @@
+{
+  "name": "xia-gong-factory",
+  "version": "1.0.0",
+  "description": "🦐 虾工厂 Masterclaw 官网",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  }
+}
