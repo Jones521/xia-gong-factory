@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OzonHunter - 1688产品自动上架OZON平台 | 80秒完成</title>
+<meta name="description" content="跨境电商必备工具！输入1688产品链接，80秒自动生成俄语内容并上架到OZON平台。中国卖家必备效率工具。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #FF4D00;
+  --primary-dark: #E64500;
+  --dark: #1A1A2E;
+  --gray: #646496;
+  --light: #F7F7FB;
+  --white: #FFFFFF;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--dark);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Nav */
+nav {
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo span { color: var(--primary); }
+
+.nav-cta {
+  background: var(--primary);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+/* Hero */
+.hero {
+  padding: 140px 0 80px;
+  text-align: center;
+  background: linear-gradient(180deg, #FFF5F0 0%, #FFFFFF 100%);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFF0E8;
+  color: var(--primary);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.badge-dot {
+  width: 6px; height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--primary), #FF8C00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero .sub {
+  font-size: 20px;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.hero .cta-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(255,77,0,0.3);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255,77,0,0.4);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--dark);
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border: 2px solid #E5E5EF;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover { border-color: var(--dark); }
+
+/* Stats */
+.stats {
+  padding: 60px 0;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.stats .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.stat-num {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: 4px;
+}
+
+/* How it works */
+.how {
+  padding: 100px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--gray);
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.step {
+  text-align: center;
+  padding: 32px 24px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.3s;
+}
+
+.step:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.step-icon {
+  width: 64px;
+  height: 64px;
+  background: #FFF5F0;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin: 0 auto 20px;
+}
+
+.step-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  background: #FFF0E8;
+  padding: 4px 12px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.step h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+/* Comparison */
+.compare {
+  padding: 100px 0;
+  background: var(--light);
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  gap: 24px;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.compare-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.compare-card h3 {
+  font-size: 18px;
+  margin-bottom: 24px;
+  color: var(--gray);
+}
+
+.compare-card.old h3 { color: #999; }
+
+.compare-card .time {
+  font-size: 56px;
+  font-weight: 700;
+  color: #CCC;
+  line-height: 1;
+}
+
+.compare-card.new .time {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.compare-card .time-label {
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: 8px;
+}
+
+.compare-arrow {
+  font-size: 40px;
+  color: var(--primary);
+  text-align: center;
+}
+
+/* Demo Preview */
+.demo {
+  padding: 100px 0;
+}
+
+.demo-window {
+  background: #1A1A2E;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.demo-bar {
+  background: #2A2A4A;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.demo-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.demo-dot.r { background: #FF5F57; }
+.demo-dot.y { background: #FFBD2E; }
+.demo-dot.g { background: #28CA41; }
+
+.demo-content {
+  padding: 40px;
+  color: white;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.demo-line { display: flex; gap: 12px; margin-bottom: 8px; }
+.demo-prompt { color: #4FC3F7; }
+.demo-result { color: #81C784; }
+.demo-time { color: #FFB74D; }
+.demo-label { color: #888; min-width: 120px; text-align: right; }
+
+/* Features */
+.features {
+  padding: 100px 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature {
+  padding: 28px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.3s;
+}
+
+.feature:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.feature h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.feature p {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+/* CTA */
+.cta-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1A1A2E 0%, #2D1B4E 100%);
+  text-align: center;
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 40px;
+}
+
+.waitlist-form {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  gap: 12px;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 16px 20px;
+  border-radius: 50px;
+  border: 2px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input::placeholder { color: rgba(255,255,255,0.5); }
+.form-group input:focus { border-color: var(--primary); }
+
+.form-group button {
+  padding: 16px 32px;
+  border-radius: 50px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.form-group button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.form-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 16px;
+}
+
+/* Footer */
+footer {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--gray);
+  font-size: 14px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+footer a { color: var(--gray); text-decoration: none; }
+footer a:hover { color: var(--primary); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 34px; }
+  .hero .sub { font-size: 16px; }
+  .stats .container { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .compare-arrow { transform: rotate(90deg); }
+  .features-grid { grid-template-columns: 1fr; }
+  .form-group { flex-direction: column; }
+  .section-title { font-size: 28px; }
+  .cta-section h2 { font-size: 28px; }
+}
+
+/* Success message */
+.success-msg {
+  display: none;
+  text-align: center;
+  padding: 40px;
+  color: white;
+}
+.success-msg.show { display: block; }
+.success-msg h3 { font-size: 24px; margin-bottom: 8px; }
+.success-msg p { color: rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="container">
+    <a href="#" class="logo">Ozon<span>Hunter</span></a>
+    <a href="#waitlist" class="nav-cta">免费预约</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      跨境电商效率工具
+    </div>
+    <h1>
+      1688产品<br>
+      <span class="highlight">80秒自动上架OZON</span>
+    </h1>
+    <p class="sub">
+      输入1688产品关键词，AI自动提取参数、生成俄语内容、<br>
+      处理产品图，一键上架到俄罗斯OZON平台
+    </p>
+    <div class="cta-group">
+      <a href="#waitlist" class="btn-primary">
+        立即预约体验
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#how" class="btn-secondary">了解原理</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+  <div class="container">
+    <div class="stat-num">80秒</div>
+    <div class="stat-label">完成全套上架流程</div>
+    <div class="stat-num">30-60分钟</div>
+    <div class="stat-label">手工操作耗时</div>
+    <div class="stat-num">80%+</div>
+    <div class="stat-label">华为占俄手机市场</div>
+    <div class="stat-num">140%</div>
+    <div class="stat-label">中国卖家增长率</div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="how" id="how">
+  <div class="container">
+    <h2 class="section-title">3步完成上架</h2>
+    <p class="section-sub">简单到你不敢相信</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">🔍</div>
+        <span class="step-num">STEP 1</span>
+        <h3>输入产品关键词</h3>
+        <p>输入"手机壳"、"数据线"等品类关键词，系统自动在1688搜索产品列表</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">⚡</div>
+        <span class="step-num">STEP 2</span>
+        <h3>AI自动处理</h3>
+        <p>自动提取产品参数，生成俄语标题和描述，处理产品图片，生成OZON兼容格式</p>
+      </div>
+      <div class="step">
+        <div class="step-icon">🚀</div>
+        <span class="step-num">STEP 3</span>
+        <h3>一键上架</h3>
+        <p>确认后自动提交到OZON Seller API，完成上架。人工只需最后审核</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison -->
+<section class="compare">
+  <div class="container">
+    <h2 class="section-title">效率对比</h2>
+    <p class="section-sub">同样是上架一款产品</p>
+
+    <div class="compare-grid">
+      <div class="compare-card old">
+        <h3>手工操作</h3>
+        <div class="time">30-60分钟</div>
+        <div class="time-label">搜索 + 翻译 + 调整 + 上架</div>
+      </div>
+      <div class="compare-arrow">→</div>
+      <div class="compare-card new">
+        <h3>OzonHunter</h3>
+        <div class="time">80秒</div>
+        <div class="time-label">全自动，AI搞定一切</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Demo Preview -->
+<section class="demo">
+  <div class="container">
+    <h2 class="section-title">实际效果</h2>
+    <p class="section-sub">模拟器运行界面截图</p>
+
+    <div class="demo-window">
+      <div class="demo-bar">
+        <div class="demo-dot r"></div>
+        <div class="demo-dot y"></div>
+        <div class="demo-dot g"></div>
+      </div>
+      <div class="demo-content">
+        <div class="demo-line">
+          <span class="demo-label">></span>
+          <span class="demo-prompt">输入品类：phone case</span>
+        </div>
+        <div class="demo-line">
+          <span class="demo-label">1688 搜索 →</span>
+          <span class="demo-result">找到50款产品 (已售2619件起)</span>
+        </div>
+        <br>
+        <div class="demo-line">
+          <span class="demo-label">AI 提取 →</span>
+          <span class="demo-result">材质:TPU | 适用:iPhone全系 | 价格:$0.77</span>
+        </div>
+        <br>
+        <div class="demo-line">
+          <span class="demo-label">俄语生成 →</span>
+          <span class="demo-result">Чехол POD для iPhone 17...</span>
+        </div>
+        <br>
+        <div class="demo-line">
+          <span class="demo-label">OZON 格式 →</span>
+          <span class="demo-result">{ name, price, stock, images... }</span>
+        </div>
+        <br>
+        <div class="demo-line">
+          <span class="demo-time">⏱ 总耗时: 78秒</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="container">
+    <h2 class="section-title">核心功能</h2>
+    <p class="section-sub">专为OZON中国卖家设计</p>
+
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">🌐</div>
+        <h3>1688产品采集</h3>
+        <p>自动从1688/Alibaba采集产品信息，包括价格、销量、材质、规格参数</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🇷🇺</div>
+        <h3>俄语内容生成</h3>
+        <p>AI自动将中文产品信息翻译并生成符合OZON平台规范的俄语文案</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🎨</div>
+        <h3>图片自动处理</h3>
+        <p>下载1688产品图，自动调整尺寸、格式，适配OZON图片要求</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <h3>数据格式转换</h3>
+        <p>将1688产品数据自动转换为OZON Seller API兼容的JSON格式</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔗</div>
+        <h3>API自动上架</h3>
+        <p>对接OZON Seller API，实现真正意义上的"一键全自动上架"</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📈</div>
+        <h3>爆款参考</h3>
+        <p>显示产品在1688的已售数量，参考市场热度，降低选品风险</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="waitlist">
+  <div class="container">
+    <h2>限量预约体验</h2>
+    <p>正式版上线后，首批用户享受优惠价格</p>
+
+    <div class="waitlist-form" id="formContainer">
+      <form class="form-group" id="waitlistForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="email" name="email" placeholder="请输入你的邮箱" required>
+        <input type="hidden" name="_to" value="ozonhunter">
+        <button type="submit">立即预约</button>
+      </form>
+      <p class="form-note">我们尊重你的隐私，不会发送垃圾邮件</p>
+    </div>
+
+    <div class="success-msg" id="successMsg">
+      <h3>预约成功！</h3>
+      <p>我们会通过邮箱通知你产品上线时间</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p><a href="#">OzonHunter</a> · 专为跨境电商打造<br>
+    <small>© 2026 All rights reserved</small></p>
+  </div>
+</footer>
+
+<script>
+// Simple form handling
+document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = this;
+  const email = form.querySelector('input[type="email"]').value;
+  
+  if(email) {
+    // 存储到 localStorage 作为简单备份
+    const waitlist = JSON.parse(localStorage.getItem('ozonhunter_waitlist') || '[]');
+    if(!waitlist.includes(email)) {
+      waitlist.push(email);
+      localStorage.setItem('ozonhunter_waitlist', JSON.stringify(waitlist));
+    }
+    
+    // 显示成功信息
+    document.getElementById('formContainer').style.display = 'none';
+    document.getElementById('successMsg').classList.add('show');
+    
+    // 也可以发送到 Google Form / Formspree
+    // form.submit();
+  }
+});
+</script>
+
+</body>
+</html>
