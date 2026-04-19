@@ -965,7 +965,7 @@ footer a:hover { color: var(--primary); }
 <section class="cta-section" id="waitlist">
   <div class="container">
     <h2>限量内测名额开放中</h2>
-    <p>首批用户享受首发优惠价格，名额有限，先到先得</p>
+    <p>扫码加微信，备注「预约」，拉你进内测群</p>
 
     <div class="cta-features">
       <div class="cta-feature"><span>✓</span> 免费使用3个月</div>
@@ -974,19 +974,13 @@ footer a:hover { color: var(--primary); }
       <div class="cta-feature"><span>✓</span> OZON入驻指导</div>
     </div>
 
-    <div class="form-box">
-      <form class="form-group" action="https://formspree.io/f/xvzdrjrp" method="POST" id="waitlistForm">
-        <input type="email" name="email" placeholder="请输入你的邮箱，预约内测名额" required>
-        <input type="hidden" name="_to" value="ozonhunter">
-        <button type="submit">立即预约</button>
-      </form>
-      <p class="form-note">我们尊重你的隐私，不发送垃圾邮件。预约完全免费。</p>
+    <div class="form-box" style="background: rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; max-width: 400px; margin: 0 auto;">
+      <img src="https://raw.githubusercontent.com/Jones521/xia-gong-factory/main/1fad4b1416162e431ef3d909be4e1258.jpg" alt="微信二维码" style="width: 220px; height: 220px; border-radius: 12px; display: block; margin: 0 auto 20px; border: 3px solid white; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+      <p style="color: white; font-size: 18px; font-weight: 600; margin-bottom: 8px; text-align: center;">👆 扫码加我微信</p>
+      <p style="color: rgba(255,255,255,0.7); font-size: 14px; text-align: center;">备注「预约」，拉你进内测群</p>
     </div>
 
-    <div class="success-msg" id="successMsg">
-      <h3>🎉 预约成功！</h3>
-      <p>我们会通过邮箱通知你内测开通时间</p>
-    </div>
+
   </div>
 </section>
 
@@ -998,24 +992,7 @@ footer a:hover { color: var(--primary); }
   </div>
 </footer>
 
-<script>
-document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var form = this;
-  var email = form.querySelector('input[type="email"]').value;
 
-  if(email) {
-    var waitlist = JSON.parse(localStorage.getItem('ozonhunter_waitlist') || '[]');
-    if(!waitlist.includes(email)) {
-      waitlist.push(email);
-      localStorage.setItem('ozonhunter_waitlist', JSON.stringify(waitlist));
-    }
-    form.style.display = 'none';
-    document.querySelector('.form-note').style.display = 'none';
-    document.getElementById('successMsg').classList.add('show');
-  }
-});
-</script>
 
 </body>
 </html>
