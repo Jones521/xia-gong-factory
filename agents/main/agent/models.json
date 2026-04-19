@@ -1,6 +1,0 @@
-{
-  "default": "bailian/qwen3.5-plus",
-  "models": {
-    "bailian/qwen3.5-plus": {}
-  }
-}

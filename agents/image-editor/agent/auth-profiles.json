@@ -1,9 +1,0 @@
-{
-  "profiles": [
-    {
-      "id": "default",
-      "name": "默认配置",
-      "enabled": true
-    }
-  ]
-}
