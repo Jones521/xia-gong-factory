@@ -3,690 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OzonHunter - 1688产品自动上架OZON平台 | 跨境卖家必备工具</title>
-<meta name="description" content="跨境电商必备工具！输入1688产品关键词，80秒自动生成俄语内容并上架到OZON平台。中国卖家首选效率工具。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>DataHunter - 跨境电商数据服务商</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 :root {
-  --primary: #FF4D00;
-  --primary-dark: #E64500;
-  --dark: #1A1A2E;
-  --gray: #646496;
-  --light: #F7F7FB;
+  --primary: #2563EB;
+  --primary-dark: #1D4ED8;
+  --dark: #0F172A;
+  --gray: #64748B;
+  --light: #F1F5F9;
   --white: #FFFFFF;
-  --success: #00C853;
+  --success: #10B981;
   --radius: 16px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--dark);
-  background: var(--white);
-  line-height: 1.7;
-}
-
+body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); line-height: 1.7; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
 /* Nav */
-nav {
-  padding: 16px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(10px);
-  z-index: 100;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-
-nav .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--dark);
-  text-decoration: none;
-}
-
+nav { padding: 20px 0; position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.05); }
+nav .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 22px; font-weight: 800; color: var(--dark); }
 .logo span { color: var(--primary); }
-
-.nav-cta {
-  background: var(--primary);
-  color: white;
-  padding: 10px 24px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  transition: all 0.3s;
-}
-
-.nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+.nav-cta { background: var(--primary); color: white; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+.nav-cta:hover { background: var(--primary-dark); }
 
 /* Hero */
-.hero {
-  padding: 130px 0 80px;
-  background: linear-gradient(180deg, #FFF8F5 0%, #FFFFFF 100%);
-}
-
-.hero-top {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.badge-red {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #FF4D00;
-  color: white;
-  padding: 8px 20px;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 24px;
-  animation: blink 2s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
-}
-
-.hero h1 {
-  font-size: 54px;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  letter-spacing: -1px;
-}
-
-.hero h1 .highlight {
-  background: linear-gradient(135deg, var(--primary), #FF8C00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero .sub {
-  font-size: 20px;
-  color: var(--gray);
-  max-width: 680px;
-  margin: 0 auto 36px;
-  line-height: 1.8;
-}
-
-.hero .cta-group {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: white;
-  padding: 18px 40px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 17px;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(255,77,0,0.35);
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(255,77,0,0.45);
-}
-
-.btn-secondary {
-  background: var(--white);
-  color: var(--dark);
-  padding: 18px 36px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  border: 2px solid #E5E5EF;
-  transition: all 0.3s;
-}
-
-.btn-secondary:hover { border-color: var(--dark); background: #FAFAFA; }
-
-.btn-msg {
-  color: var(--gray);
-  font-size: 13px;
-  text-align: center;
-  margin-top: 16px;
-}
-
-/* Pain Point Section */
-.pain-section {
-  padding: 80px 0;
-  background: var(--dark);
-  color: white;
-}
-
-.pain-section h2 {
-  text-align: center;
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 50px;
-}
-
-.pain-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.pain-card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius);
-  padding: 32px;
-  text-align: center;
-  transition: all 0.3s;
-}
-
-.pain-card:hover {
-  background: rgba(255,255,255,0.12);
-  transform: translateY(-4px);
-}
-
-.pain-icon {
-  font-size: 40px;
-  margin-bottom: 16px;
-}
-
-.pain-card h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.pain-card p {
-  font-size: 14px;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.6;
-}
-
-/* Stats Bar */
-.stats-bar {
-  padding: 50px 0;
-  background: linear-gradient(135deg, #FF4D00 0%, #FF8C00 100%);
-  color: white;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  text-align: center;
-}
-
-.stat-item h3 {
-  font-size: 48px;
-  font-weight: 800;
-  margin-bottom: 4px;
-}
-
-.stat-item p {
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-/* Market Opportunity */
-.market {
-  padding: 100px 0;
-}
-
-.section-label {
-  display: inline-block;
-  background: #FFF0E8;
-  color: var(--primary);
-  padding: 6px 16px;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.section-title {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.section-sub {
-  color: var(--gray);
-  font-size: 18px;
-  margin-bottom: 50px;
-  max-width: 600px;
-}
-
-.market-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-}
-
-.market-card {
-  border: 1px solid #E5E5EF;
-  border-radius: var(--radius);
-  padding: 32px;
-  transition: all 0.3s;
-}
-
-.market-card:hover {
-  box-shadow: var(--shadow);
-  transform: translateY(-2px);
-}
-
-.market-card .number {
-  font-size: 56px;
-  font-weight: 800;
-  color: var(--primary);
-  line-height: 1;
-  margin-bottom: 12px;
-}
-
-.market-card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.market-card p {
-  font-size: 14px;
-  color: var(--gray);
-  line-height: 1.7;
-}
-
-.market-source {
-  font-size: 12px;
-  color: #999;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid #EEE;
-}
-
-/* ROI Calculator */
-.roi {
-  padding: 80px 0;
-  background: var(--light);
-}
-
-.roi-box {
-  background: white;
-  border-radius: 24px;
-  padding: 50px;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-}
-
-.roi-box h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-}
-
-.roi-calc {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 24px;
-  align-items: center;
-}
-
-.roi-item {
-  padding: 24px;
-  border-radius: var(--radius);
-  background: var(--light);
-}
-
-.roi-item .label {
-  font-size: 14px;
-  color: var(--gray);
-  margin-bottom: 8px;
-}
-
-.roi-item .value {
-  font-size: 36px;
-  font-weight: 700;
-}
-
-.roi-item .value.old { color: #CCC; text-decoration: line-through; }
-.roi-item .value.new { color: var(--success); }
-
-.roi-arrow {
-  font-size: 40px;
-  color: var(--primary);
-}
-
-.roi-result {
-  margin-top: 30px;
-  padding: 20px;
-  background: #E8F5E9;
-  border-radius: var(--radius);
-}
-
-.roi-result h4 {
-  color: var(--success);
-  font-size: 18px;
-  margin-bottom: 6px;
-}
-
-.roi-result p {
-  font-size: 14px;
-  color: var(--gray);
-}
-
-/* How it works */
-.how {
-  padding: 100px 0;
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.step {
-  text-align: center;
-  padding: 36px 28px;
-  border-radius: var(--radius);
-  border: 2px solid #EEE;
-  transition: all 0.3s;
-  position: relative;
-}
-
-.step:hover {
-  border-color: var(--primary);
-  box-shadow: 0 8px 32px rgba(255,77,0,0.1);
-  transform: translateY(-4px);
-}
-
-.step-num {
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--primary);
-  color: white;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.step-icon {
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-
-.step h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.step p {
-  font-size: 14px;
-  color: var(--gray);
-  line-height: 1.7;
-}
-
-/* Testimonials */
-.testimonials {
-  padding: 100px 0;
-  background: var(--dark);
-  color: white;
-}
-
-.testimonials .section-title {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 50px;
-}
-
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.testi-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius);
-  padding: 28px;
-}
-
-.testi-text {
-  font-size: 15px;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  color: rgba(255,255,255,0.9);
-}
-
-.testi-author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.testi-avatar {
-  width: 44px;
-  height: 44px;
-  background: var(--primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.testi-info h4 {
-  font-size: 15px;
-  margin-bottom: 2px;
-}
-
-.testi-info p {
-  font-size: 13px;
-  color: rgba(255,255,255,0.5);
-}
-
-.testi-badge {
-  display: inline-block;
-  background: rgba(0,200,83,0.2);
-  color: #00C853;
-  padding: 4px 12px;
-  border-radius: 50px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-top: 12px;
-}
-
-/* FAQ */
-.faq {
-  padding: 100px 0;
-}
-
-.faq-list {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  border-bottom: 1px solid #EEE;
-  padding: 24px 0;
-}
-
-.faq-item h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: var(--dark);
-}
-
-.faq-item p {
-  font-size: 15px;
-  color: var(--gray);
-  line-height: 1.7;
-}
-
-/* CTA */
-.cta-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #1A1A2E 0%, #2D1B4E 100%);
-  text-align: center;
-  color: white;
-}
-
-.cta-section h2 {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.cta-section p {
-  font-size: 18px;
-  color: rgba(255,255,255,0.7);
-  margin-bottom: 12px;
-}
-
-.cta-features {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
-.cta-feature {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: rgba(255,255,255,0.8);
-}
-
-.cta-feature span {
-  color: #00C853;
-  font-weight: 700;
-}
-
-.form-box {
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-.form-group {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.form-group input {
-  flex: 1;
-  padding: 18px 24px;
-  border-radius: 50px;
-  border: 2px solid rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.1);
-  color: white;
-  font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.form-group input::placeholder { color: rgba(255,255,255,0.4); }
-.form-group input:focus { border-color: var(--primary); }
-
-.form-group button {
-  padding: 18px 36px;
-  border-radius: 50px;
-  background: var(--primary);
-  color: white;
-  border: none;
-  font-weight: 700;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s;
-  white-space: nowrap;
-}
-
-.form-group button:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-}
-
-.form-note {
-  font-size: 13px;
-  color: rgba(255,255,255,0.4);
-}
-
-.success-msg {
-  display: none;
-  padding: 40px;
-  background: rgba(0,200,83,0.15);
-  border-radius: var(--radius);
-}
-
-.success-msg.show { display: block; }
-.success-msg h3 { font-size: 24px; margin-bottom: 8px; color: #00C853; }
-.success-msg p { color: rgba(255,255,255,0.7); }
+.hero { padding: 140px 0 80px; background: linear-gradient(180deg, #EFF6FF 0%, #FFFFFF 100%); text-align: center; }
+.hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; line-height: 1.15; }
+.hero h1 .highlight { color: var(--primary); }
+.hero .sub { font-size: 20px; color: var(--gray); max-width: 640px; margin: 0 auto 36px; }
+.hero .cta-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { background: var(--primary); color: white; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+.btn-secondary { background: var(--white); color: var(--dark); padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px; border: 2px solid #E2E8F0; }
+.btn-secondary:hover { border-color: var(--primary); }
+
+/* Stats */
+.stats { padding: 60px 0; background: var(--dark); color: white; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+.stat-item h3 { font-size: 48px; font-weight: 800; color: var(--primary); margin-bottom: 4px; }
+.stat-item p { font-size: 14px; opacity: 0.7; }
+
+/* Services */
+.services { padding: 100px 0; }
+.section-label { display: inline-block; background: #DBEAFE; color: var(--primary); padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+.section-title { font-size: 40px; font-weight: 700; margin-bottom: 12px; }
+.section-sub { color: var(--gray); font-size: 18px; margin-bottom: 50px; }
+
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.service-card { border: 1px solid #E2E8F0; border-radius: var(--radius); padding: 32px; transition: all 0.3s; }
+.service-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); border-color: var(--primary); }
+.service-icon { font-size: 40px; margin-bottom: 16px; }
+.service-card h3 { font-size: 22px; margin-bottom: 10px; }
+.service-card p { color: var(--gray); font-size: 15px; margin-bottom: 20px; line-height: 1.7; }
+.service-features { list-style: none; margin-bottom: 20px; }
+.service-features li { font-size: 14px; color: var(--gray); padding: 6px 0; display: flex; align-items: center; gap: 8px; }
+.service-features li::before { content: "✓"; color: var(--success); font-weight: 700; }
+.service-price { font-size: 28px; font-weight: 800; color: var(--primary); }
+.service-price span { font-size: 14px; font-weight: 400; color: var(--gray); }
+
+/* Sample Data */
+.sample { padding: 80px 0; background: var(--light); }
+.sample-box { background: white; border-radius: 20px; padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+.sample h2 { font-size: 28px; margin-bottom: 24px; text-align: center; }
+.sample-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.sample-table th { background: var(--primary); color: white; padding: 12px 16px; text-align: left; }
+.sample-table td { padding: 12px 16px; border-bottom: 1px solid #E2E8F0; }
+.sample-table tr:hover { background: #F8FAFC; }
+
+/* Process */
+.process { padding: 100px 0; }
+.process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.process-step { text-align: center; }
+.process-num { width: 48px; height: 48px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px; margin: 0 auto 16px; }
+.process-step h3 { font-size: 18px; margin-bottom: 8px; }
+.process-step p { font-size: 14px; color: var(--gray); }
+
+/* Contact */
+.contact { padding: 100px 0; background: var(--dark); color: white; text-align: center; }
+.contact h2 { font-size: 40px; font-weight: 700; margin-bottom: 16px; }
+.contact p { font-size: 18px; opacity: 0.7; margin-bottom: 40px; }
+.contact-box { max-width: 480px; margin: 0 auto; }
+.wechat-box { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; }
+.wechat-box img { width: 200px; height: 200px; border-radius: 12px; display: block; margin: 0 auto 20px; }
+.wechat-box p { font-size: 16px; margin-bottom: 8px; }
+.wechat-box small { opacity: 0.5; font-size: 13px; }
 
 /* Footer */
-footer {
-  padding: 40px 0;
-  text-align: center;
-  color: var(--gray);
-  font-size: 14px;
-  border-top: 1px solid rgba(0,0,0,0.05);
-}
-
-footer a { color: var(--gray); text-decoration: none; }
-footer a:hover { color: var(--primary); }
+footer { padding: 40px 0; text-align: center; color: var(--gray); font-size: 14px; }
 
 /* Responsive */
-@media (max-width: 900px) {
-  .hero h1 { font-size: 38px; }
-  .pain-grid { grid-template-columns: 1fr; }
+@media (max-width: 768px) {
+  .hero h1 { font-size: 32px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .market-grid { grid-template-columns: 1fr; }
-  .roi-calc { grid-template-columns: 1fr; }
-  .roi-arrow { transform: rotate(90deg); }
-  .steps { grid-template-columns: 1fr; }
-  .testi-grid { grid-template-columns: 1fr; }
-  .form-group { flex-direction: column; }
-}
-
-@media (max-width: 600px) {
-  .hero h1 { font-size: 30px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
   .section-title { font-size: 28px; }
-  .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-  .stat-item h3 { font-size: 36px; }
-  .market-card .number { font-size: 40px; }
-  .cta-section h2 { font-size: 28px; }
 }
 </style>
 </head>
@@ -695,304 +108,237 @@ footer a:hover { color: var(--primary); }
 <!-- Nav -->
 <nav>
   <div class="container">
-    <a href="#" class="logo">Ozon<span>Hunter</span></a>
-    <a href="#waitlist" class="nav-cta">立即预约</a>
+    <div class="logo">Data<span>Hunter</span></div>
+    <a href="#contact" class="nav-cta">咨询报价</a>
   </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
   <div class="container">
-    <div class="hero-top">
-      <div class="badge-red">🔥 限量内测名额开放中</div>
-      <h1>
-        1688产品<br>
-        <span class="highlight">80秒自动上架OZON</span>
-      </h1>
-      <p class="sub">
-        手工上架一款产品需要 <strong>30-60分钟</strong>，<br>
-        用OzonHunter只需要 <strong>80秒</strong>，还自动生成俄语内容
-      </p>
-      <div class="cta-group">
-        <a href="#waitlist" class="btn-primary">
-          👉 立即预约体验
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#how" class="btn-secondary">了解详情</a>
-      </div>
-      <p class="btn-msg">已有 <strong>127+</strong> 跨境卖家预约 | 正式版预计5月上线</p>
+    <h1>跨境电商数据服务商</h1>
+    <p class="sub">为跨境卖家、品牌方、投资人提供精准的市场情报与选品数据</p>
+    <div class="cta-group">
+      <a href="#services" class="btn-primary">查看服务</a>
+      <a href="#sample" class="btn-secondary">看看真实数据</a>
     </div>
   </div>
 </section>
 
-<!-- Pain Points -->
-<section class="pain-section">
-  <div class="container">
-    <h2>你是不是也在为这些问题头疼？</h2>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon">😩</div>
-        <h3>上架太慢</h3>
-        <p>一天只能上架几款产品，眼睁睁看着竞争对手每天上新，自己却忙得团团转</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">🧠</div>
-        <h3>俄语头疼</h3>
-        <p>俄语内容翻译难、编写难，语法错误还被客户差评，改来改去一个产品要折腾1小时</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">💸</div>
-        <h3>人工成本高</h3>
-        <p>雇人上架，一个月光人工费就要1-2万，还得操心人员管理和培训</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">📦</div>
-        <h3>选品迷茫</h3>
-        <p>不知道1688上哪些产品好卖，花时间找了一圈结果发现已经有人在卖了</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">⏰</div>
-        <h3>效率低下</h3>
-        <p>每天机械性地复制粘贴，眼睛酸脖子疼，1个月下来累个半死却没多少进展</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">📊</div>
-        <h3>数据缺失</h3>
-        <p>不知道产品在1688的真实销量和价格走势，拍脑袋选品全靠运气</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Stats Bar -->
-<section class="stats-bar">
+<!-- Stats -->
+<section class="stats">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item">
-        <h3>80%+</h3>
-        <p>华为等中国品牌占俄罗斯手机市场</p>
-      </div>
-      <div class="stat-item">
-        <h3>140%</h3>
-        <p>Wildberries中国卖家年增长率</p>
-      </div>
-      <div class="stat-item">
-        <h3>1.4亿</h3>
-        <p>俄罗斯OZON活跃买家数量</p>
-      </div>
-      <div class="stat-item">
-        <h3>$860亿</h3>
-        <p>俄罗斯电商市场规模（2025年）</p>
-      </div>
+      <div class="stat-item"><h3>500+</h3><p>覆盖品类</p></div>
+      <div class="stat-item"><h3>10万+</h3><p>产品数据点</p></div>
+      <div class="stat-item"><h3>99%</h3><p>数据准确率</p></div>
+      <div class="stat-item"><h3>24h</h3><p>快速交付</p></div>
     </div>
   </div>
 </section>
 
-<!-- Market Opportunity -->
-<section class="market">
+<!-- Services -->
+<section class="services" id="services">
   <div class="container">
     <div style="text-align:center;">
-      <span class="section-label">🇷🇺 俄罗斯市场机遇</span>
-      <h2 class="section-title">中国卖家正在疯狂涌入俄罗斯</h2>
-      <p class="section-sub">现在入场，正是最佳时机</p>
+      <span class="section-label">我们的服务</span>
+      <h2 class="section-title">数据产品</h2>
+      <p class="section-sub">从选品到竞品监控，一站式数据支持</p>
     </div>
 
-    <div class="market-grid">
-      <div class="market-card">
-        <div class="number">140%↑</div>
-        <h3>Wildberries 中国卖家暴增</h3>
-        <p>2025年4月以来，Wildberries平台中国卖家数量同比增长140%。市场空白巨大，先入场者先吃肉。</p>
-        <p class="market-source">数据来源：MarketBeat / Wildberries官方报告</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>品类选品报告</h3>
+        <p>分析OZON/Wildberries热门品类，找到竞争度低、需求大的蓝海市场</p>
+        <ul class="service-features">
+          <li>月销TOP100产品清单</li>
+          <li>竞争程度分析</li>
+          <li>平均价格与利润空间</li>
+          <li>进入时机建议</li>
+        </ul>
+        <div class="service-price">299元 <span>/ 份</span></div>
       </div>
-      <div class="market-card">
-        <div class="number">80%+</div>
-        <h3>中国手机品牌主导俄罗斯</h3>
-        <p>华为、小米、OPPO、vivo等中国品牌占据俄罗斯智能手机市场80%以上份额。配件需求爆发式增长！</p>
-        <p class="market-source">数据来源：Counterpoint Research 2025</p>
+
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <h3>竞品监控月报</h3>
+        <p>监控竞争对手的销量、价格、新品动态，抢占市场先机</p>
+        <ul class="service-features">
+          <li>日/周/月销量追踪</li>
+          <li>价格变动提醒</li>
+          <li>新品上架监控</li>
+          <li>竞品对比分析</li>
+        </ul>
+        <div class="service-price">599元 <span>/ 月</span></div>
       </div>
-      <div class="market-card">
-        <div class="number">1.4亿</div>
-        <h3>OZON 活跃买家</h3>
-        <p>OZON是俄罗斯最大电商平台之一，月活用户1.4亿+，还在高速增长。中国商品在OZON极具竞争力。</p>
-        <p class="market-source">数据来源：OZON Investor Relations 2025</p>
+
+      <div class="service-card">
+        <div class="service-icon">🏭</div>
+        <h3>1688热销数据</h3>
+        <p>按品类查询1688爆款产品，找到源头工厂与最优拿货价</p>
+        <ul class="service-features">
+          <li>按销量/销售额排序</li>
+          <li>工厂直供价</li>
+          <li>产品参数规格</li>
+          <li>供应商评分</li>
+        </ul>
+        <div class="service-price">199元 <span>/ 次</span></div>
       </div>
-      <div class="market-card">
-        <div class="number">30-50%</div>
-        <h3>中国商品价格优势明显</h3>
-        <p>同样产品，中国卖家成本比当地卖家低30-50%。加上1688源头供应链，价格竞争力惊人。</p>
-        <p class="market-source">数据来源：JungleScout跨境电商报告</p>
+
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>市场进入分析</h3>
+        <p>深度分析某市场进入难度、竞争格局、投资回报周期</p>
+        <ul class="service-features">
+          <li>市场规模估算</li>
+          <li>头部玩家分析</li>
+          <li>SWOT分析</li>
+          <li>投资回报模型</li>
+        </ul>
+        <div class="service-price">999元 <span>/ 份</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💬</div>
+        <h3>按需查询</h3>
+        <p>定制化数据需求，满足个性化商业调研</p>
+        <ul class="service-features">
+          <li>指定产品/店铺分析</li>
+          <li>特定市场调研</li>
+          <li>竞品详细对比</li>
+          <li>行业趋势追踪</li>
+        </ul>
+        <div class="service-price">100元 <span>起 / 次</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📑</div>
+        <h3>订阅年卡</h3>
+        <p>全年不限次使用，稳定数据支持，适合重度用户</p>
+        <ul class="service-features">
+          <li>全年无限次查询</li>
+          <li>每月竞品报告</li>
+          <li>优先客服响应</li>
+          <li>定制化数据推送</li>
+        </ul>
+        <div class="service-price">4999元 <span>/ 年</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ROI Calculator -->
-<section class="roi">
+<!-- Sample Data -->
+<section class="sample" id="sample">
   <div class="container">
-    <div class="roi-box">
-      <h2>省下的时间值多少钱？</h2>
-      <div class="roi-calc">
-        <div class="roi-item">
-          <div class="label">手工上架一款产品</div>
-          <div class="value old">30-60分钟</div>
-        </div>
-        <div class="roi-arrow">→</div>
-        <div class="roi-item">
-          <div class="label">OzonHunter 上架</div>
-          <div class="value new">80秒</div>
-        </div>
-      </div>
-      <div class="roi-result">
-        <h4>每天多上架 10-20 款产品</h4>
-        <p>假设你每天工作8小时，原来只能上架8款，现在可以上架50款。一个月多上架1000+产品，多赚多少钱？</p>
-      </div>
+    <div class="sample-box">
+      <h2>📦 真实数据样例（男装品类）</h2>
+      <table class="sample-table">
+        <thead>
+          <tr>
+            <th>产品</th>
+            <th>价格</th>
+            <th>30日销量</th>
+            <th>总销量</th>
+            <th>店铺</th>
+            <th>评分</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>230g纯棉T恤 男款黑色白色</td>
+            <td>¥18.8</td>
+            <td>15,000+</td>
+            <td>201,517</td>
+            <td>嘉兴服装厂</td>
+            <td>4.6</td>
+          </tr>
+          <tr>
+            <td>230支圆领T恤 男装宽松薄款</td>
+            <td>¥14.8</td>
+            <td>12,000+</td>
+            <td>150,758</td>
+            <td>广州服饰</td>
+            <td>4.5</td>
+          </tr>
+          <tr>
+            <td>男士纯棉T恤 职业装</td>
+            <td>¥41</td>
+            <td>3,500+</td>
+            <td>28,000</td>
+            <td>南通纺织</td>
+            <td>4.7</td>
+          </tr>
+          <tr>
+            <td>男士polo衫 商务休闲</td>
+            <td>¥35</td>
+            <td>2,800+</td>
+            <td>35,000</td>
+            <td>宁波制衣</td>
+            <td>4.4</td>
+          </tr>
+          <tr>
+            <td>男士外套 春秋运动</td>
+            <td>¥68</td>
+            <td>1,500+</td>
+            <td>12,000</td>
+            <td>泉州服装</td>
+            <td>4.3</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
-<!-- How it works -->
-<section class="how" id="how">
+<!-- Process -->
+<section class="process">
   <div class="container">
     <div style="text-align:center;">
-      <span class="section-label">⚡ 3步完成</span>
-      <h2 class="section-title">简单到你不敢相信</h2>
-      <p class="section-sub">不需要任何技术背景，会打字就会用</p>
+      <span class="section-label">服务流程</span>
+      <h2 class="section-title">简单3步，获得数据</h2>
     </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-icon">🔍</div>
-        <h3>输入产品关键词</h3>
-        <p>输入"手机壳"、"数据线"、"蓝牙耳机"等品类关键词，系统自动在1688搜索产品列表，按销量排序</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <h3>提出需求</h3>
+        <p>告诉我们你想查询的品类/产品/市场</p>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-icon">⚡</div>
-        <h3>AI 全自动处理</h3>
-        <p>自动提取产品参数、生成俄语标题和描述、处理产品图片、转换成OZON兼容格式。全程不需要你操心</p>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <h3>我们采集</h3>
+        <p>24小时内完成数据采集与分析</p>
       </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-icon">🚀</div>
-        <h3>一键上架 OZON</h3>
-        <p>确认信息后，点击上架。自动提交到OZON Seller API，完成后你会收到通知。人工只需最后审核</p>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <h3>交付报告</h3>
+        <p>微信/邮箱发送完整数据报告</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Testimonials -->
-<section class="testimonials">
+<!-- Contact -->
+<section class="contact" id="contact">
   <div class="container">
-    <h2 class="section-title">他们已经在用内测版了</h2>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-text">"用了1个月，每天多上架20款产品。一个月下来，店铺SKU从200增加到600，销售额翻了一倍。"</div>
-        <div class="testi-author">
-          <div class="testi-avatar">张</div>
-          <div class="testi-info">
-            <h4>张老板</h4>
-            <p>深圳 · 3年跨境经验</p>
-          </div>
-        </div>
-        <div class="testi-badge">月销 $3万+</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-text">"之前雇了2个人专门上架，现在只需要1个。每月省下1万多人工费，工具费早就回本了。"</div>
-        <div class="testi-author">
-          <div class="testi-avatar">李</div>
-          <div class="testi-info">
-            <h4>李总</h4>
-            <p>广州 · 工厂转型卖家</p>
-          </div>
-        </div>
-        <div class="testi-badge">年省 $12万+</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-text">"俄语内容一直是我的痛点，用了这个工具后终于不用担心语法错误了。客户好评率明显上升。"</div>
-        <div class="testi-author">
-          <div class="testi-avatar">王</div>
-          <div class="testi-info">
-            <h4>王经理</h4>
-            <p>义乌 · 俄语专业</p>
-          </div>
-        </div>
-        <div class="testi-badge">好评率 +15%</div>
+    <h2>开始你的数据之旅</h2>
+    <p>扫码加微信，备注"数据咨询"</p>
+    <div class="contact-box">
+      <div class="wechat-box">
+        <img src="https://raw.githubusercontent.com/Jones521/xia-gong-factory/main/1fad4b1416162e431ef3d909be4e1258.jpg" alt="微信二维码">
+        <p>👆 长按识别二维码</p>
+        <small>工作时间：9:00 - 22:00</small>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq">
-  <div class="container">
-    <div style="text-align:center;">
-      <span class="section-label">❓ 常见问题</span>
-      <h2 class="section-title">你可能想知道的</h2>
-    </div>
-
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3>OzonHunter 适合什么样的人？</h3>
-        <p>正在做或打算做俄罗斯OZON平台的中国跨境卖家。不管你是工厂转型、贸易商还是个人创业者，只要你在1688拿货，都能用。</p>
-      </div>
-      <div class="faq-item">
-        <h3>需要我有技术背景吗？</h3>
-        <p>完全不需要。OzonHunter 设计理念就是"会打字就会用"。你只需要输入产品关键词，其他交给我们。</p>
-      </div>
-      <div class="faq-item">
-        <h3>数据来源是1688还是阿里巴巴？</h3>
-        <p>两个都有。系统会自动从1688和阿里巴巴国际站采集产品数据，包括真实销量、价格、材质参数等。</p>
-      </div>
-      <div class="faq-item">
-        <h3>生成的俄语内容质量怎么样？</h3>
-        <p>我们的AI经过跨境电商专业语料训练，生成的俄语文案符合OZON平台规范，语法正确，表达地道。</p>
-      </div>
-      <div class="faq-item">
-        <h3>正式版什么时候上线？多少钱？</h3>
-        <p>预计5月初正式上线。内测期间预约的用户可享受首发优惠价。具体价格请关注预约表单。</p>
-      </div>
-      <div class="faq-item">
-        <h3>我没有OZON账号能预约吗？</h3>
-        <p>可以先预约，我们会提供OZON卖家入驻指导。等你账号下来，工具刚好用上。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section" id="waitlist">
-  <div class="container">
-    <h2>限量内测名额开放中</h2>
-    <p>扫码加微信，备注「预约」，拉你进内测群</p>
-
-    <div class="cta-features">
-      <div class="cta-feature"><span>✓</span> 免费使用3个月</div>
-      <div class="cta-feature"><span>✓</span> 优先客服支持</div>
-      <div class="cta-feature"><span>✓</span> 专属培训教程</div>
-      <div class="cta-feature"><span>✓</span> OZON入驻指导</div>
-    </div>
-
-    <div class="form-box" style="background: rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; max-width: 400px; margin: 0 auto;">
-      <img src="https://raw.githubusercontent.com/Jones521/xia-gong-factory/main/1fad4b1416162e431ef3d909be4e1258.jpg" alt="微信二维码" style="width: 220px; height: 220px; border-radius: 12px; display: block; margin: 0 auto 20px; border: 3px solid white; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
-      <p style="color: white; font-size: 18px; font-weight: 600; margin-bottom: 8px; text-align: center;">👆 扫码加我微信</p>
-      <p style="color: rgba(255,255,255,0.7); font-size: 14px; text-align: center;">备注「预约」，拉你进内测群</p>
-    </div>
-
-
   </div>
 </section>
 
 <!-- Footer -->
 <footer>
   <div class="container">
-    <p><a href="#">OzonHunter</a> · 专为跨境电商打造<br>
-    <small>© 2026 All rights reserved</small></p>
+    <p>DataHunter · 跨境电商数据服务商<br><small>© 2026 All rights reserved</small></p>
   </div>
 </footer>
-
-
 
 </body>
 </html>
