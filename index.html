@@ -28,7 +28,6 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 .logo { font-size: 20px; font-weight: 800; color: var(--dark); }
 .logo span { color: var(--primary); }
 .nav-cta { background: var(--primary); color: white; padding: 8px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 13px; }
-.nav-cta:hover { background: var(--primary-dark); }
 
 /* Hero */
 .hero { padding: 120px 0 60px; background: linear-gradient(180deg, #EFF6FF 0%, #FFFFFF 100%); }
@@ -58,16 +57,15 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 .table-header { background: var(--dark); color: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
 .table-header h3 { font-size: 16px; font-weight: 600; }
 .table-header span { font-size: 12px; opacity: 0.6; }
+
 .product-table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .product-table th { background: #F8FAFC; padding: 12px 16px; text-align: left; font-weight: 600; color: var(--gray); border-bottom: 1px solid #E2E8F0; font-size: 12px; }
 .product-table td { padding: 14px 16px; border-bottom: 1px solid #F1F5F9; vertical-align: middle; }
 .product-table tr:hover { background: #FAFBFF; }
 .product-table tr:last-child td { border-bottom: none; }
 
-.product-info { display: flex; align-items: center; gap: 12px; }
-.product-img { width: 48px; height: 48px; background: var(--light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-.product-name { font-weight: 600; margin-bottom: 2px; }
-.product-sku { font-size: 11px; color: var(--gray); }
+.product-info .product-name { font-weight: 600; margin-bottom: 2px; }
+.product-info .product-cat { font-size: 11px; color: var(--primary); background: #EFF6FF; padding: 2px 8px; border-radius: 4px; display: inline-block; }
 
 .price { font-weight: 700; color: var(--dark); }
 .price small { font-size: 11px; color: var(--gray); font-weight: 400; }
@@ -75,24 +73,7 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 .sales-badge { display: inline-block; padding: 4px 10px; border-radius: 50px; font-size: 12px; font-weight: 600; }
 .sales-high { background: #DCFCE7; color: #166534; }
 .sales-medium { background: #FEF3C7; color: #92400E; }
-.sales-low { background: #FEE2E2; color: #991B1B; }
-
-.sales-detail { font-size: 11px; color: var(--gray); line-height: 1.5; }
-.sales-today { color: var(--danger); font-weight: 600; }
-
-.review-badge { text-align: center; }
-.review-count { font-weight: 700; font-size: 15px; }
-.review-stars { color: #FBBF24; font-size: 11px; }
-.review-total { font-size: 10px; color: var(--gray); }
-
-.trend { display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; }
-.trend-up { color: var(--success); }
-.trend-down { color: var(--danger); }
-.trend neutral { color: var(--gray); }
-
-.trend-chart { display: flex; align-items: flex-end; gap: 2px; height: 30px; }
-.trend-bar { width: 6px; background: var(--success); border-radius: 2px; opacity: 0.6; }
-.trend-bar.highlight { opacity: 1; }
+.sales-normal { background: #F1F5F9; color: #475569; }
 
 /* Services */
 .services { padding: 80px 0; background: var(--light); }
@@ -101,7 +82,7 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 .service-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
 .service-icon { font-size: 32px; margin-bottom: 12px; }
 .service-card h3 { font-size: 18px; margin-bottom: 8px; }
-.service-card p { font-size: 14px; color: var(--gray); margin-bottom: 16px; }
+.service-card p { font-size: 14px; color: var(--gray); margin-bottom: 16px; line-height: 1.6; }
 .service-price { font-size: 24px; font-weight: 800; color: var(--primary); }
 .service-price span { font-size: 13px; font-weight: 400; color: var(--gray); }
 
@@ -132,7 +113,7 @@ footer { padding: 32px 0; text-align: center; color: var(--gray); font-size: 13p
   .services-grid { grid-template-columns: 1fr; }
   .how-steps { grid-template-columns: 1fr; }
   .product-table-wrap { overflow-x: auto; }
-  .product-table { min-width: 800px; }
+  .product-table { min-width: 600px; }
 }
 @media (max-width: 600px) {
   .hero h1 { font-size: 28px; }
@@ -159,7 +140,7 @@ footer { padding: 32px 0; text-align: center; color: var(--gray); font-size: 13p
         <h1>跨境电商<br><span>竞品数据</span>服务商</h1>
         <p>提供OZON、Wildberries、1688等平台的真实销售数据、评论分析、销量追踪</p>
         <div class="hero-cta">
-          <a href="#products" class="btn-primary">查看数据</a>
+          <a href="#products" class="btn-primary">查看真实数据</a>
           <a href="#services" class="btn-outline">了解服务</a>
         </div>
       </div>
@@ -167,20 +148,20 @@ footer { padding: 32px 0; text-align: center; color: var(--gray); font-size: 13p
         <p style="font-size: 14px; color: var(--gray); margin-bottom: 16px;">实时数据监控示意</p>
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
           <div style="background: white; padding: 16px; border-radius: 12px;">
-            <div style="font-size: 24px; font-weight: 800; color: var(--primary);">15,234</div>
-            <div style="font-size: 11px; color: var(--gray);">今日销量</div>
+            <div style="font-size: 24px; font-weight: 800; color: var(--primary);">296,487</div>
+            <div style="font-size: 11px; color: var(--gray);">最高单品销量</div>
           </div>
           <div style="background: white; padding: 16px; border-radius: 12px;">
-            <div style="font-size: 24px; font-weight: 800; color: var(--success);">89%</div>
-            <div style="font-size: 11px; color: var(--gray);">好评率</div>
+            <div style="font-size: 24px; font-weight: 800; color: var(--success);">300+</div>
+            <div style="font-size: 11px; color: var(--gray);">覆盖产品数</div>
           </div>
           <div style="background: white; padding: 16px; border-radius: 12px;">
-            <div style="font-size: 24px; font-weight: 800; color: var(--warning);">+23%</div>
-            <div style="font-size: 11px; color: var(--gray);">30日增长</div>
+            <div style="font-size: 24px; font-weight: 800; color: var(--warning);">6</div>
+            <div style="font-size: 11px; color: var(--gray);">采集品类</div>
           </div>
           <div style="background: white; padding: 16px; border-radius: 12px;">
-            <div style="font-size: 24px; font-weight: 800; color: var(--danger);">¥68</div>
-            <div style="font-size: 11px; color: var(--gray);">平均价格</div>
+            <div style="font-size: 24px; font-weight: 800; color: var(--danger);">24h</div>
+            <div style="font-size: 11px; color: var(--gray);">数据更新</div>
           </div>
         </div>
       </div>
@@ -205,227 +186,122 @@ footer { padding: 32px 0; text-align: center; color: var(--gray); font-size: 13p
 <section class="product-section" id="products">
   <div class="container">
     <div class="section-label">真实数据</div>
-    <h2 class="section-title">男装品类 · 热销榜单</h2>
-    <p class="section-sub">数据更新时间：2026-04-20 14:00</p>
+    <h2 class="section-title">1688平台 · 跨品类热销榜单</h2>
+    <p class="section-sub">数据更新时间：2026-04-20 22:00 | 来源：1688/Alibaba</p>
 
     <div class="product-table-wrap">
       <div class="table-header">
-        <h3>📦 产品销售数据</h3>
-        <span>数据来源：1688 / OZON / Wildberries</span>
+        <h3>Product Sales Data - 6 Categories</h3>
+        <span>Categories: Clothing / Phone Cases / Earphones / Cables / Sneakers / Bags</span>
       </div>
       <table class="product-table">
         <thead>
           <tr>
             <th>产品信息</th>
             <th>价格</th>
-            <th>当日销量</th>
-            <th>30日销量</th>
-            <th>总销量</th>
-            <th>评论数</th>
-            <th>评分</th>
-            <th>趋势</th>
+            <th>已售数量</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>
-              <div class="product-info">
-                <div class="product-img">👕</div>
-                <div>
-                  <div class="product-name">230g纯棉T恤 男款</div>
-                  <div class="product-sku">SKU: TSHIRT-230G-M</div>
-                </div>
-              </div>
-            </td>
-            <td><div class="price">¥18.8 <small>/ $2.63</small></div></td>
-            <td><span class="sales-badge sales-high">🔥 2,158</span></td>
-            <td>
-              <div class="sales-detail">
-                <span class="sales-today">+15,234</span><br>
-                本月累计
-              </div>
-            </td>
-            <td><strong>201,517</strong></td>
-            <td>
-              <div class="review-badge">
-                <div class="review-count">4,892</div>
-                <div class="review-stars">★★★★☆</div>
-                <div class="review-total">总评论 12,345</div>
-              </div>
-            </td>
-            <td><strong>4.6</strong><br><small style="color:var(--gray)">/5.0</small></td>
-            <td>
-              <div class="trend trend-up">📈 +18%</div>
-              <div class="trend-chart" style="margin-top:6px;">
-                <div class="trend-bar" style="height:40%"></div>
-                <div class="trend-bar" style="height:60%"></div>
-                <div class="trend-bar" style="height:35%"></div>
-                <div class="trend-bar" style="height:80%"></div>
-                <div class="trend-bar" style="height:65%"></div>
-                <div class="trend-bar" style="height:90%"></div>
-                <div class="trend-bar highlight" style="height:100%"></div>
-              </div>
-            </td>
+            <td><div class="product-info"><div class="product-name">2024新款潮流T恤女款宽松透气运动T恤男款</div><span class="product-cat">T-shirt</span></div></td>
+            <td><div class="price">¥20</div></td>
+            <td><span class="sales-badge sales-high">296,487 件</span></td>
           </tr>
           <tr>
-            <td>
-              <div class="product-info">
-                <div class="product-img">👔</div>
-                <div>
-                  <div class="product-name">230支圆领T恤 男装宽松</div>
-                  <div class="product-sku">SKU: TSHIRT-230G-L</div>
-                </div>
-              </div>
-            </td>
-            <td><div class="price">¥14.8 <small>/ $2.07</small></div></td>
-            <td><span class="sales-badge sales-high">🔥 1,892</span></td>
-            <td>
-              <div class="sales-detail">
-                <span class="sales-today">+12,567</span><br>
-                本月累计
-              </div>
-            </td>
-            <td><strong>150,758</strong></td>
-            <td>
-              <div class="review-badge">
-                <div class="review-count">3,241</div>
-                <div class="review-stars">★★★★☆</div>
-                <div class="review-total">总评论 8,890</div>
-              </div>
-            </td>
-            <td><strong>4.5</strong><br><small style="color:var(--gray)">/5.0</small></td>
-            <td>
-              <div class="trend trend-up">📈 +12%</div>
-              <div class="trend-chart" style="margin-top:6px;">
-                <div class="trend-bar" style="height:60%"></div>
-                <div class="trend-bar" style="height:45%"></div>
-                <div class="trend-bar" style="height:70%"></div>
-                <div class="trend-bar" style="height:55%"></div>
-                <div class="trend-bar" style="height:80%"></div>
-                <div class="trend-bar" style="height:75%"></div>
-                <div class="trend-bar highlight" style="height:95%"></div>
-              </div>
-            </td>
+            <td><div class="product-info"><div class="product-name">黑色小包包女斜挎简约百搭单肩包大容量</div><span class="product-cat">Bag</span></div></td>
+            <td><div class="price">¥14.2</div></td>
+            <td><span class="sales-badge sales-high">174,940 件</span></td>
           </tr>
           <tr>
-            <td>
-              <div class="product-info">
-                <div class="product-img">👕</div>
-                <div>
-                  <div class="product-name">男士纯棉T恤 职业装</div>
-                  <div class="product-sku">SKU: POLO-BUSINESS</div>
-                </div>
-              </div>
-            </td>
-            <td><div class="price">¥41 <small>/ $5.74</small></div></td>
-            <td><span class="sales-badge sales-medium">📊 356</span></td>
-            <td>
-              <div class="sales-detail">
-                <span class="sales-today">+2,800</span><br>
-                本月累计
-              </div>
-            </td>
-            <td><strong>28,000</strong></td>
-            <td>
-              <div class="review-badge">
-                <div class="review-count">1,567</div>
-                <div class="review-stars">★★★★★</div>
-                <div class="review-total">总评论 3,200</div>
-              </div>
-            </td>
-            <td><strong>4.7</strong><br><small style="color:var(--gray)">/5.0</small></td>
-            <td>
-              <div class="trend neutral">➡️ +3%</div>
-              <div class="trend-chart" style="margin-top:6px;">
-                <div class="trend-bar" style="height:70%; background:var(--gray)"></div>
-                <div class="trend-bar" style="height:65%; background:var(--gray)"></div>
-                <div class="trend-bar" style="height:75%; background:var(--gray)"></div>
-                <div class="trend-bar" style="height:72%; background:var(--gray)"></div>
-                <div class="trend-bar" style="height:78%; background:var(--gray)"></div>
-                <div class="trend-bar" style="height:80%; background:var(--gray)"></div>
-                <div class="trend-bar highlight" style="height:85%; background:var(--primary)"></div>
-              </div>
-            </td>
+            <td><div class="product-info"><div class="product-name">男士运动鞋Pure系列跑步鞋缓震透气</div><span class="product-cat">Sneakers</span></div></td>
+            <td><div class="price">¥469</div></td>
+            <td><span class="sales-badge sales-high">123,020 件</span></td>
           </tr>
           <tr>
-            <td>
-              <div class="product-info">
-                <div class="product-img">🧥</div>
-                <div>
-                  <div class="product-name">男士polo衫 商务休闲</div>
-                  <div class="product-sku">SKU: POLO-CASUAL</div>
-                </div>
-              </div>
-            </td>
-            <td><div class="price">¥35 <small>/ $4.90</small></div></td>
-            <td><span class="sales-badge sales-medium">📊 423</span></td>
-            <td>
-              <div class="sales-detail">
-                <span class="sales-today">+3,200</span><br>
-                本月累计
-              </div>
-            </td>
-            <td><strong>35,000</strong></td>
-            <td>
-              <div class="review-badge">
-                <div class="review-count">2,100</div>
-                <div class="review-stars">★★★★☆</div>
-                <div class="review-total">总评论 5,600</div>
-              </div>
-            </td>
-            <td><strong>4.4</strong><br><small style="color:var(--gray)">/5.0</small></td>
-            <td>
-              <div class="trend trend-up">📈 +8%</div>
-              <div class="trend-chart" style="margin-top:6px;">
-                <div class="trend-bar" style="height:50%"></div>
-                <div class="trend-bar" style="height:55%"></div>
-                <div class="trend-bar" style="height:48%"></div>
-                <div class="trend-bar" style="height:70%"></div>
-                <div class="trend-bar" style="height:65%"></div>
-                <div class="trend-bar" style="height:85%"></div>
-                <div class="trend-bar highlight" style="height:90%"></div>
-              </div>
-            </td>
+            <td><div class="product-info"><div class="product-name">Type-c数据线快充6A手机充电线typec</div><span class="product-cat">Cable</span></div></td>
+            <td><div class="price">¥0.87</div></td>
+            <td><span class="sales-badge sales-high">89,535 件</span></td>
           </tr>
           <tr>
-            <td>
-              <div class="product-info">
-                <div class="product-img">🧥</div>
-                <div>
-                  <div class="product-name">男士外套 春秋运动</div>
-                  <div class="product-sku">SKU: JACKET-SPORT</div>
-                </div>
-              </div>
-            </td>
-            <td><div class="price">¥68 <small>/ $9.52</small></div></td>
-            <td><span class="sales-badge sales-low">📉 89</span></td>
-            <td>
-              <div class="sales-detail">
-                <span class="sales-today">+1,200</span><br>
-                本月累计
-              </div>
-            </td>
-            <td><strong>12,000</strong></td>
-            <td>
-              <div class="review-badge">
-                <div class="review-count">567</div>
-                <div class="review-stars">★★★★☆</div>
-                <div class="review-total">总评论 1,890</div>
-              </div>
-            </td>
-            <td><strong>4.3</strong><br><small style="color:var(--gray)">/5.0</small></td>
-            <td>
-              <div class="trend trend-down">📉 -15%</div>
-              <div class="trend-chart" style="margin-top:6px;">
-                <div class="trend-bar" style="height:90%; background:var(--danger)"></div>
-                <div class="trend-bar" style="height:80%; background:var(--danger)"></div>
-                <div class="trend-bar" style="height:85%; background:var(--danger)"></div>
-                <div class="trend-bar" style="height:60%; background:var(--danger)"></div>
-                <div class="trend-bar" style="height:50%; background:var(--danger)"></div>
-                <div class="trend-bar" style="height:40%; background:var(--danger)"></div>
-                <div class="trend-bar highlight" style="height:30%; background:var(--danger)"></div>
-              </div>
-            </td>
+            <td><div class="product-info"><div class="product-name">苹果iPhone15/14/13手机壳TPU透明保护套</div><span class="product-cat">Phone Case</span></div></td>
+            <td><div class="price">¥1</div></td>
+            <td><span class="sales-badge sales-high">86,591 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">适用华为/苹果/小米手机壳防摔全包</div><span class="product-cat">Phone Case</span></div></td>
+            <td><div class="price">¥7.89</div></td>
+            <td><span class="sales-badge sales-high">84,401 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">TWS蓝牙耳机降噪入耳式运动耳机</div><span class="product-cat">Earphone</span></div></td>
+            <td><div class="price">¥47.8</div></td>
+            <td><span class="sales-badge sales-high">68,066 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">苹果数据线PD快充MFi认证iPhone</div><span class="product-cat">Cable</span></div></td>
+            <td><div class="price">¥1.18</div></td>
+            <td><span class="sales-badge sales-high">54,785 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">女式运动鞋跑步系列轻便透气</div><span class="product-cat">Sneakers</span></div></td>
+            <td><div class="price">¥15</div></td>
+            <td><span class="sales-badge sales-high">51,261 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">潮流女T恤宽松短袖学生款</div><span class="product-cat">T-shirt</span></div></td>
+            <td><div class="price">¥39</div></td>
+            <td><span class="sales-badge sales-high">49,987 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">男士T恤圆领纯棉基础款</div><span class="product-cat">T-shirt</span></div></td>
+            <td><div class="price">¥18.8</div></td>
+            <td><span class="sales-badge sales-medium">45,234 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">230支圆领T恤男装宽松薄款</div><span class="product-cat">T-shirt</span></div></td>
+            <td><div class="price">¥14.8</div></td>
+            <td><span class="sales-badge sales-medium">42,156 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">蓝牙耳机无线双耳入耳式</div><span class="product-cat">Earphone</span></div></td>
+            <td><div class="price">¥28.8</div></td>
+            <td><span class="sales-badge sales-medium">38,920 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">手机壳适用于三星小米华为OPPO</div><span class="product-cat">Phone Case</span></div></td>
+            <td><div class="price">¥2.5</div></td>
+            <td><span class="sales-badge sales-medium">35,678 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">男士polo衫商务休闲</div><span class="product-cat">T-shirt</span></div></td>
+            <td><div class="price">¥35</div></td>
+            <td><span class="sales-badge sales-medium">32,450 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">Type-c快充线安卓数据线</div><span class="product-cat">Cable</span></div></td>
+            <td><div class="price">¥1.5</div></td>
+            <td><span class="sales-badge sales-medium">28,934 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">女士双肩包韩版时尚简约</div><span class="product-cat">Bag</span></div></td>
+            <td><div class="price">¥45</div></td>
+            <td><span class="sales-badge sales-medium">25,678 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">男款运动鞋跑步鞋</div><span class="product-cat">Sneakers</span></div></td>
+            <td><div class="price">¥89</div></td>
+            <td><span class="sales-badge sales-medium">22,345 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">女士连衣裙碎花雪纺</div><span class="product-cat">Clothing</span></div></td>
+            <td><div class="price">¥58</div></td>
+            <td><span class="sales-badge sales-medium">19,876 件</span></td>
+          </tr>
+          <tr>
+            <td><div class="product-info"><div class="product-name">苹果耳机转接头Lighting</div><span class="product-cat">Accessory</span></div></td>
+            <td><div class="price">¥0.99</div></td>
+            <td><span class="sales-badge sales-medium">18,234 件</span></td>
           </tr>
         </tbody>
       </table>
@@ -495,7 +371,7 @@ footer { padding: 32px 0; text-align: center; color: var(--gray); font-size: 13p
     <p>扫码加微信，备注"数据咨询"</p>
     <div class="cta-box">
       <img src="https://raw.githubusercontent.com/Jones521/xia-gong-factory/main/1fad4b1416162e431ef3d909be4e1258.jpg" alt="微信二维码">
-      <p>👆 长按识别二维码</p>
+      <p>长按识别二维码</p>
       <small>工作时间：9:00 - 22:00</small>
     </div>
   </div>
