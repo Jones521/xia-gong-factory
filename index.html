@@ -6,114 +6,83 @@
 <title>DataHunter - 跨境电商真实销售数据</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-  --primary: #2563EB;
-  --dark: #0F172A;
-  --gray: #64748B;
-  --light: #F1F5F9;
-  --white: #FFFFFF;
-  --success: #10B981;
-  --danger: #EF4444;
-}
-body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--light); min-height: 100vh; }
-nav { padding: 16px 24px; background: var(--dark); display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 18px; font-weight: 800; color: white; }
-.logo span { color: var(--primary); }
-.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
-
-.hero { background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); color: white; padding: 60px 0; text-align: center; border-radius: 24px; margin-bottom: 32px; }
-.hero h1 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
-.hero p { font-size: 18px; opacity: 0.9; }
-
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
-.stat-card { background: white; padding: 24px; border-radius: 16px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-.stat-card .number { font-size: 32px; font-weight: 800; color: var(--primary); }
-.stat-card .label { font-size: 13px; color: var(--gray); margin-top: 4px; }
-
-.section { background: white; border-radius: 20px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
-.section-title { font-size: 20px; font-weight: 700; }
-.section-badge { background: #DCFCE7; color: #166534; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
-
-.tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-.tab { padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; background: var(--light); color: var(--gray); transition: all 0.2s; border: none; }
-.tab:hover { background: #E2E8F0; }
-.tab.active { background: var(--primary); color: white; }
-
-.table-wrap { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 900px; }
-th { background: #F8FAFC; padding: 12px 16px; text-align: left; font-weight: 600; color: var(--gray); border-bottom: 2px solid #E2E8F0; white-space: nowrap; }
-td { padding: 14px 16px; border-bottom: 1px solid #F1F5F9; vertical-align: middle; }
-tr:hover { background: #FAFBFF; }
-
-.product-cell { display: flex; align-items: center; gap: 12px; }
-.product-icon { width: 44px; height: 44px; background: var(--light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
-.product-name { font-weight: 600; margin-bottom: 2px; max-width: 320px; }
-.product-tag { display: inline-block; background: #EFF6FF; color: var(--primary); padding: 2px 8px; border-radius: 4px; font-size: 10px; margin-top: 4px; }
-
-.price { font-weight: 700; white-space: nowrap; }
-.price small { font-size: 11px; color: var(--gray); font-weight: 400; }
-
-.sold-high { color: #166534; font-weight: 700; }
-.sold-medium { color: #92400E; font-weight: 700; }
-.sold-low { color: #475569; }
-
-.info { font-size: 12px; color: var(--gray); }
-.info strong { color: var(--dark); }
-
-.pagination { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 16px; border-top: 1px solid #E2E8F0; flex-wrap: wrap; gap: 12px; }
-.pagination-info { font-size: 13px; color: var(--gray); }
-.pagination-buttons { display: flex; gap: 8px; }
-.pagination-buttons button { padding: 8px 16px; border-radius: 8px; border: 1px solid #E2E8F0; background: white; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.2s; }
-.pagination-buttons button:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
-.pagination-buttons button:disabled { opacity: 0.4; cursor: not-allowed; }
-.pagination-buttons button.active { background: var(--primary); color: white; border-color: var(--primary); }
-
-.cta-section { background: var(--dark); color: white; border-radius: 20px; padding: 40px; text-align: center; margin-top: 32px; }
-.cta-section h2 { font-size: 28px; margin-bottom: 12px; }
-.cta-section p { opacity: 0.7; margin-bottom: 24px; }
-.cta-box { display: inline-block; background: rgba(255,255,255,0.1); border-radius: 16px; padding: 24px; }
-.cta-box img { width: 160px; height: 160px; border-radius: 8px; display: block; margin: 0 auto 12px; }
-.cta-box p { font-size: 14px; margin-bottom: 4px; }
-.cta-box small { opacity: 0.5; font-size: 12px; }
-footer { text-align: center; padding: 32px; color: var(--gray); font-size: 12px; }
-
-@media (max-width: 768px) {
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .hero h1 { font-size: 28px; }
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--primary:#2563EB;--dark:#0F172A;--gray:#64748B;--light:#F1F5F9;--white:#FFFFFF;--success:#10B981;--danger:#EF4444;}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--light);min-height:100vh;}
+nav{padding:16px 24px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:18px;font-weight:800;color:white;}
+.logo span{color:var(--primary);}
+.container{max-width:1100px;margin:0 auto;padding:24px;}
+.hero{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 100%);color:white;padding:60px 0;text-align:center;border-radius:24px;margin-bottom:32px;}
+.hero h1{font-size:36px;font-weight:800;margin-bottom:12px;}
+.hero p{font-size:18px;opacity:0.9;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;}
+.stat-card{background:white;padding:24px;border-radius:16px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+.stat-card .number{font-size:32px;font-weight:800;color:var(--primary);}
+.stat-card .label{font-size:13px;color:var(--gray);margin-top:4px;}
+.section{background:white;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;}
+.section-title{font-size:20px;font-weight:700;}
+.section-badge{background:#DCFCE7;color:#166534;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.tab{padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;background:var(--light);color:var(--gray);transition:all 0.2s;border:none;}
+.tab:hover{background:#E2E8F0;}
+.tab.active{background:var(--primary);color:white;}
+.table-wrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:900px;}
+th{background:#F8FAFC;padding:12px 16px;text-align:left;font-weight:600;color:var(--gray);border-bottom:2px solid #E2E8F0;white-space:nowrap;}
+td{padding:14px 16px;border-bottom:1px solid #F1F5F9;vertical-align:middle;}
+tr:hover{background:#FAFBFF;}
+.product-cell{display:flex;align-items:center;gap:12px;}
+.product-icon{width:44px;height:44px;background:var(--light);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.product-name{font-weight:600;margin-bottom:2px;max-width:300px;}
+.product-tag{display:inline-block;background:#EFF6FF;color:var(--primary);padding:2px 8px;border-radius:4px;font-size:10px;margin-top:4px;}
+.price{font-weight:700;white-space:nowrap;}
+.price small{font-size:11px;color:var(--gray);font-weight:400;}
+.sold-high{color:#166534;font-weight:700;}
+.sold-medium{color:#92400E;font-weight:700;}
+.sold-low{color:#475569;}
+.info{font-size:12px;color:var(--gray);}
+.info strong{color:var(--dark);}
+.pagination{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:16px;border-top:1px solid #E2E8F0;flex-wrap:wrap;gap:12px;}
+.pagination-info{font-size:13px;color:var(--gray);}
+.pagination-buttons{display:flex;gap:8px;flex-wrap:wrap;}
+.pagination-buttons button{padding:8px 14px;border-radius:8px;border:1px solid #E2E8F0;background:white;cursor:pointer;font-size:13px;font-weight:600;transition:all 0.2s;}
+.pagination-buttons button:hover:not(:disabled){border-color:var(--primary);color:var(--primary);}
+.pagination-buttons button:disabled{opacity:0.4;cursor:not-allowed;}
+.pagination-buttons button.active{background:var(--primary);color:white;border-color:var(--primary);}
+.cta-section{background:var(--dark);color:white;border-radius:20px;padding:40px;text-align:center;margin-top:32px;}
+.cta-section h2{font-size:28px;margin-bottom:12px;}
+.cta-section p{opacity:0.7;margin-bottom:24px;}
+.cta-box{display:inline-block;background:rgba(255,255,255,0.1);border-radius:16px;padding:24px;}
+.cta-box img{width:160px;height:160px;border-radius:8px;display:block;margin:0 auto 12px;}
+.cta-box p{font-size:14px;margin-bottom:4px;}
+.cta-box small{opacity:0.5;font-size:12px;}
+footer{text-align:center;padding:32px;color:var(--gray);font-size:12px;}
+@media(max-width:768px){.stats{grid-template-columns:repeat(2,1fr);}.hero h1{font-size:28px;}}
 </style>
 </head>
 <body>
-
 <nav>
   <div class="logo">Data<span>Hunter</span></div>
-  <a href="#contact" style="color: white; text-decoration: none; font-size: 13px; font-weight: 600;">联系我们</a>
+  <a href="#contact" style="color:white;text-decoration:none;font-size:13px;font-weight:600;">联系我们</a>
 </nav>
-
 <div class="container">
-
   <div class="hero">
     <h1>1688 跨境热销数据</h1>
     <p>真实采集 · 6 大品类 · 120+ 产品 · 已验证销量</p>
   </div>
-
   <div class="stats">
     <div class="stat-card"><div class="number">6</div><div class="label">覆盖品类</div></div>
     <div class="stat-card"><div class="number">120+</div><div class="label">产品数据</div></div>
     <div class="stat-card"><div class="number">29.6万</div><div class="label">最高单品销量</div></div>
     <div class="stat-card"><div class="number">24h</div><div class="label">数据更新</div></div>
   </div>
-
   <div class="section">
     <div class="section-header">
-      <div>
-        <h2 class="section-title">📊 1688 热销产品数据</h2>
-      </div>
+      <div><h2 class="section-title">📊 1688 热销产品数据</h2></div>
       <span class="section-badge">✓ 真实数据</span>
     </div>
-
     <div class="tabs">
       <button class="tab active" data-cat="all">全部</button>
       <button class="tab" data-cat="运动鞋">运动鞋</button>
@@ -123,31 +92,20 @@ footer { text-align: center; padding: 32px; color: var(--gray); font-size: 12px;
       <button class="tab" data-cat="蓝牙耳机">耳机</button>
       <button class="tab" data-cat="充电宝">充电宝</button>
     </div>
-
     <div class="table-wrap">
       <table>
         <thead>
-          <tr>
-            <th>产品信息</th>
-            <th>价格</th>
-            <th>已售</th>
-            <th>复购率</th>
-            <th>供应商</th>
-            <th>地区</th>
-          </tr>
+          <tr><th>产品信息</th><th>价格</th><th>已售</th><th>复购率</th><th>供应商</th><th>地区</th></tr>
         </thead>
         <tbody id="productTable"></tbody>
       </table>
     </div>
-
     <div class="pagination">
-      <div class="pagination-info" id="pageInfo">显示 1-30 / 120 条</div>
+      <div class="pagination-info" id="pageInfo"></div>
       <div class="pagination-buttons" id="pageButtons"></div>
     </div>
   </div>
-
 </div>
-
 <div class="container">
   <div class="cta-section" id="contact">
     <h2>需要更多数据？</h2>
@@ -159,95 +117,64 @@ footer { text-align: center; padding: 32px; color: var(--gray); font-size: 12px;
     </div>
   </div>
 </div>
-
 <footer>DataHunter · 跨境电商数据服务商<br><small>数据来源：1688/Alibaba | 更新于 2026-04</small></footer>
-
 <script>
-const products = [{"title":"2024新款春季飞织网鞋椰子女鞋夏季透气休闲鞋运动鞋百搭老爹潮鞋","price":"¥20","sold":296486,"repurchase":"41%","shop":"温州浙匡商贸有限公司","location":"浙江温州","cat":"运动鞋"},{"title":"白色纯棉小背心西装内搭打底无袖吊带女士春夏秋外穿辣妹大码上衣","price":"¥14.2","sold":174940,"repurchase":"11%","shop":"丰色服饰","location":"浙江义乌","cat":"女装"},{"title":"男女款远征者Pure 休闲慢跑鞋","price":"¥469","sold":123018,"repurchase":"95%","shop":"上海迈跑体育","location":"北京","cat":"运动鞋"},{"title":"Type-c单头数据线闪充6A线typec适用于华为手机充电线快充礼品","price":"¥0.87","sold":89535,"repurchase":"8%","shop":"深圳科联电子","location":"广东深圳","cat":"数据线"},{"title":"适用苹果17promax透明手机壳iphone16tpu防摔15太空全包13保护","price":"¥1","sold":86591,"repurchase":"15%","shop":"广州优品数码","location":"广东广州","cat":"手机壳"},{"title":"苹果iPhone15/14/13手机壳TPU透明保护套","price":"¥1","sold":84401,"repurchase":"12%","shop":"深圳华创科技","location":"广东深圳","cat":"手机壳"},{"title":"TWS蓝牙耳机降噪入耳式运动耳机","price":"¥47.8","sold":68066,"repurchase":"20%","shop":"深圳声威电子","location":"广东深圳","cat":"蓝牙耳机"},{"title":"苹果数据线PD快充MFi认证iPhone","price":"¥1.18","sold":54785,"repurchase":"18%","shop":"广州盈讯电子","location":"广东广州","cat":"数据线"},{"title":"女式运动鞋跑步系列轻便透气","price":"¥15","sold":51261,"repurchase":"22%","shop":"泉州风尚鞋业","location":"福建泉州","cat":"运动鞋"},{"title":"潮流女T恤宽松短袖学生款","price":"¥39","sold":49987,"repurchase":"35%","shop":"杭州韩风服饰","location":"浙江杭州","cat":"女装"},{"title":"男士T恤圆领纯棉基础款","price":"¥18.8","sold":45234,"repurchase":"28%","shop":"广州恒源制衣","location":"广东广州","cat":"女装"},{"title":"230支圆领T恤男装宽松薄款","price":"¥14.8","sold":42156,"repurchase":"30%","shop":"义乌针织制衣","location":"浙江义乌","cat":"女装"},{"title":"蓝牙耳机无线双耳入耳式","price":"¥28.8","sold":38920,"repurchase":"25%","shop":"深圳漫步者","location":"广东深圳","cat":"蓝牙耳机"},{"title":"手机壳适用于三星小米华为OPPO","price":"¥2.5","sold":35678,"repurchase":"10%","shop":"深圳合创数码","location":"广东深圳","cat":"手机壳"},{"title":"男士polo衫商务休闲","price":"¥35","sold":32450,"repurchase":"32%","shop":"宁波雅戈尔","location":"浙江宁波","cat":"女装"},{"title":"Type-c快充线安卓数据线","price":"¥1.5","sold":28934,"repurchase":"14%","shop":"广州腾跃电子","location":"广东广州","cat":"数据线"},{"title":"女士双肩包韩版时尚简约","price":"¥45","sold":25678,"repurchase":"38%","shop":"广州箱包皮具","location":"广东广州","cat":"运动鞋"},{"title":"男款运动鞋跑步鞋","price":"¥89","sold":22345,"repurchase":"40%","shop":"泉州体育用品","location":"福建泉州","cat":"运动鞋"},{"title":"女士连衣裙碎花雪纺","price":"¥58","sold":19876,"repurchase":"45%","shop":"杭州时尚服饰","location":"浙江杭州","cat":"女装"},{"title":"苹果耳机转接头Lighting","price":"¥0.99","sold":18234,"repurchase":"9%","shop":"深圳创联电子","location":"广东深圳","cat":"数据线"},{"title":"2024新款手机钢化膜防摔","price":"¥2.8","sold":17567,"repurchase":"7%","shop":"深圳诺希数码","location":"广东深圳","cat":"手机壳"},{"title":"迷你充电宝10000毫安","price":"¥28","sold":16543,"repurchase":"15%","shop":"深圳瑞鑫电子","location":"广东深圳","cat":"充电宝"},{"title":"男士商务公文包真皮","price":"¥128","sold":15432,"repurchase":"42%","shop":"广州保罗皮具","location":"广东广州","cat":"运动鞋"},{"title":"无线蓝牙耳机入耳式","price":"¥19.9","sold":14876,"repurchase":"18%","shop":"深圳小米数码","location":"广东深圳","cat":"蓝牙耳机"},{"title":"女士手提包单肩包","price":"¥55","sold":14234,"repurchase":"35%","shop":"广州丽人皮具","location":"广东广州","cat":"运动鞋"},{"title":"iPhone16手机壳磁吸透明","price":"¥3.5","sold":13987,"repurchase":"12%","shop":"深圳鑫创电子","location":"广东深圳","cat":"手机壳"},{"title":"20000毫安充电宝大容量","price":"¥45","sold":13567,"repurchase":"20%","shop":"深圳飞毛腿电子","location":"广东深圳","cat":"充电宝"},{"title":"运动蓝牙耳机防水跑步","price":"¥38","sold":12876,"repurchase":"22%","shop":"深圳JBL数码","location":"广东深圳","cat":"蓝牙耳机"},{"title":"Type-c数据线编织快充","price":"¥2.9","sold":12345,"repurchase":"11%","shop":"广州创联电子","location":"广东广州","cat":"数据线"},{"title":"女士针织开衫毛衣","price":"¥69","sold":11876,"repurchase":"48%","shop":"杭州针织制衣","location":"浙江杭州","cat":"女装"},{"title":"男士运动裤宽松休闲","price":"¥45","sold":11234,"repurchase":"30%","shop":"广州运动服饰","location":"广东广州","cat":"运动鞋"},{"title":"旅行双肩包大容量防水","price":"¥68","sold":10876,"repurchase":"25%","shop":"深圳行者箱包","location":"广东深圳","cat":"运动鞋"},{"title":"三合一数据线多头充电线","price":"¥2.9","sold":10234,"repurchase":"8%","shop":"深圳雅配件电子","location":"广东深圳","cat":"数据线"},{"title":"22.5W快充充电宝","price":"¥55","sold":9876,"repurchase":"18%","shop":"深圳品胜电子","location":"广东深圳","cat":"充电宝"},{"title":"蓝牙音响便携迷你","price":"¥38","sold":9654,"repurchase":"15%","shop":"深圳漫步者音响","location":"广东深圳","cat":"蓝牙耳机"},{"title":"女士半身裙百褶裙","price":"¥35","sold":9234,"repurchase":"40%","shop":"杭州时尚裙装","location":"浙江杭州","cat":"女装"},{"title":"男士外套春秋运动","price":"¥89","sold":8976,"repurchase":"35%","shop":"泉州运动服饰","location":"福建泉州","cat":"运动鞋"},{"title":"磁吸无线充电宝","price":"¥68","sold":8654,"repurchase":"22%","shop":"深圳苹果配件","location":"广东深圳","cat":"充电宝"},{"title":"Lightning数据线苹果","price":"¥1.5","sold":8234,"repurchase":"10%","shop":"广州苹果配件","location":"广东广州","cat":"数据线"},{"title":"女士风衣外套春秋","price":"¥128","sold":7865,"repurchase":"38%","shop":"杭州风衣服饰","location":"浙江杭州","cat":"女装"},{"title":"男士休闲鞋板鞋","price":"¥79","sold":7654,"repurchase":"32%","shop":"泉州鞋业","location":"福建泉州","cat":"运动鞋"},{"title":"车载充电器快充","price":"¥15","sold":7234,"repurchase":"8%","shop":"深圳车充电子","location":"广东深圳","cat":"数据线"},{"title":"无线充电器底座","price":"¥38","sold":6876,"repurchase":"12%","shop":"深圳三星配件","location":"广东深圳","cat":"充电宝"},{"title":"蓝牙耳机头戴式游戏","price":"¥89","sold":6543,"repurchase":"20%","shop":"深圳雷蛇数码","location":"广东深圳","cat":"蓝牙耳机"},{"title":"小米蓝牙耳机无线单耳","price":"¥19.9","sold":6543,"repurchase":"15%","shop":"深圳小米配件","location":"广东深圳","cat":"蓝牙耳机"},{"title":"iPad保护套平板壳","price":"¥18","sold":6234,"repurchase":"12%","shop":"深圳平板配件","location":"广东深圳","cat":"手机壳"},{"title":"登山背包双肩包","price":"¥128","sold":5987,"repurchase":"30%","shop":"广州户外装备","location":"广东广州","cat":"运动鞋"},{"title":"女士牛仔裤高腰紧身","price":"¥45","sold":5765,"repurchase":"42%","shop":"广州牛仔服饰","location":"广东广州","cat":"女装"},{"title":"快充数据线套装","price":"¥12","sold":5543,"repurchase":"6%","shop":"深圳数码配件","location":"广东深圳","cat":"数据线"},{"title":"迷你便携充电宝","price":"¥35","sold":5321,"repurchase":"18%","shop":"深圳小熊电子","location":"广东深圳","cat":"充电宝"},{"title":"运动蓝牙耳机跑步","price":"¥48","sold":5123,"repurchase":"25%","shop":"深圳运动数码","location":"广东深圳","cat":"蓝牙耳机"},{"title":"女士卫衣休闲套装","price":"¥79","sold":4987,"repurchase":"38%","shop":"杭州休闲服饰","location":"浙江杭州","cat":"女装"},{"title":"男士T恤印花潮流","price":"¥28","sold":4765,"repurchase":"25%","shop":"广州潮流服饰","location":"广东广州","cat":"女装"},{"title":"USB-C数据线转换器","price":"¥18","sold":4543,"repurchase":"9%","shop":"深圳数码配件","location":"广东深圳","cat":"数据线"},{"title":"移动电源Type-c快充","price":"¥55","sold":4321,"repurchase":"15%","shop":"深圳移动电源","location":"广东深圳","cat":"充电宝"},{"title":"电脑笔记本散热器","price":"¥38","sold":4123,"repurchase":"10%","shop":"深圳电脑配件","location":"广东深圳","cat":"数据线"},{"title":"蓝牙音响家用桌面","price":"¥68","sold":3987,"repurchase":"20%","shop":"深圳音响品牌","location":"广东深圳","cat":"蓝牙耳机"},{"title":"女士打底裤外穿","price":"¥25","sold":3765,"repurchase":"35%","shop":"广州打底裤","location":"广东广州","cat":"女装"},{"title":"男士冲锋衣户外","price":"¥168","sold":3543,"repurchase":"40%","shop":"泉州户外服饰","location":"福建泉州","cat":"运动鞋"},{"title":"数据线收纳盒整理盒","price":"¥8","sold":3321,"repurchase":"5%","shop":"深圳收纳配件","location":"广东深圳","cat":"数据线"},{"title":"背夹充电宝超薄","price":"¥45","sold":3123,"repurchase":"12%","shop":"深圳背夹电源","location":"广东深圳","cat":"充电宝"},{"title":"蓝牙耳机运动防水","price":"¥58","sold":2987,"repurchase":"22%","shop":"深圳运动耳机","location":"广东深圳","cat":"蓝牙耳机"},{"title":"女士毛衣针织衫","price":"¥69","sold":2765,"repurchase":"45%","shop":"杭州针织制衣","location":"浙江杭州","cat":"女装"},{"title":"男士棉衣冬季加厚","price":"¥158","sold":2543,"repurchase":"48%","shop":"广州棉衣服饰","location":"广东广州","cat":"女装"},{"title":"一拖三数据线快充","price":"¥6.9","sold":2321,"repurchase":"8%","shop":"深圳一线多充","location":"广东深圳","cat":"数据线"},{"title":"太阳能充电宝户外","price":"¥88","sold":2123,"repurchase":"15%","shop":"深圳太阳能电子","location":"广东深圳","cat":"充电宝"},{"title":"降噪蓝牙耳机耳塞","price":"¥78","sold":1987,"repurchase":"20%","shop":"深圳降噪耳机","location":"广东深圳","cat":"蓝牙耳机"},{"title":"女士阔腿裤休闲","price":"¥49","sold":1765,"repurchase":"38%","shop":"杭州裤装","location":"浙江杭州","cat":"女装"},{"title":"男士运动长裤健身","price":"¥59","sold":1543,"repurchase":"30%","shop":"泉州健身服饰","location":"福建泉州","cat":"运动鞋"},{"title":"Type-c转接头扩展坞","price":"¥28","sold":1321,"repurchase":"10%","shop":"深圳转接配件","location":"广东深圳","cat":"数据线"},{"title":"手表充电底座","price":"¥35","sold":1123,"repurchase":"8%","shop":"深圳手表配件","location":"广东深圳","cat":"充电宝"}];
+const PAGE_SIZE=30;
+let currentCat='all';
+let currentPage=1;
+const products=[{"title":"2024新款春季飞织网鞋椰子女鞋夏季透气休闲鞋运动鞋百搭老爹潮鞋","price":"20 ($2.80)","sold":296486,"repurchase":"41%","shop":"温州浙匡商贸有限公司","location":"浙江温州市","cat":"运动鞋"},{"title":"白色纯棉小背心西装内搭打底无袖吊带女士春夏秋外穿辣妹大码上衣","price":"14.2 ($1.99)","sold":174940,"repurchase":"11%","shop":"丰色服饰","location":"浙江义乌市","cat":"女装"},{"title":"男女款远征者Pure 休闲慢跑鞋","price":"469 ($65.66)","sold":123018,"repurchase":"95%","shop":"上海迈跑体育","location":"北京北京市","cat":"运动鞋"},{"title":"Type-c单头数据线闪充6A线typec适用于华为手机充电线快充礼品","price":"0.87 ($0.12)","sold":89535,"repurchase":"29%","shop":"深圳市志翔通科技","location":"广东深圳市","cat":"数据线"},{"title":"适用苹果17promax透明手机壳iphone16tpu防摔15太空全包13保护套","price":"1 ($0.14)","sold":86591,"repurchase":"9%","shop":"广州艾尚数码科技","location":"广东广州市","cat":"手机壳"},{"title":"品胜数据线适用于14苹果13充电器16线XS手机8plus快充15pro闪充17","price":"7.89 ($1.10)","sold":84401,"repurchase":"34%","shop":"广州汇好科技有限公司","location":"广东广州市","cat":"数据线"},{"title":"TWS-X10高音质蓝牙耳机无线音乐双耳入耳式跨境私模工厂批发代发","price":"47.8 ($6.69)","sold":68066,"repurchase":"31%","shop":"艾米king数码配件","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"适用苹果数据线快充typec快充线iphone手机pd数据线usb苹果充电线","price":"1.18 ($0.17)","sold":54785,"repurchase":"14%","shop":"蝶彩实业1688","location":"广东深圳市","cat":"数据线"},{"title":"男鞋春夏季网面透气鞋休闲鞋超轻运动鞋软底防滑减震学生跑步鞋子","price":"15 ($2.10)","sold":51261,"repurchase":"45%","shop":"足匠鞋业有限公司","location":"河北保定市","cat":"运动鞋"},{"title":"跨境大码休闲运动鞋49码 外贸一脚蹬懒人鞋子男士网布透气健步鞋","price":"39 ($5.46)","sold":49987,"repurchase":"50%","shop":"晋江铭磊鞋业有限公司","location":"福建晋江市","cat":"运动鞋"},{"title":"【加盒】一件代发男飞织休闲鞋子男软底舒适跑步学生鞋网面透气鞋","price":"7.9 ($1.11)","sold":45496,"repurchase":"72%","shop":"温县亚泰制鞋厂","location":"河南温县","cat":"运动鞋"},{"title":"山本裙裤女春夏2026新款高腰a字半身裙小个子夏季垂感冰丝阔腿裤","price":"18.5 ($2.59)","sold":43307,"repurchase":"23%","shop":"ruitongfs","location":"浙江义乌市","cat":"女装"},{"title":"适用iPhone17Promax精孔16Pro磁吸手机壳15软边硬背保护 一件代发","price":"8.5 ($1.19)","sold":41891,"repurchase":"24%","shop":"恒讯手机壳","location":"广东东莞市","cat":"手机壳"},{"title":"苹果17手机壳iphone16透明软壳15四角防摔超薄13pro14太空保护套","price":"0.83 ($0.12)","sold":41095,"repurchase":"24%","shop":"兴创五金塑胶","location":"广东惠州市","cat":"手机壳"},{"title":"复古天丝牛仔裤女2026新款春季山本裤高腰直筒宽松薄款阔腿牛仔裤","price":"35 ($4.90)","sold":36489,"repurchase":"25%","shop":"优伊服饰","location":"浙江义乌市","cat":"女装"},{"title":"数据线V8适用安卓Typec USB快充手机2A蓝牙耳机加湿器纯铜充电线","price":"0.16 ($0.02)","sold":35678,"repurchase":"20%","shop":"深圳市竞臻科技有限公司","location":"广东深圳市","cat":"数据线"},{"title":"过2A 适用苹果 适用华为乐视 安卓 micro TYPE-C 手机数据线 2米","price":"0.57 ($0.08)","sold":35201,"repurchase":"39%","shop":"博越电子厂","location":"广东潮州市","cat":"数据线"},{"title":"华强北pro46真无线TWS蓝牙耳机I7I9S二三代i12四五六七代耳机工厂","price":"8 ($1.12)","sold":33092,"repurchase":"49%","shop":"奥琳芯时代","location":"广东东莞市","cat":"蓝牙耳机"},{"title":"外贸保罗T恤LF小马标刺绣女圆领短袖纯棉半袖男卫衣百搭打底衫潮","price":"25 ($3.50)","sold":31243,"repurchase":"39%","shop":"广州兰冰服装厂","location":"广东广州市","cat":"女装"},{"title":"美式灰色弯刀裤女2026新款春秋宽松慵懒香蕉卫裤小个子阔腿运动裤","price":"26 ($3.64)","sold":30724,"repurchase":"20%","shop":"ruitongfs","location":"浙江义乌市","cat":"女装"},{"title":"美式复古德训鞋女2026新款平底百搭运动休闲低帮板鞋真皮阿甘女鞋","price":"78 ($10.92)","sold":29608,"repurchase":"16%","shop":"漫女鞋业","location":"广东惠州市","cat":"运动鞋"},{"title":"春夏季百搭宽松慵懒风打底可外穿小吊带背心女式内搭遮肉无袖上衣","price":"13.5 ($1.89)","sold":28426,"repurchase":"13%","shop":"丰色服饰","location":"浙江义乌市","cat":"女装"},{"title":"欧美夏加肥加大码女装胖mm阔腿短裤女200斤妹妹百搭热裤裙裤女夏","price":"14 ($1.96)","sold":25661,"repurchase":"57%","shop":"蔡刚","location":"广东广州市","cat":"女装"},{"title":"小白鞋男夏季透气青少年休闲百搭男鞋2024新款学生纯白色运动板鞋","price":"15.5 ($2.17)","sold":24066,"repurchase":"72%","shop":"瑞安市凯丁鞋业","location":"浙江温州市","cat":"运动鞋"},{"title":"厚底内增高老爹鞋2026春季新款休闲时尚百搭运动板鞋圆头透气女鞋","price":"88 ($12.32)","sold":23592,"repurchase":"53%","shop":"温州华匠鞋业有限公司","location":"浙江温州市","cat":"运动鞋"},{"title":"适用苹果pd快充数据线20w充电器充电头苹果快充线15充电线type-c","price":"1.25 ($0.18)","sold":23413,"repurchase":"20%","shop":"宏辉盛实业","location":"广东深圳市","cat":"数据线"},{"title":"typec数据线usb3.2转type-c传输线10Gbps硬盘线carpaly 60W快充线","price":"6.3 ($0.88)","sold":20314,"repurchase":"34%","shop":"东莞鹏桥光电科技有限公司","location":"广东东莞市","cat":"数据线"},{"title":"GT526Y柏林之声挂耳式OWS不入耳降噪蓝牙无线蓝牙耳机可旋转130°","price":"13 ($1.82)","sold":19518,"repurchase":"22%","shop":"伊洛数码批发","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"女鞋小白鞋外贸批发厚底潮流跑步鞋时尚潮搭春季透气女士运动鞋","price":"19.3 ($2.70)","sold":17424,"repurchase":"32%","shop":"望都县旭晨鞋业有限公司","location":"河北保定市","cat":"运动鞋"},{"title":"布谷鸟 G10T声卡耳麦一体无线挂脖耳机直播唱歌麦克风话筒专业设","price":"199 ($27.86)","sold":17384,"repurchase":"48%","shop":"jomzhou2015","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"莆田鞋巴黎13代10xl复古做旧网面老爹鞋男女厚底增高休闲运动鞋","price":"190 ($26.60)","sold":17112,"repurchase":"35%","shop":"莆田鞋产地供应链","location":"福建莆田市","cat":"运动鞋"},{"title":"鞋子女鞋百搭夏季新款休闲运动单鞋批发跨境工厂透气飞织女鞋代发","price":"15.5 ($2.17)","sold":15934,"repurchase":"39%","shop":"康泰制鞋厂","location":"河南偃师市","cat":"运动鞋"},{"title":"工装半身裙女2026新款胖mm伞裙a字半裙垂坠感小个子夏季南瓜长裙","price":"23 ($3.22)","sold":15934,"repurchase":"23%","shop":"ruitongfs","location":"浙江义乌市","cat":"女装"},{"title":"树莓紫老爹鞋女2025新款ins百搭学生校园厚底运动跑步休闲鞋","price":"24.8 ($3.47)","sold":15443,"repurchase":"51%","shop":"哈基米鞋业","location":"浙江台州市","cat":"运动鞋"},{"title":"适用苹果17魔方直边仿液态硅胶手机壳iphone16防摔苹果15保护套","price":"1.4 ($0.20)","sold":15363,"repurchase":"20%","shop":"极熠电子科技","location":"广东清远市","cat":"手机壳"},{"title":"适用苹果15-17快充数据线编织平板笔记本iphone手机双typec充电线","price":"2.35 ($0.33)","sold":15333,"repurchase":"43%","shop":"蝶彩实业1688","location":"广东深圳市","cat":"数据线"},{"title":"外贸保罗T恤LF小马标刺绣女圆领短袖纯棉半袖男卫衣百搭打底衫潮","price":"25 ($3.50)","sold":14727,"repurchase":"43%","shop":"广州兰冰外贸服装","location":"广东广州市","cat":"女装"},{"title":"透气芭蕾阿甘鞋女2025新款夏季浅口休闲运动板鞋软底不累脚小白鞋","price":"98 ($13.72)","sold":13405,"repurchase":"61%","shop":"迷之脚度鞋业","location":"浙江温州市","cat":"运动鞋"},{"title":"新款120W超级快充自带线充电宝3c认证20000毫安迷你大容量礼品","price":"45.1 ($6.31)","sold":13273,"repurchase":"55%","shop":"东莞市衡季商贸有限公司","location":"广东东莞市","cat":"充电宝"},{"title":"usb充电线手机数据线适用安卓华为type-c数据线快充线苹果数据线a","price":"0.16 ($0.02)","sold":13157,"repurchase":"32%","shop":"煊盛电子","location":"广东深圳市","cat":"数据线"},{"title":"秋冬天丝醋酸打底衫女莱赛尔羊毛圆领保暖针织衫纯色内搭长袖上衣","price":"31 ($4.34)","sold":13072,"repurchase":"20%","shop":"浙江旺季服饰有限公司","location":"浙江诸暨市","cat":"女装"},{"title":"DIY手工USB-TypeC客制化【白光键盘线】8K电竞磁轴机械键盘充电线","price":"31.9 ($4.47)","sold":12213,"repurchase":"15%","shop":"科比太电子有限公司","location":"湖北当阳市","cat":"数据线"},{"title":"老钱风直筒西装休闲裤女秋季新款垂感简约气质高级感阔腿长裤子","price":"62 ($8.68)","sold":12121,"repurchase":"5%","shop":"雨洋222722","location":"江苏常熟市","cat":"女装"},{"title":"运动鞋男2026夏季新款外贸男鞋一件代发系带跑步鞋时尚潮流鞋子男","price":"23.9 ($3.35)","sold":12119,"repurchase":"25%","shop":"康泰制鞋厂","location":"河南偃师市","cat":"运动鞋"},{"title":"3C认证20000毫安容量充电宝快充迷你便携自带4线移动电源礼品印制","price":"30 ($4.20)","sold":12117,"repurchase":"20%","shop":"深圳市华盛乾科技有限公司","location":"广东深圳市","cat":"充电宝"},{"title":"安卓type-c数据线快充手机充电线2m三米适用苹果iPhone手机数据线","price":"1.8 ($0.25)","sold":12063,"repurchase":"18%","shop":"臣源氏数码配件源头厂家","location":"广东深圳市","cat":"数据线"},{"title":"AIRKEEEN户外徒步登山鞋男女JASPER运动春秋休闲情侣款防滑低帮鞋","price":"108 ($15.12)","sold":11946,"repurchase":"21%","shop":"鲤城区盈步鞋行","location":"福建泉州市","cat":"运动鞋"},{"title":"GT610跨境 2025新款无线蓝牙耳机无线入耳式超长续航运动高音质好","price":"13.5 ($1.89)","sold":11155,"repurchase":"81%","shop":"忠安电子","location":"湖北武汉市","cat":"蓝牙耳机"},{"title":"新款2025内增高鞋女高帮拼色圆头平底休闲鞋百搭款魔术贴运动鞋女","price":"110 ($15.40)","sold":10515,"repurchase":"43%","shop":"温州格苑诗鞋业","location":"浙江温州市","cat":"运动鞋"},{"title":"厂家货源秋冬季户外鞋男网布透气防滑情侣款登山徒步鞋低帮登山鞋","price":"80 ($11.20)","sold":10314,"repurchase":"53%","shop":"li18659532551","location":"福建泉州市","cat":"运动鞋"},{"title":"新款铝合金苹果/黑色行李箱全包手机壳苹果款苹果16promax/15/14","price":"58 ($8.12)","sold":9782,"repurchase":"59%","shop":"梦露潮壳","location":"广东深圳市","cat":"手机壳"},{"title":"红辣椒黑科技15米潜水壳防水保护三星适用14苹果13手机壳华为小米","price":"96 ($13.44)","sold":9568,"repurchase":"43%","shop":"爱菲达电子科技","location":"广东深圳市","cat":"手机壳"},{"title":"usb充电线安卓手机数据线快充typec环保玩具蓝牙耳机小风扇配机线","price":"0.16 ($0.02)","sold":9560,"repurchase":"33%","shop":"科之盛电子","location":"广东深圳市","cat":"数据线"},{"title":"透气芭蕾阿甘鞋女2025新款夏季浅口休闲运动板鞋软底不累脚小白鞋","price":"98 ($13.72)","sold":9340,"repurchase":"77%","shop":"温州岑悦鞋业","location":"浙江温州市","cat":"运动鞋"},{"title":"户外电源折叠手摇太阳能充电宝20000毫安 无线充便携手机移动电源","price":"80 ($11.20)","sold":9185,"repurchase":"33%","shop":"巨正鑫","location":"广东深圳市","cat":"充电宝"},{"title":"运动鞋佩斯熊猫爆款高弹减震跑步男鞋跳操情侣休闲鞋时尚百搭潮鞋","price":"99 ($13.86)","sold":8840,"repurchase":"56%","shop":"豪朗鞋业工厂店","location":"福建泉州市","cat":"运动鞋"},{"title":"现货秒发外贸Americas cup P家亮皮网布透气休闲时尚运动漆皮男鞋","price":"129 ($18.06)","sold":8505,"repurchase":"51%","shop":"捷思帮贸易","location":"广东阳江市","cat":"运动鞋"},{"title":"外贸亚马逊强防水太阳能移动电源20000mah指南针手机太阳能充电宝","price":"32 ($4.48)","sold":8090,"repurchase":"11%","shop":"深圳市合德隆实业有限公司","location":"广东深圳市","cat":"充电宝"},{"title":"120W超级快充数据线Typec全兼容数显支持LED屏幕实时功率数字显示","price":"7.8 ($1.09)","sold":7898,"repurchase":"36%","shop":"深圳华有胜科技有限公司","location":"广东深圳市","cat":"数据线"},{"title":"Typec充电线2A纯铜适用苹果华为充电线type-c快充数据线usb充电线","price":"0.8 ($0.11)","sold":7526,"repurchase":"41%","shop":"银盛世纪电子","location":"广东深圳市","cat":"数据线"},{"title":"防走光运动短裙薄款半身裙子女士网球裙健身瑜伽运动裤","price":"18 ($2.52)","sold":6624,"repurchase":"37%","shop":"奈思服饰源头工厂","location":"浙江金华市","cat":"女装"},{"title":"2026跨境亚马逊速卖通新款女士吊带大衣露背宽松家居服连衣裙","price":"29 ($4.06)","sold":6534,"repurchase":"52%","shop":"雯心服装","location":"广东广州市","cat":"女装"},{"title":"跨境外贸亚马逊2025新款女式休闲圆领开叉宽松短裤短袖居家服套装","price":"35 ($4.90)","sold":6444,"repurchase":"49%","shop":"广州博丽世家服装","location":"广东广州市","cat":"女装"},{"title":"夏奈 超有范！老钱风阔腿休闲西裤女宽松显腿长腰部按扣长裤2606","price":"79 ($11.06)","sold":6337,"repurchase":"17%","shop":"杭州夏奈贸易有限公司","location":"浙江杭州市","cat":"女装"},{"title":"YX09真无线蓝牙耳机耳夹式游戏运动超长续航超低延迟跨境电商爆款","price":"3.6 ($0.50)","sold":6289,"repurchase":"19%","shop":"深圳市光速电子商行","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"120W超级快充数据线锌合金机客线硅胶加粗6A快充带灯手机充电线","price":"2 ($0.28)","sold":6286,"repurchase":"10%","shop":"梵瑞电子有限公司","location":"广东潮州市","cat":"数据线"},{"title":"适用iphone 17ProMax手机壳苹果16手机皮套新款三星S26翻盖保护套","price":"12.5 ($1.75)","sold":6047,"repurchase":"42%","shop":"佛山皮诺斯皮具有限公司","location":"广东佛山市","cat":"手机壳"},{"title":"速9卖通wish亚马逊新款 欧美女装印花V领短袖口袋T恤女士上衣 现9","price":"20 ($2.80)","sold":6046,"repurchase":"75%","shop":"思玉如华服饰","location":"广东广州市","cat":"女装"},{"title":"VRLink连接线相机眼镜头盔Oculusquest2串流线元宇宙VR数据线厂家","price":"7.6 ($1.06)","sold":6036,"repurchase":"53%","shop":"东莞鹏桥光电科技有限公司","location":"广东东莞市","cat":"数据线"},{"title":"适用于苹果/华为Type-c数字入耳式有线耳机线控带麦手机耳机工厂","price":"5.8 ($0.81)","sold":6035,"repurchase":"46%","shop":"欢歌电子科技","location":"广东博罗县","cat":"蓝牙耳机"},{"title":"机客一拖三发光数据线120W超级快充极客线适用TYPE-C三合一充电线","price":"2.4 ($0.34)","sold":5987,"repurchase":"13%","shop":"深圳市福田区铎越电子商行","location":"广东深圳市","cat":"数据线"},{"title":"100w超级快充伸缩一拖三充电线适用于华为安卓苹果6A三合一数据线","price":"6.9 ($0.97)","sold":4967,"repurchase":"21%","shop":"兴凯盛数码科技","location":"广东深圳市","cat":"数据线"},{"title":"金属超薄MagSafe磁吸充电宝 5000毫安PD20W无线快充小巧移动电源","price":"60 ($8.40)","sold":4923,"repurchase":"20%","shop":"品优盛科技","location":"广东深圳市","cat":"充电宝"},{"title":"GTS26无线蓝牙耳机运动挂耳夹耳式新款适用华为索尼高音质降噪","price":"19.5 ($2.73)","sold":4897,"repurchase":"13%","shop":"伊洛数码批发","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"数据线V8安卓typec蓝牙耳机补光仪USB配机线2A快充手机纯铜充电线","price":"0.17 ($0.02)","sold":4812,"repurchase":"29%","shop":"深圳市优信飞科技有限公司","location":"广东深圳市","cat":"数据线"},{"title":"苎麻砂炒做旧宽松休闲裤女式灯笼裤26文艺复古棉麻打坐禅修太极裤","price":"96 ($13.44)","sold":4620,"repurchase":"76%","shop":"古宥服装商贸","location":"山东青岛市","cat":"女装"},{"title":"江左 莱赛尔亚麻风衣外套女高级感落肩抽褶形中长款春装新款 1800","price":"179 ($25.06)","sold":4364,"repurchase":"5%","shop":"杭州江左服饰有限公司","location":"浙江杭州市","cat":"女装"},{"title":"跨境P9蓝牙耳机p9头戴式耳机重低音无线运动游戏通用耳机工厂礼品","price":"8.5 ($1.19)","sold":4061,"repurchase":"39%","shop":"辉骐士数码","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"usb3.2数据线type-c弯头vr连接线20Gbps高速相机拍摄线8K投屏线5m","price":"20.8 ($2.91)","sold":3765,"repurchase":"28%","shop":"东莞鹏桥光电科技有限公司","location":"广东东莞市","cat":"数据线"},{"title":"跨镜迷你充电宝自带线20000毫安容量22.5W超级快充移动电源闪充","price":"18 ($2.52)","sold":3736,"repurchase":"52%","shop":"深圳市捷盛华科技有限公司","location":"广东深圳市","cat":"充电宝"},{"title":"欧美跨境女装两件套女2026翻领长袖衬衫春秋季休闲纯色裤阔腿套装","price":"38 ($5.32)","sold":3714,"repurchase":"50%","shop":"依帆顺服饰","location":"广东佛山市","cat":"女装"},{"title":"2026欧美外贸跨境女装亚马逊爆款 V领抽褶泡泡袖大摆短袖连衣裙","price":"53 ($7.42)","sold":3449,"repurchase":"55%","shop":"广州依黛佳人服饰","location":"广东广州市","cat":"女装"},{"title":"创意集装箱66W超级快充充电宝50000毫安PD22W双向快充10000毫安","price":"70 ($9.80)","sold":3338,"repurchase":"41%","shop":"深圳市派利星电子有限公司","location":"广东深圳市","cat":"充电宝"},{"title":"MagSafe无线3C认证迷你磁吸充电宝快充小巧移动电源礼品印制LOGO","price":"34 ($4.76)","sold":3259,"repurchase":"50%","shop":"深圳市华盛乾科技有限公司","location":"广东深圳市","cat":"充电宝"},{"title":"智能AI实时翻译M91蓝牙耳机OWS耳夹式骨传导智能蓝牙耳机工厂现货","price":"41 ($5.74)","sold":2930,"repurchase":"26%","shop":"巅火火ai","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"新款17mm手机镜头专用手机壳适用于iPhone华为三星等外接各种镜头","price":"38 ($5.32)","sold":2882,"repurchase":"53%","shop":"久幕光电有限公司","location":"广东深圳市","cat":"手机壳"},{"title":"跨境苹果17pm手机壳磁吸16pro肤感防摔iphone18promax磨砂保护套","price":"8.99 ($1.26)","sold":2881,"repurchase":"13%","shop":"fssf06","location":"广东佛山市","cat":"手机壳"},{"title":"磁吸充电宝自带线无线充magsafe迷你共享快充移动电源 power bank","price":"38 ($5.32)","sold":2776,"repurchase":"24%","shop":"惠州市畅维科技有限公司","location":"广东惠州市","cat":"充电宝"},{"title":"3C认证迷你充电宝20000毫安大容量自带线便携移动电源礼品定制","price":"20.9 ($2.93)","sold":2648,"repurchase":"24%","shop":"深圳市港头实业有限公司","location":"广东深圳市","cat":"充电宝"},{"title":"跨境POD磁吸菲林二合一手机壳来图定制 适用苹果17手机保护套","price":"5.5 ($0.77)","sold":2635,"repurchase":"45%","shop":"小壳壳科技","location":"广东深圳市","cat":"手机壳"},{"title":"华强北1:1新款Pro3四代五六七八代适用苹果蓝牙降噪耳机跨境爆款","price":"22 ($3.08)","sold":2488,"repurchase":"27%","shop":"新创宇数码","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"3c认证跨境热门磁吸无线充电宝快充自带线支架三合一移动电源印制","price":"37.5 ($5.25)","sold":2435,"repurchase":"42%","shop":"深圳市华盛乾科技有限公司","location":"广东深圳市","cat":"充电宝"},{"title":"蝴蝶结钻扣 2025新款M91翻译耳机跨境爆款无线OWS耳夹式蓝牙耳机","price":"41 ($5.74)","sold":2045,"repurchase":"51%","shop":"深圳市恋音科技有限公司","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"新品显示屏骨传导蓝牙耳机5.4带防水可游泳32G内存无线运动耳机","price":"130 ($18.20)","sold":1817,"repurchase":"50%","shop":"豆高电子","location":"广东东莞市","cat":"蓝牙耳机"},{"title":"自带线超级快充20000毫安充电宝迷你小巧便携支持礼品定做ogo印刷","price":"36 ($5.04)","sold":1685,"repurchase":"10%","shop":"欣奈尔1688","location":"广东深圳市","cat":"充电宝"},{"title":"适用iPhone17双面贴皮手机壳14二合一内外凹槽厚款苹果18套啤素材","price":"6.5 ($0.91)","sold":1681,"repurchase":"47%","shop":"pingekj","location":"广东深圳市","cat":"手机壳"},{"title":"新款x58耳骨传导蓝牙耳机夹耳式无线降噪运动通话长续航不入耳机","price":"23.8 ($3.33)","sold":1533,"repurchase":"38%","shop":"金壕科技1688","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"跨境Magsafe磁吸充电宝大容量小巧便携无线充电宝定制ogo移动电源","price":"17.9 ($2.51)","sold":1418,"repurchase":"21%","shop":"深圳市泰好数码有限公司","location":"广东深圳市","cat":"充电宝"},{"title":"厂家直销蓝牙头巾头戴无线睡眠耳机音乐运动头巾遮光眼罩蓝牙头带","price":"12.5 ($1.75)","sold":1386,"repurchase":"40%","shop":"深圳市森和远科技有限公司","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"适用苹果17Pro手机壳360旋转磁吸支架iPhone16Promax防摔保护套","price":"24 ($3.36)","sold":1360,"repurchase":"32%","shop":"征翔通讯","location":"广东深圳市","cat":"手机壳"},{"title":"蓝牙有线低音上班偷懒听歌高清通话仿劳保耳塞耳机伪装防噪音","price":"28 ($3.92)","sold":1329,"repurchase":"72%","shop":"爱吃辣椒的小乌贼","location":"广东佛山市","cat":"蓝牙耳机"},{"title":"跨境专业潜水手机壳适用水下15米 通用款游泳拍照防水手机保护套","price":"96 ($13.44)","sold":1313,"repurchase":"32%","shop":"youdayou88","location":"广东深圳市","cat":"手机壳"},{"title":"适用iPhone16Pro手机壳15磁吸透明壳14磁吸13ProMax保护套17e批发","price":"2 ($0.28)","sold":1229,"repurchase":"20%","shop":"金鸿福伟业","location":"广东佛山市","cat":"手机壳"},{"title":"适用苹果华强北二三四五六七八代悦虎蓝牙无线耳机洛达入耳式降噪","price":"35 ($4.90)","sold":1206,"repurchase":"13%","shop":"露筑电子","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"MCHOSE迈从 V9游戏耳机电竞耳麦头戴式电脑蓝牙/2.4G/有线耳机","price":"229 ($32.06)","sold":1200,"repurchase":"53%","shop":"深圳市小英贸易","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"适用iPhone17Pro Max手机皮套苹果16E新款手机壳15插卡翻盖保护套","price":"11 ($1.54)","sold":1011,"repurchase":"28%","shop":"佛山宏城皮具有限公司","location":"广东佛山市","cat":"手机壳"},{"title":"适用iPhone17pro手机壳磁吸凯夫拉纹碳纤维苹果17半包磨砂保护套","price":"12.5 ($1.75)","sold":989,"repurchase":"29%","shop":"深圳市佰鑫胜实业有限公司","location":"广东深圳市","cat":"手机壳"},{"title":"小米自带线充电宝口袋版10000毫安mAh移动电源企业礼品定适用","price":"49 ($6.86)","sold":693,"repurchase":"28%","shop":"盛恒欧科技","location":"广东深圳市","cat":"充电宝"},{"title":"四角气囊适用iphone16/11手机壳苹果15硅胶14透明保护套XR7P软套","price":"1.7 ($0.24)","sold":657,"repurchase":"100%","shop":"艾尚通科技","location":"广东深圳市","cat":"手机壳"},{"title":"新款a9pro蓝牙耳机入耳式彩屏ANC降噪华强北运动无线耳机超长续航","price":"20 ($2.80)","sold":654,"repurchase":"36%","shop":"诺优蓝牙耳机工厂","location":"广东深圳市","cat":"蓝牙耳机"},{"title":"铝美合金行李箱适用苹果16promax手机壳iPhone15炫酷14全包潮高级","price":"52 ($7.28)","sold":624,"repurchase":"33%","shop":"骏凌数码1688","location":"广东深圳市","cat":"手机壳"},{"title":"适用三星S26Ultra透明手机壳 插卡翻盖支架Galaxy S25钱包保护套4","price":"15.62 ($2.19)","sold":611,"repurchase":"40%","shop":"维洛司科技","location":"广东深圳市","cat":"手机壳"},{"title":"外贸66W快充自带线充电宝20000毫安大容量移动电源礼品批发印logo","price":"36 ($5.04)","sold":597,"repurchase":"20%","shop":"深圳市合德隆实业有限公司","location":"广东深圳市","cat":"充电宝"},{"title":"适用苹果16/16 ProMax/iPhone15/14/13小牛皮强磁7磁吸手机皮套","price":"10.3 ($1.44)","sold":595,"repurchase":"40%","shop":"莫凯思科技","location":"广东广州市","cat":"手机壳"},{"title":"新款蓝牙耳机无线夹耳不入耳高音质骨传导耳夹耳机跑步运动耳机","price":"16.9 ($2.37)","sold":586,"repurchase":"19%","shop":"奕璇电子科技有限公司","location":"广东东莞市","cat":"蓝牙耳机"},{"title":"品胜自带双线充电宝22.5w快充10000毫安迷你大容量定 制移动电源","price":"65 ($9.10)","sold":559,"repurchase":"11%","shop":"riborn","location":"广东深圳市","cat":"充电宝"},{"title":"跨境120W快充50000毫安移动电源户外旅行容量充电宝长续航大容量","price":"47.5 ($6.65)","sold":463,"repurchase":"15%","shop":"恒牛世纪科技有限公司","location":"广东深圳市","cat":"充电宝"},{"title":"跨境20000毫安太阳能充电宝可折叠无线充移动电源快充可订logo","price":"89 ($12.46)","sold":418,"repurchase":"58%","shop":"深圳艾莫科技","location":"广东深圳市","cat":"充电宝"},{"title":"国标3C认证充电宝Magsafe无线充超级快充磁吸移动电源定制kc跨境","price":"25 ($3.50)","sold":369,"repurchase":"10%","shop":"新巴都贸易","location":"广东深圳市","cat":"充电宝"},{"title":"3C认证跨境磁吸无线充电宝快充背夹电池便携移动电源可印制LOGO","price":"30 ($4.20)","sold":360,"repurchase":"31%","shop":"豪金盛电子科技有限公司","location":"广东深圳市","cat":"充电宝"}];
 
-const PAGE_SIZE = 30;
-let currentCat = 'all';
-let currentPage = 1;
-
-function getIcon(cat) {
-  const icons = { '女装':'👕','运动鞋':'👟','数据线':'🔌','手机壳':'📱','蓝牙耳机':'🎧','充电宝':'🔋' };
-  return icons[cat] || '📦';
+function getIcon(cat){
+  const icons={'女装':'👕','运动鞋':'👟','数据线':'🔌','手机壳':'📱','蓝牙耳机':'🎧','充电宝':'🔋'};
+  return icons[cat]||'📦';
 }
-
-function getFiltered() {
-  return currentCat === 'all' ? products : products.filter(p => p.cat === currentCat);
+function getFiltered(){
+  return currentCat==='all'?products:products.filter(p=>p.cat===currentCat);
 }
-
-function renderTable() {
-  const filtered = getFiltered();
-  const total = filtered.length;
-  const totalPages = Math.ceil(total / PAGE_SIZE);
-  const start = (currentPage - 1) * PAGE_SIZE;
-  const end = start + PAGE_SIZE;
-  const pageItems = filtered.slice(start, end);
-
-  const tbody = document.getElementById('productTable');
-  tbody.innerHTML = pageItems.map(p => {
-    const soldClass = p.sold > 50000 ? 'sold-high' : p.sold > 10000 ? 'sold-medium' : 'sold-low';
-    return `<tr>
-      <td>
-        <div class="product-cell">
-          <div class="product-icon">${getIcon(p.cat)}</div>
-          <div>
-            <div class="product-name">${p.title.substring(0,40)}${p.title.length > 40 ? '...' : ''}</div>
-            <span class="product-tag">${p.cat}</span>
-          </div>
-        </div>
-      </td>
-      <td class="price">${p.price} <small>/ $${(parseFloat(p.price.replace('¥',''))*0.14).toFixed(2)}</small></td>
-      <td class="${soldClass}">${p.sold.toLocaleString()} 件</td>
-      <td>${p.repurchase}</td>
-      <td class="info"><strong>${p.shop}</strong></td>
-      <td class="info">${p.location}</td>
-    </tr>`;
+function renderTable(){
+  const filtered=getFiltered();
+  const total=filtered.length;
+  const totalPages=Math.ceil(total/PAGE_SIZE)||1;
+  const start=(currentPage-1)*PAGE_SIZE;
+  const end=Math.min(start+PAGE_SIZE,total);
+  const pageItems=filtered.slice(start,end);
+  const tbody=document.getElementById('productTable');
+  tbody.innerHTML=pageItems.map(p=>{
+    const soldClass=p.sold>50000?'sold-high':p.sold>10000?'sold-medium':'sold-low';
+    const priceNum=parseFloat(p.price.replace(/[^0-9.]/g,''))||0;
+    return '<tr><td><div class="product-cell"><div class="product-icon">'+getIcon(p.cat)+'</div><div><div class="product-name">'+p.title.substring(0,40)+(p.title.length>40?'...':'')+'</div><span class="product-tag">'+p.cat+'</span></div></div></td><td class="price">'+p.price+' <small>/ $'+(priceNum*0.14).toFixed(2)+'</small></td><td class="'+soldClass+'">'+p.sold.toLocaleString()+' 件</td><td>'+p.repurchase+'</td><td class="info"><strong>'+p.shop+'</strong></td><td class="info">'+p.location+'</td></tr>';
   }).join('');
-
-  // Pagination
-  document.getElementById('pageInfo').textContent = `显示 ${start+1}-${Math.min(end, total)} / ${total} 条`;
-
-  const btns = document.getElementById('pageButtons');
-  let html = `<button ${currentPage === 1 ? 'disabled' : ''} onclick="goPage(${currentPage-1})">上一页</button>`;
-  
-  // Page numbers
-  for (let i = 1; i <= totalPages; i++) {
-    if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
-      html += `<button class="${i === currentPage ? 'active' : ''}" onclick="goPage(${i})">${i}</button>`;
-    } else if (i === currentPage - 3 || i === currentPage + 3) {
-      html += `<span style="padding:0 4px">...</span>`;
+  document.getElementById('pageInfo').textContent='显示 '+(total>0?start+1:'0')+'-'+end+' / '+total+' 条';
+  const btns=document.getElementById('pageButtons');
+  let html='<button '+(currentPage===1?'disabled ':'')+'onclick="goPage('+(currentPage-1)+')">上一页</button>';
+  for(let i=1;i<=totalPages;i++){
+    if(i===1||i===totalPages||(i>=currentPage-2&&i<=currentPage+2)){
+      html+='<button class="'+(i===currentPage?'active':'')+'" onclick="goPage('+i+')">'+i+'</button>';
+    }else if(i===currentPage-3||i===currentPage+3){
+      html+='<span style="padding:0 4px">...</span>';
     }
   }
-  
-  html += `<button ${currentPage === totalPages ? 'disabled' : ''} onclick="goPage(${currentPage+1})">下一页</button>`;
-  btns.innerHTML = html;
+  html+='<button '+(currentPage===totalPages||totalPages===0?'disabled ':'')+'onclick="goPage('+(currentPage+1)+')">下一页</button>';
+  btns.innerHTML=html;
 }
-
-function goPage(p) {
-  const total = getFiltered().length;
-  const totalPages = Math.ceil(total / PAGE_SIZE);
-  if (p < 1 || p > totalPages) return;
-  currentPage = p;
+function goPage(p){
+  const total=getFiltered().length;
+  const totalPages=Math.ceil(total/PAGE_SIZE)||1;
+  if(p<1||p>totalPages)return;
+  currentPage=p;
   renderTable();
-  window.scrollTo({ top: 400, behavior: 'smooth' });
+  window.scrollTo({top:400,behavior:'smooth'});
 }
-
-// Tab switching
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+document.querySelectorAll('.tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
     tab.classList.add('active');
-    currentCat = tab.dataset.cat;
-    currentPage = 1;
+    currentCat=tab.dataset.cat;
+    currentPage=1;
     renderTable();
   });
 });
-
 renderTable();
 </script>
-
 </body>
 </html>
