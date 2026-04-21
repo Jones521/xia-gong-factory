@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DataHunter - 跨境电商数据查询</title>
+<title>DataHunter - 1688实时数据查询</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,14 +22,14 @@ body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--l
 nav { padding: 16px 24px; background: var(--dark); display: flex; justify-content: space-between; align-items: center; }
 .logo { font-size: 18px; font-weight: 800; color: white; }
 .logo span { color: var(--primary); }
+.nav-badge { background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; }
 
 .container { max-width: 900px; margin: 0 auto; padding: 24px; }
 
-/* Search Section */
+/* Search */
 .search-section { background: white; border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
 .search-section h2 { font-size: 22px; margin-bottom: 8px; }
 .search-section p { color: var(--gray); font-size: 14px; margin-bottom: 20px; }
-
 .search-box { display: flex; gap: 12px; }
 .search-box input { flex: 1; padding: 14px 20px; border: 2px solid #E2E8F0; border-radius: 12px; font-size: 16px; font-family: inherit; outline: none; transition: border-color 0.2s; }
 .search-box input:focus { border-color: var(--primary); }
@@ -48,6 +48,7 @@ nav { padding: 16px 24px; background: var(--dark); display: flex; justify-conten
 .result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #E2E8F0; }
 .result-header h3 { font-size: 16px; }
 .result-header span { font-size: 12px; color: var(--gray); }
+.result-header .badge { background: #DCFCE7; color: #166534; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
 
 .result-table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .result-table th { background: #F8FAFC; padding: 10px 12px; text-align: left; font-weight: 600; color: var(--gray); border-bottom: 1px solid #E2E8F0; }
@@ -56,13 +57,13 @@ nav { padding: 16px 24px; background: var(--dark); display: flex; justify-conten
 .result-table tr:hover { background: #FAFBFF; }
 
 .product-name { font-weight: 600; margin-bottom: 2px; }
-.product-cat { font-size: 11px; color: var(--primary); }
+.product-cat { font-size: 11px; color: var(--primary); background: #EFF6FF; padding: 2px 8px; border-radius: 4px; display: inline-block; }
 
 .price { font-weight: 700; }
-.sold { font-weight: 600; }
-.sold.high { color: #166534; background: #DCFCE7; padding: 3px 10px; border-radius: 20px; display: inline-block; }
-.sold.medium { color: #92400E; background: #FEF3C7; padding: 3px 10px; border-radius: 20px; display: inline-block; }
-.sold.low { color: #475569; background: #F1F5F9; padding: 3px 10px; border-radius: 20px; display: inline-block; }
+.sold { font-weight: 600; padding: 3px 10px; border-radius: 20px; display: inline-block; }
+.sold.high { color: #166534; background: #DCFCE7; }
+.sold.medium { color: #92400E; background: #FEF3C7; }
+.sold.low { color: #475569; background: #F1F5F9; }
 
 /* Loading */
 .loading { text-align: center; padding: 40px; color: var(--gray); }
@@ -89,17 +90,17 @@ footer { text-align: center; padding: 32px; color: var(--gray); font-size: 12px;
 
 <nav>
   <div class="logo">Data<span>Hunter</span></div>
-  <a href="#contact" style="color: white; text-decoration: none; font-size: 13px; font-weight: 600;">咨询合作</a>
+  <span class="nav-badge">实时数据</span>
 </nav>
 
 <div class="container">
 
   <!-- Search -->
   <div class="search-section">
-    <h2>🔍 1688 真实销售数据查询</h2>
-    <p>输入任意品类关键词，实时查询1688热销产品数据</p>
+    <h2>1688 实时热销数据查询</h2>
+    <p>输入任意品类关键词，实时查询1688平台真实销售数据</p>
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="例如：手机壳、T恤、运动鞋、耳机" value="">
+      <input type="text" id="searchInput" placeholder="例如：手机壳、T恤、耳机、数据线" value="">
       <button id="searchBtn" onclick="doSearch()">查询</button>
     </div>
     <div class="quick-tags">
@@ -120,9 +121,7 @@ footer { text-align: center; padding: 32px; color: var(--gray); font-size: 12px;
       <h3 id="resultTitle">查询结果</h3>
       <span id="resultCount">0 条数据</span>
     </div>
-    <div id="resultContent">
-      <!-- Dynamic content -->
-    </div>
+    <div id="resultContent"></div>
   </div>
 
   <!-- CTA -->
@@ -139,76 +138,16 @@ footer { text-align: center; padding: 32px; color: var(--gray); font-size: 12px;
 
 <footer>
   DataHunter · 跨境电商数据服务商<br>
-  <small>数据来源：1688/Alibaba | 更新于 2026-04</small>
+  <small>数据来源：1688/Alibaba | 实时更新</small>
 </footer>
 
 <script>
-// Pre-loaded sample data for demo
-const sampleData = {
-  "手机壳": [
-    { title: "苹果iPhone15/14/13手机壳TPU透明保护套", price: "¥1", sold: 86591, cat: "Phone Case" },
-    { title: "适用华为/苹果/小米手机壳防摔全包", price: "¥7.89", sold: 84401, cat: "Phone Case" },
-    { title: "手机壳适用于三星小米华为OPPO", price: "¥2.5", sold: 35678, cat: "Phone Case" },
-    { title: "iPhone16promax透明手机壳防摔", price: "¥1.5", sold: 28456, cat: "Phone Case" },
-    { title: "荣耀/小米/华为全包手机壳", price: "¥3.8", sold: 19234, cat: "Phone Case" },
-  ],
-  "t恤": [
-    { title: "2024新款潮流T恤女款宽松透气运动T恤男款", price: "¥20", sold: 296487, cat: "T-shirt" },
-    { title: "男士T恤圆领纯棉基础款", price: "¥18.8", sold: 45234, cat: "T-shirt" },
-    { title: "230支圆领T恤男装宽松薄款", price: "¥14.8", sold: 42156, cat: "T-shirt" },
-    { title: "潮流女T恤宽松短袖学生款", price: "¥39", sold: 39987, cat: "T-shirt" },
-    { title: "男士polo衫商务休闲", price: "¥35", sold: 32450, cat: "Polo" },
-  ],
-  "蓝牙耳机": [
-    { title: "TWS蓝牙耳机降噪入耳式运动耳机", price: "¥47.8", sold: 68066, cat: "Earphone" },
-    { title: "蓝牙耳机无线双耳入耳式", price: "¥28.8", sold: 38920, cat: "Earphone" },
-    { title: "漫步者蓝牙耳机头戴式", price: "¥89", sold: 25678, cat: "Earphone" },
-    { title: "小米蓝牙耳机无线单耳", price: "¥19.9", sold: 19876, cat: "Earphone" },
-    { title: "Beats蓝牙耳机运动防水", price: "¥128", sold: 14567, cat: "Earphone" },
-  ],
-  "数据线": [
-    { title: "Type-c数据线快充6A手机充电线", price: "¥0.87", sold: 89535, cat: "Cable" },
-    { title: "苹果数据线PD快充MFi认证iPhone", price: "¥1.18", sold: 54785, cat: "Cable" },
-    { title: "Type-c快充线安卓数据线", price: "¥1.5", sold: 28934, cat: "Cable" },
-    { title: "三合一数据线多头充电线", price: "¥2.9", sold: 21345, cat: "Cable" },
-    { title: "苹果耳机转接头Lighting", price: "¥0.99", sold: 18234, cat: "Cable" },
-  ],
-  "运动鞋": [
-    { title: "男士运动鞋Pure系列跑步鞋缓震透气", price: "¥469", sold: 123020, cat: "Sneakers" },
-    { title: "女式运动鞋跑步系列轻便透气", price: "¥15", sold: 51261, cat: "Sneakers" },
-    { title: "男款运动鞋跑步鞋", price: "¥89", sold: 22345, cat: "Sneakers" },
-    { title: "Nike运动鞋Air Max系列", price: "¥299", sold: 18765, cat: "Sneakers" },
-    { title: "Adidas运动鞋休闲板鞋", price: "¥259", sold: 15432, cat: "Sneakers" },
-  ],
-  "女装": [
-    { title: "2024新款潮流T恤女款宽松透气", price: "¥20", sold: 296487, cat: "Clothing" },
-    { title: "女士连衣裙碎花雪纺", price: "¥58", sold: 19876, cat: "Dress" },
-    { title: "女装牛仔裤高腰紧身", price: "¥45", sold: 16543, cat: "Jeans" },
-    { title: "女士针织开衫毛衣", price: "¥69", sold: 12345, cat: "Knit" },
-    { title: "女装半身裙百褶裙", price: "¥35", sold: 11234, cat: "Skirt" },
-  ],
-  "充电宝": [
-    { title: "20000毫安充电宝大容量", price: "¥45", sold: 45678, cat: "Power Bank" },
-    { title: "迷你充电宝10000毫安", price: "¥28", sold: 34567, cat: "Power Bank" },
-    { title: "无线充电宝磁吸iPhone", price: "¥68", sold: 23456, cat: "Power Bank" },
-    { title: "22.5W快充充电宝", price: "¥55", sold: 18765, cat: "Power Bank" },
-    { title: "充电宝30000毫安超大容量", price: "¥79", sold: 15432, cat: "Power Bank" },
-  ],
-  "包包": [
-    { title: "黑色小包包女斜挎简约百搭单肩包大容量", price: "¥14.2", sold: 174940, cat: "Bag" },
-    { title: "女士双肩包韩版时尚简约", price: "¥45", sold: 25678, cat: "Backpack" },
-    { title: "男士商务公文包真皮", price: "¥128", sold: 12345, cat: "Briefcase" },
-    { title: "女士手提包单肩包", price: "¥55", sold: 11234, cat: "Handbag" },
-    { title: "旅行双肩包大容量防水", price: "¥68", sold: 9876, cat: "Travel Bag" },
-  ],
-};
+// ============================================
+// ⚠️ 配置：替换为你的 Cloudflare Worker URL
+// ============================================
+const WORKER_URL = "https://datahunter.workers.example.com"; // 改成你的 Worker 地址
 
-function quickSearch(keyword) {
-  document.getElementById('searchInput').value = keyword;
-  doSearch();
-}
-
-function doSearch() {
+async function doSearch() {
   const keyword = document.getElementById('searchInput').value.trim();
   if (!keyword) return;
   
@@ -221,41 +160,62 @@ function doSearch() {
   
   resultsEl.classList.add('show');
   document.getElementById('resultTitle').textContent = '「' + keyword + '」查询结果';
-  
   contentEl.innerHTML = '<div class="loading"><div class="spinner"></div>正在从1688获取真实数据...</div>';
   
-  // Simulate API call with sample data
-  setTimeout(() => {
-    const data = sampleData[keyword] || [];
+  try {
+    const res = await fetch(`${WORKER_URL}?q=${encodeURIComponent(keyword)}`);
+    const data = await res.json();
     
-    if (data.length === 0) {
-      contentEl.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><h3>暂无数据</h3><p>该品类数据正在采集中，请联系客服获取</p></div>';
-    } else {
-      let html = '<table class="result-table"><thead><tr><th>产品</th><th>价格</th><th>已售</th></tr></thead><tbody>';
-      
-      data.forEach(p => {
-        let soldClass = p.sold > 50000 ? 'high' : p.sold > 10000 ? 'medium' : 'low';
-        html += `<tr>
-          <td>
-            <div class="product-name">${p.title}</div>
-            <span class="product-cat">${p.cat}</span>
-          </td>
-          <td class="price">${p.price}</td>
-          <td><span class="sold ${soldClass}">${p.sold.toLocaleString()} 件</span></td>
-        </tr>`;
-      });
-      
-      html += '</tbody></table>';
-      contentEl.innerHTML = html;
-      document.getElementById('resultCount').textContent = data.length + ' 条数据';
+    if (data.error) {
+      contentEl.innerHTML = `<div class="empty"><div class="empty-icon">⚠️</div><h3>查询失败</h3><p>${data.error}</p></div>`;
+      return;
     }
     
+    const products = data.products || [];
+    
+    if (products.length === 0) {
+      contentEl.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><h3>暂无数据</h3><p>该品类数据正在采集中，请联系客服获取</p></div>';
+      return;
+    }
+    
+    let html = '<table class="result-table"><thead><tr><th>产品</th><th>价格</th><th>已售</th></tr></thead><tbody>';
+    
+    products.forEach(p => {
+      const soldClass = p.sold > 50000 ? 'high' : p.sold > 10000 ? 'medium' : 'low';
+      const soldFormatted = p.sold > 0 ? p.sold.toLocaleString() + ' 件' : 'N/A';
+      html += `<tr>
+        <td>
+          <div class="product-name">${escapeHtml(p.title)}</div>
+          <span class="product-cat">${escapeHtml(p.cat)}</span>
+        </td>
+        <td class="price">${escapeHtml(p.price)}</td>
+        <td><span class="sold ${soldClass}">${soldFormatted}</span></td>
+      </tr>`;
+    });
+    
+    html += '</tbody></table>';
+    contentEl.innerHTML = html;
+    document.getElementById('resultCount').innerHTML = `<span class="badge">${products.length} 条数据</span>`;
+    
+  } catch (err) {
+    contentEl.innerHTML = `<div class="empty"><div class="empty-icon">⚠️</div><h3>网络错误</h3><p>${err.message}</p></div>`;
+  } finally {
     btn.disabled = false;
     btn.textContent = '查询';
-  }, 800);
+  }
 }
 
-// Enter key to search
+function quickSearch(keyword) {
+  document.getElementById('searchInput').value = keyword;
+  doSearch();
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 document.getElementById('searchInput').addEventListener('keypress', function(e) {
   if (e.key === 'Enter') doSearch();
 });
