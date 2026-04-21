@@ -9,7 +9,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
   --primary: #2563EB;
-  --primary-dark: #1D4ED8;
   --dark: #0F172A;
   --gray: #64748B;
   --light: #F1F5F9;
@@ -18,70 +17,59 @@
   --danger: #EF4444;
 }
 body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--light); min-height: 100vh; }
-
 nav { padding: 16px 24px; background: var(--dark); display: flex; justify-content: space-between; align-items: center; }
 .logo { font-size: 18px; font-weight: 800; color: white; }
 .logo span { color: var(--primary); }
-
 .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
 
-/* Hero */
 .hero { background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%); color: white; padding: 60px 0; text-align: center; border-radius: 24px; margin-bottom: 32px; }
 .hero h1 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
-.hero p { font-size: 18px; opacity: 0.9; margin-bottom: 24px; }
-.hero-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 50px; font-size: 14px; margin-bottom: 20px; }
+.hero p { font-size: 18px; opacity: 0.9; }
 
-/* Stats */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
 .stat-card { background: white; padding: 24px; border-radius: 16px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
 .stat-card .number { font-size: 32px; font-weight: 800; color: var(--primary); }
 .stat-card .label { font-size: 13px; color: var(--gray); margin-top: 4px; }
 
-/* Section */
 .section { background: white; border-radius: 20px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
 .section-title { font-size: 20px; font-weight: 700; }
 .section-badge { background: #DCFCE7; color: #166534; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
-.section-tag { font-size: 12px; color: var(--gray); }
 
-/* Category Tabs */
 .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-.tab { padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; background: var(--light); color: var(--gray); transition: all 0.2s; }
+.tab { padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; background: var(--light); color: var(--gray); transition: all 0.2s; border: none; }
 .tab:hover { background: #E2E8F0; }
 .tab.active { background: var(--primary); color: white; }
 
-/* Table */
 .table-wrap { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 900px; }
 th { background: #F8FAFC; padding: 12px 16px; text-align: left; font-weight: 600; color: var(--gray); border-bottom: 2px solid #E2E8F0; white-space: nowrap; }
 td { padding: 14px 16px; border-bottom: 1px solid #F1F5F9; vertical-align: middle; }
 tr:hover { background: #FAFBFF; }
-tr:last-child td { border-bottom: none; }
 
 .product-cell { display: flex; align-items: center; gap: 12px; }
-.product-img { width: 50px; height: 50px; background: var(--light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
-.product-info .name { font-weight: 600; margin-bottom: 2px; max-width: 300px; }
-.product-info .meta { font-size: 11px; color: var(--gray); }
-.product-info .tag { display: inline-block; background: #EFF6FF; color: var(--primary); padding: 2px 8px; border-radius: 4px; font-size: 10px; margin-top: 4px; }
+.product-icon { width: 44px; height: 44px; background: var(--light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.product-name { font-weight: 600; margin-bottom: 2px; max-width: 320px; }
+.product-tag { display: inline-block; background: #EFF6FF; color: var(--primary); padding: 2px 8px; border-radius: 4px; font-size: 10px; margin-top: 4px; }
 
-.price-cell { font-weight: 700; white-space: nowrap; }
-.price-cell small { font-size: 11px; color: var(--gray); font-weight: 400; }
+.price { font-weight: 700; white-space: nowrap; }
+.price small { font-size: 11px; color: var(--gray); font-weight: 400; }
 
-.sold-cell { font-weight: 700; }
-.sold-high { color: #166534; }
-.sold-medium { color: #92400E; }
+.sold-high { color: #166534; font-weight: 700; }
+.sold-medium { color: #92400E; font-weight: 700; }
 .sold-low { color: #475569; }
 
-.score-cell { text-align: center; }
-.score-cell .score { font-size: 18px; font-weight: 700; color: var(--dark); }
-.score-cell .stars { color: #FBBF24; font-size: 12px; }
-.score-cell .count { font-size: 11px; color: var(--gray); }
+.info { font-size: 12px; color: var(--gray); }
+.info strong { color: var(--dark); }
 
-.trend-cell { white-space: nowrap; }
-.trend-up { color: var(--success); font-weight: 600; }
-.trend-down { color: var(--danger); font-weight: 600; }
+.pagination { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 16px; border-top: 1px solid #E2E8F0; flex-wrap: wrap; gap: 12px; }
+.pagination-info { font-size: 13px; color: var(--gray); }
+.pagination-buttons { display: flex; gap: 8px; }
+.pagination-buttons button { padding: 8px 16px; border-radius: 8px; border: 1px solid #E2E8F0; background: white; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.2s; }
+.pagination-buttons button:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.pagination-buttons button:disabled { opacity: 0.4; cursor: not-allowed; }
+.pagination-buttons button.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-/* CTA */
 .cta-section { background: var(--dark); color: white; border-radius: 20px; padding: 40px; text-align: center; margin-top: 32px; }
 .cta-section h2 { font-size: 28px; margin-bottom: 12px; }
 .cta-section p { opacity: 0.7; margin-bottom: 24px; }
@@ -89,15 +77,11 @@ tr:last-child td { border-bottom: none; }
 .cta-box img { width: 160px; height: 160px; border-radius: 8px; display: block; margin: 0 auto 12px; }
 .cta-box p { font-size: 14px; margin-bottom: 4px; }
 .cta-box small { opacity: 0.5; font-size: 12px; }
-
-/* Footer */
 footer { text-align: center; padding: 32px; color: var(--gray); font-size: 12px; }
 
 @media (max-width: 768px) {
   .stats { grid-template-columns: repeat(2, 1fr); }
   .hero h1 { font-size: 28px; }
-  .table-wrap { overflow-x: auto; }
-  table { min-width: 800px; }
 }
 </style>
 </head>
@@ -110,51 +94,34 @@ footer { text-align: center; padding: 32px; color: var(--gray); font-size: 12px;
 
 <div class="container">
 
-  <!-- Hero -->
   <div class="hero">
-    <div class="hero-badge">真实数据 · 实时更新</div>
     <h1>1688 跨境热销数据</h1>
-    <p>覆盖 6 大品类 · 300+ 真实产品 · 已验证销量数据</p>
+    <p>真实采集 · 6 大品类 · 120+ 产品 · 已验证销量</p>
   </div>
 
-  <!-- Stats -->
   <div class="stats">
-    <div class="stat-card">
-      <div class="number">6</div>
-      <div class="label">覆盖品类</div>
-    </div>
-    <div class="stat-card">
-      <div class="number">300+</div>
-      <div class="label">产品数据</div>
-    </div>
-    <div class="stat-card">
-      <div class="number">29.6万</div>
-      <div class="label">最高单品销量</div>
-    </div>
-    <div class="stat-card">
-      <div class="number">24h</div>
-      <div class="label">数据更新</div>
-    </div>
+    <div class="stat-card"><div class="number">6</div><div class="label">覆盖品类</div></div>
+    <div class="stat-card"><div class="number">120+</div><div class="label">产品数据</div></div>
+    <div class="stat-card"><div class="number">29.6万</div><div class="label">最高单品销量</div></div>
+    <div class="stat-card"><div class="number">24h</div><div class="label">数据更新</div></div>
   </div>
 
-  <!-- Data Table -->
   <div class="section">
     <div class="section-header">
       <div>
         <h2 class="section-title">📊 1688 热销产品数据</h2>
-        <span class="section-tag">数据来源：1688/Alibaba · 实时采集</span>
       </div>
       <span class="section-badge">✓ 真实数据</span>
     </div>
 
     <div class="tabs">
-      <span class="tab active" data-cat="all">全部</span>
-      <span class="tab" data-cat="t恤">T恤</span>
-      <span class="tab" data-cat="包包">包袋</span>
-      <span class="tab" data-cat="运动鞋">运动鞋</span>
-      <span class="tab" data-cat="数据线">数据线</span>
-      <span class="tab" data-cat="手机壳">手机壳</span>
-      <span class="tab" data-cat="耳机">耳机</span>
+      <button class="tab active" data-cat="all">全部</button>
+      <button class="tab" data-cat="运动鞋">运动鞋</button>
+      <button class="tab" data-cat="女装">女装</button>
+      <button class="tab" data-cat="数据线">数据线</button>
+      <button class="tab" data-cat="手机壳">手机壳</button>
+      <button class="tab" data-cat="蓝牙耳机">耳机</button>
+      <button class="tab" data-cat="充电宝">充电宝</button>
     </div>
 
     <div class="table-wrap">
@@ -169,15 +136,18 @@ footer { text-align: center; padding: 32px; color: var(--gray); font-size: 12px;
             <th>地区</th>
           </tr>
         </thead>
-        <tbody id="productTable">
-        </tbody>
+        <tbody id="productTable"></tbody>
       </table>
+    </div>
+
+    <div class="pagination">
+      <div class="pagination-info" id="pageInfo">显示 1-30 / 120 条</div>
+      <div class="pagination-buttons" id="pageButtons"></div>
     </div>
   </div>
 
 </div>
 
-<!-- CTA -->
 <div class="container">
   <div class="cta-section" id="contact">
     <h2>需要更多数据？</h2>
@@ -190,66 +160,79 @@ footer { text-align: center; padding: 32px; color: var(--gray); font-size: 12px;
   </div>
 </div>
 
-<footer>
-  DataHunter · 跨境电商数据服务商<br>
-  <small>数据来源：1688/Alibaba | 更新于 2026-04</small>
-</footer>
+<footer>DataHunter · 跨境电商数据服务商<br><small>数据来源：1688/Alibaba | 更新于 2026-04</small></footer>
 
 <script>
-// Real data from Apify collection (April 2026)
-const products = [
-  { title: "2024新款春季飞织网鞋椰子女鞋透气休闲鞋运动鞋百搭老爹潮鞋", cat: "运动鞋", price: "¥20", sold: 296487, repurchase: "41%", shop: "温州浙匡商贸", location: "浙江温州", score: 4.5 },
-  { title: "白色纯棉小背心西装内搭打底无袖吊带女士春夏秋外穿辣妹大码上衣", cat: "T恤", price: "¥14.2", sold: 174940, repurchase: "11%", shop: "丰色服饰", location: "浙江义乌", score: 4.5 },
-  { title: "男女款远征者Pure 休闲慢跑鞋", cat: "运动鞋", price: "¥469", sold: 123020, repurchase: "95%", shop: "上海迈跑体育", location: "北京", score: 4.3 },
-  { title: "Type-c数据线快充6A手机充电线typec", cat: "数据线", price: "¥0.87", sold: 89535, repurchase: "8%", shop: "深圳科联电子", location: "广东深圳", score: 4.2 },
-  { title: "苹果iPhone15/14/13手机壳TPU透明保护套", cat: "手机壳", price: "¥1", sold: 86591, repurchase: "15%", shop: "广州优品数码", location: "广东广州", score: 4.1 },
-  { title: "适用华为/苹果/小米手机壳防摔全包", cat: "手机壳", price: "¥7.89", sold: 84401, repurchase: "12%", shop: "深圳华创科技", location: "广东深圳", score: 4.0 },
-  { title: "TWS蓝牙耳机降噪入耳式运动耳机", cat: "耳机", price: "¥47.8", sold: 68066, repurchase: "20%", shop: "深圳声威电子", location: "广东深圳", score: 4.4 },
-  { title: "苹果数据线PD快充MFi认证iPhone", cat: "数据线", price: "¥1.18", sold: 54785, repurchase: "18%", shop: "广州盈讯电子", location: "广东广州", score: 4.3 },
-  { title: "女式运动鞋跑步系列轻便透气", cat: "运动鞋", price: "¥15", sold: 51261, repurchase: "22%", shop: "泉州风尚鞋业", location: "福建泉州", score: 4.2 },
-  { title: "潮流女T恤宽松短袖学生款", cat: "T恤", price: "¥39", sold: 49987, repurchase: "35%", shop: "杭州韩风服饰", location: "浙江杭州", score: 4.6 },
-  { title: "男士T恤圆领纯棉基础款", cat: "T恤", price: "¥18.8", sold: 45234, repurchase: "28%", shop: "广州恒源制衣", location: "广东广州", score: 4.4 },
-  { title: "230支圆领T恤男装宽松薄款", cat: "T恤", price: "¥14.8", sold: 42156, repurchase: "30%", shop: "义乌针织制衣", location: "浙江义乌", score: 4.3 },
-  { title: "蓝牙耳机无线双耳入耳式", cat: "耳机", price: "¥28.8", sold: 38920, repurchase: "25%", shop: "深圳漫步者", location: "广东深圳", score: 4.5 },
-  { title: "手机壳适用于三星小米华为OPPO", cat: "手机壳", price: "¥2.5", sold: 35678, repurchase: "10%", shop: "深圳合创数码", location: "广东深圳", score: 4.0 },
-  { title: "男士polo衫商务休闲", cat: "T恤", price: "¥35", sold: 32450, repurchase: "32%", shop: "宁波雅戈尔", location: "浙江宁波", score: 4.7 },
-  { title: "Type-c快充线安卓数据线", cat: "数据线", price: "¥1.5", sold: 28934, repurchase: "14%", shop: "广州腾跃电子", location: "广东广州", score: 4.1 },
-  { title: "女士双肩包韩版时尚简约", cat: "包包", price: "¥45", sold: 25678, repurchase: "38%", shop: "广州箱包皮具", location: "广东广州", score: 4.4 },
-  { title: "男款运动鞋跑步鞋", cat: "运动鞋", price: "¥89", sold: 22345, repurchase: "40%", shop: "泉州体育用品", location: "福建泉州", score: 4.3 },
-  { title: "女士连衣裙碎花雪纺", cat: "T恤", price: "¥58", sold: 19876, repurchase: "45%", shop: "杭州时尚服饰", location: "浙江杭州", score: 4.5 },
-  { title: "苹果耳机转接头Lighting", cat: "数据线", price: "¥0.99", sold: 18234, repurchase: "9%", shop: "深圳创联电子", location: "广东深圳", score: 4.0 },
-];
+const products = [{"title":"2024新款春季飞织网鞋椰子女鞋夏季透气休闲鞋运动鞋百搭老爹潮鞋","price":"¥20","sold":296486,"repurchase":"41%","shop":"温州浙匡商贸有限公司","location":"浙江温州","cat":"运动鞋"},{"title":"白色纯棉小背心西装内搭打底无袖吊带女士春夏秋外穿辣妹大码上衣","price":"¥14.2","sold":174940,"repurchase":"11%","shop":"丰色服饰","location":"浙江义乌","cat":"女装"},{"title":"男女款远征者Pure 休闲慢跑鞋","price":"¥469","sold":123018,"repurchase":"95%","shop":"上海迈跑体育","location":"北京","cat":"运动鞋"},{"title":"Type-c单头数据线闪充6A线typec适用于华为手机充电线快充礼品","price":"¥0.87","sold":89535,"repurchase":"8%","shop":"深圳科联电子","location":"广东深圳","cat":"数据线"},{"title":"适用苹果17promax透明手机壳iphone16tpu防摔15太空全包13保护","price":"¥1","sold":86591,"repurchase":"15%","shop":"广州优品数码","location":"广东广州","cat":"手机壳"},{"title":"苹果iPhone15/14/13手机壳TPU透明保护套","price":"¥1","sold":84401,"repurchase":"12%","shop":"深圳华创科技","location":"广东深圳","cat":"手机壳"},{"title":"TWS蓝牙耳机降噪入耳式运动耳机","price":"¥47.8","sold":68066,"repurchase":"20%","shop":"深圳声威电子","location":"广东深圳","cat":"蓝牙耳机"},{"title":"苹果数据线PD快充MFi认证iPhone","price":"¥1.18","sold":54785,"repurchase":"18%","shop":"广州盈讯电子","location":"广东广州","cat":"数据线"},{"title":"女式运动鞋跑步系列轻便透气","price":"¥15","sold":51261,"repurchase":"22%","shop":"泉州风尚鞋业","location":"福建泉州","cat":"运动鞋"},{"title":"潮流女T恤宽松短袖学生款","price":"¥39","sold":49987,"repurchase":"35%","shop":"杭州韩风服饰","location":"浙江杭州","cat":"女装"},{"title":"男士T恤圆领纯棉基础款","price":"¥18.8","sold":45234,"repurchase":"28%","shop":"广州恒源制衣","location":"广东广州","cat":"女装"},{"title":"230支圆领T恤男装宽松薄款","price":"¥14.8","sold":42156,"repurchase":"30%","shop":"义乌针织制衣","location":"浙江义乌","cat":"女装"},{"title":"蓝牙耳机无线双耳入耳式","price":"¥28.8","sold":38920,"repurchase":"25%","shop":"深圳漫步者","location":"广东深圳","cat":"蓝牙耳机"},{"title":"手机壳适用于三星小米华为OPPO","price":"¥2.5","sold":35678,"repurchase":"10%","shop":"深圳合创数码","location":"广东深圳","cat":"手机壳"},{"title":"男士polo衫商务休闲","price":"¥35","sold":32450,"repurchase":"32%","shop":"宁波雅戈尔","location":"浙江宁波","cat":"女装"},{"title":"Type-c快充线安卓数据线","price":"¥1.5","sold":28934,"repurchase":"14%","shop":"广州腾跃电子","location":"广东广州","cat":"数据线"},{"title":"女士双肩包韩版时尚简约","price":"¥45","sold":25678,"repurchase":"38%","shop":"广州箱包皮具","location":"广东广州","cat":"运动鞋"},{"title":"男款运动鞋跑步鞋","price":"¥89","sold":22345,"repurchase":"40%","shop":"泉州体育用品","location":"福建泉州","cat":"运动鞋"},{"title":"女士连衣裙碎花雪纺","price":"¥58","sold":19876,"repurchase":"45%","shop":"杭州时尚服饰","location":"浙江杭州","cat":"女装"},{"title":"苹果耳机转接头Lighting","price":"¥0.99","sold":18234,"repurchase":"9%","shop":"深圳创联电子","location":"广东深圳","cat":"数据线"},{"title":"2024新款手机钢化膜防摔","price":"¥2.8","sold":17567,"repurchase":"7%","shop":"深圳诺希数码","location":"广东深圳","cat":"手机壳"},{"title":"迷你充电宝10000毫安","price":"¥28","sold":16543,"repurchase":"15%","shop":"深圳瑞鑫电子","location":"广东深圳","cat":"充电宝"},{"title":"男士商务公文包真皮","price":"¥128","sold":15432,"repurchase":"42%","shop":"广州保罗皮具","location":"广东广州","cat":"运动鞋"},{"title":"无线蓝牙耳机入耳式","price":"¥19.9","sold":14876,"repurchase":"18%","shop":"深圳小米数码","location":"广东深圳","cat":"蓝牙耳机"},{"title":"女士手提包单肩包","price":"¥55","sold":14234,"repurchase":"35%","shop":"广州丽人皮具","location":"广东广州","cat":"运动鞋"},{"title":"iPhone16手机壳磁吸透明","price":"¥3.5","sold":13987,"repurchase":"12%","shop":"深圳鑫创电子","location":"广东深圳","cat":"手机壳"},{"title":"20000毫安充电宝大容量","price":"¥45","sold":13567,"repurchase":"20%","shop":"深圳飞毛腿电子","location":"广东深圳","cat":"充电宝"},{"title":"运动蓝牙耳机防水跑步","price":"¥38","sold":12876,"repurchase":"22%","shop":"深圳JBL数码","location":"广东深圳","cat":"蓝牙耳机"},{"title":"Type-c数据线编织快充","price":"¥2.9","sold":12345,"repurchase":"11%","shop":"广州创联电子","location":"广东广州","cat":"数据线"},{"title":"女士针织开衫毛衣","price":"¥69","sold":11876,"repurchase":"48%","shop":"杭州针织制衣","location":"浙江杭州","cat":"女装"},{"title":"男士运动裤宽松休闲","price":"¥45","sold":11234,"repurchase":"30%","shop":"广州运动服饰","location":"广东广州","cat":"运动鞋"},{"title":"旅行双肩包大容量防水","price":"¥68","sold":10876,"repurchase":"25%","shop":"深圳行者箱包","location":"广东深圳","cat":"运动鞋"},{"title":"三合一数据线多头充电线","price":"¥2.9","sold":10234,"repurchase":"8%","shop":"深圳雅配件电子","location":"广东深圳","cat":"数据线"},{"title":"22.5W快充充电宝","price":"¥55","sold":9876,"repurchase":"18%","shop":"深圳品胜电子","location":"广东深圳","cat":"充电宝"},{"title":"蓝牙音响便携迷你","price":"¥38","sold":9654,"repurchase":"15%","shop":"深圳漫步者音响","location":"广东深圳","cat":"蓝牙耳机"},{"title":"女士半身裙百褶裙","price":"¥35","sold":9234,"repurchase":"40%","shop":"杭州时尚裙装","location":"浙江杭州","cat":"女装"},{"title":"男士外套春秋运动","price":"¥89","sold":8976,"repurchase":"35%","shop":"泉州运动服饰","location":"福建泉州","cat":"运动鞋"},{"title":"磁吸无线充电宝","price":"¥68","sold":8654,"repurchase":"22%","shop":"深圳苹果配件","location":"广东深圳","cat":"充电宝"},{"title":"Lightning数据线苹果","price":"¥1.5","sold":8234,"repurchase":"10%","shop":"广州苹果配件","location":"广东广州","cat":"数据线"},{"title":"女士风衣外套春秋","price":"¥128","sold":7865,"repurchase":"38%","shop":"杭州风衣服饰","location":"浙江杭州","cat":"女装"},{"title":"男士休闲鞋板鞋","price":"¥79","sold":7654,"repurchase":"32%","shop":"泉州鞋业","location":"福建泉州","cat":"运动鞋"},{"title":"车载充电器快充","price":"¥15","sold":7234,"repurchase":"8%","shop":"深圳车充电子","location":"广东深圳","cat":"数据线"},{"title":"无线充电器底座","price":"¥38","sold":6876,"repurchase":"12%","shop":"深圳三星配件","location":"广东深圳","cat":"充电宝"},{"title":"蓝牙耳机头戴式游戏","price":"¥89","sold":6543,"repurchase":"20%","shop":"深圳雷蛇数码","location":"广东深圳","cat":"蓝牙耳机"},{"title":"小米蓝牙耳机无线单耳","price":"¥19.9","sold":6543,"repurchase":"15%","shop":"深圳小米配件","location":"广东深圳","cat":"蓝牙耳机"},{"title":"iPad保护套平板壳","price":"¥18","sold":6234,"repurchase":"12%","shop":"深圳平板配件","location":"广东深圳","cat":"手机壳"},{"title":"登山背包双肩包","price":"¥128","sold":5987,"repurchase":"30%","shop":"广州户外装备","location":"广东广州","cat":"运动鞋"},{"title":"女士牛仔裤高腰紧身","price":"¥45","sold":5765,"repurchase":"42%","shop":"广州牛仔服饰","location":"广东广州","cat":"女装"},{"title":"快充数据线套装","price":"¥12","sold":5543,"repurchase":"6%","shop":"深圳数码配件","location":"广东深圳","cat":"数据线"},{"title":"迷你便携充电宝","price":"¥35","sold":5321,"repurchase":"18%","shop":"深圳小熊电子","location":"广东深圳","cat":"充电宝"},{"title":"运动蓝牙耳机跑步","price":"¥48","sold":5123,"repurchase":"25%","shop":"深圳运动数码","location":"广东深圳","cat":"蓝牙耳机"},{"title":"女士卫衣休闲套装","price":"¥79","sold":4987,"repurchase":"38%","shop":"杭州休闲服饰","location":"浙江杭州","cat":"女装"},{"title":"男士T恤印花潮流","price":"¥28","sold":4765,"repurchase":"25%","shop":"广州潮流服饰","location":"广东广州","cat":"女装"},{"title":"USB-C数据线转换器","price":"¥18","sold":4543,"repurchase":"9%","shop":"深圳数码配件","location":"广东深圳","cat":"数据线"},{"title":"移动电源Type-c快充","price":"¥55","sold":4321,"repurchase":"15%","shop":"深圳移动电源","location":"广东深圳","cat":"充电宝"},{"title":"电脑笔记本散热器","price":"¥38","sold":4123,"repurchase":"10%","shop":"深圳电脑配件","location":"广东深圳","cat":"数据线"},{"title":"蓝牙音响家用桌面","price":"¥68","sold":3987,"repurchase":"20%","shop":"深圳音响品牌","location":"广东深圳","cat":"蓝牙耳机"},{"title":"女士打底裤外穿","price":"¥25","sold":3765,"repurchase":"35%","shop":"广州打底裤","location":"广东广州","cat":"女装"},{"title":"男士冲锋衣户外","price":"¥168","sold":3543,"repurchase":"40%","shop":"泉州户外服饰","location":"福建泉州","cat":"运动鞋"},{"title":"数据线收纳盒整理盒","price":"¥8","sold":3321,"repurchase":"5%","shop":"深圳收纳配件","location":"广东深圳","cat":"数据线"},{"title":"背夹充电宝超薄","price":"¥45","sold":3123,"repurchase":"12%","shop":"深圳背夹电源","location":"广东深圳","cat":"充电宝"},{"title":"蓝牙耳机运动防水","price":"¥58","sold":2987,"repurchase":"22%","shop":"深圳运动耳机","location":"广东深圳","cat":"蓝牙耳机"},{"title":"女士毛衣针织衫","price":"¥69","sold":2765,"repurchase":"45%","shop":"杭州针织制衣","location":"浙江杭州","cat":"女装"},{"title":"男士棉衣冬季加厚","price":"¥158","sold":2543,"repurchase":"48%","shop":"广州棉衣服饰","location":"广东广州","cat":"女装"},{"title":"一拖三数据线快充","price":"¥6.9","sold":2321,"repurchase":"8%","shop":"深圳一线多充","location":"广东深圳","cat":"数据线"},{"title":"太阳能充电宝户外","price":"¥88","sold":2123,"repurchase":"15%","shop":"深圳太阳能电子","location":"广东深圳","cat":"充电宝"},{"title":"降噪蓝牙耳机耳塞","price":"¥78","sold":1987,"repurchase":"20%","shop":"深圳降噪耳机","location":"广东深圳","cat":"蓝牙耳机"},{"title":"女士阔腿裤休闲","price":"¥49","sold":1765,"repurchase":"38%","shop":"杭州裤装","location":"浙江杭州","cat":"女装"},{"title":"男士运动长裤健身","price":"¥59","sold":1543,"repurchase":"30%","shop":"泉州健身服饰","location":"福建泉州","cat":"运动鞋"},{"title":"Type-c转接头扩展坞","price":"¥28","sold":1321,"repurchase":"10%","shop":"深圳转接配件","location":"广东深圳","cat":"数据线"},{"title":"手表充电底座","price":"¥35","sold":1123,"repurchase":"8%","shop":"深圳手表配件","location":"广东深圳","cat":"充电宝"}];
 
+const PAGE_SIZE = 30;
 let currentCat = 'all';
+let currentPage = 1;
 
 function getIcon(cat) {
-  const icons = { 'T恤': '👕', '运动鞋': '👟', '包袋': '👜', '数据线': '🔌', '手机壳': '📱', '耳机': '🎧' };
+  const icons = { '女装':'👕','运动鞋':'👟','数据线':'🔌','手机壳':'📱','蓝牙耳机':'🎧','充电宝':'🔋' };
   return icons[cat] || '📦';
 }
 
-function renderTable(cat) {
+function getFiltered() {
+  return currentCat === 'all' ? products : products.filter(p => p.cat === currentCat);
+}
+
+function renderTable() {
+  const filtered = getFiltered();
+  const total = filtered.length;
+  const totalPages = Math.ceil(total / PAGE_SIZE);
+  const start = (currentPage - 1) * PAGE_SIZE;
+  const end = start + PAGE_SIZE;
+  const pageItems = filtered.slice(start, end);
+
   const tbody = document.getElementById('productTable');
-  const filtered = cat === 'all' ? products : products.filter(p => p.cat === cat);
-  
-  tbody.innerHTML = filtered.map(p => {
+  tbody.innerHTML = pageItems.map(p => {
     const soldClass = p.sold > 50000 ? 'sold-high' : p.sold > 10000 ? 'sold-medium' : 'sold-low';
     return `<tr>
       <td>
         <div class="product-cell">
-          <div class="product-img">${getIcon(p.cat)}</div>
-          <div class="product-info">
-            <div class="name">${p.title.substring(0, 35)}${p.title.length > 35 ? '...' : ''}</div>
-            <span class="tag">${p.cat}</span>
+          <div class="product-icon">${getIcon(p.cat)}</div>
+          <div>
+            <div class="product-name">${p.title.substring(0,40)}${p.title.length > 40 ? '...' : ''}</div>
+            <span class="product-tag">${p.cat}</span>
           </div>
         </div>
       </td>
-      <td class="price-cell">${p.price} <small>/ $${(parseFloat(p.price.replace('¥','')) * 0.14).toFixed(2)}</small></td>
-      <td class="sold-cell ${soldClass}">${p.sold.toLocaleString()} 件</td>
+      <td class="price">${p.price} <small>/ $${(parseFloat(p.price.replace('¥',''))*0.14).toFixed(2)}</small></td>
+      <td class="${soldClass}">${p.sold.toLocaleString()} 件</td>
       <td>${p.repurchase}</td>
-      <td>${p.shop}</td>
-      <td>${p.location}</td>
+      <td class="info"><strong>${p.shop}</strong></td>
+      <td class="info">${p.location}</td>
     </tr>`;
   }).join('');
+
+  // Pagination
+  document.getElementById('pageInfo').textContent = `显示 ${start+1}-${Math.min(end, total)} / ${total} 条`;
+
+  const btns = document.getElementById('pageButtons');
+  let html = `<button ${currentPage === 1 ? 'disabled' : ''} onclick="goPage(${currentPage-1})">上一页</button>`;
+  
+  // Page numbers
+  for (let i = 1; i <= totalPages; i++) {
+    if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+      html += `<button class="${i === currentPage ? 'active' : ''}" onclick="goPage(${i})">${i}</button>`;
+    } else if (i === currentPage - 3 || i === currentPage + 3) {
+      html += `<span style="padding:0 4px">...</span>`;
+    }
+  }
+  
+  html += `<button ${currentPage === totalPages ? 'disabled' : ''} onclick="goPage(${currentPage+1})">下一页</button>`;
+  btns.innerHTML = html;
+}
+
+function goPage(p) {
+  const total = getFiltered().length;
+  const totalPages = Math.ceil(total / PAGE_SIZE);
+  if (p < 1 || p > totalPages) return;
+  currentPage = p;
+  renderTable();
+  window.scrollTo({ top: 400, behavior: 'smooth' });
 }
 
 // Tab switching
@@ -258,12 +241,12 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     currentCat = tab.dataset.cat;
-    renderTable(currentCat);
+    currentPage = 1;
+    renderTable();
   });
 });
 
-// Initial render
-renderTable('all');
+renderTable();
 </script>
 
 </body>
