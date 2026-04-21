@@ -143,7 +143,7 @@ function renderTable(){
   tbody.innerHTML=pageItems.map(p=>{
     const soldClass=p.sold>50000?"sold-high":p.sold>10000?"sold-medium":"sold-low";
     const priceNum=parseFloat(p.price.replace(/[^0-9.]/g,""))||0;
-    return "<tr><td><div class="product-cell"><div class="product-icon">"+getIcon(p.cat)+"</div><div><div class="product-name">"+p.title.substring(0,40)+(p.title.length>40?"...":"")+"</div><span class="product-tag">"+p.cat+"</span></div></div></td><td class="price">"+p.price+" <small>/ $"+(priceNum*0.14).toFixed(2)+"</small></td><td class='"+soldClass+"'>"+p.sold.toLocaleString()+" 件</td><td>"+p.repurchase+"</td><td class="info"><strong>"+p.shop+"</strong></td><td class="info">"+p.location+"</td></tr>";
+    return "<tr><td><div class=\"product-cell\"><div class=\"product-icon\">"+getIcon(p.cat)+"</div><div><div class=\"product-name\">"+p.title.substring(0,40)+(p.title.length>40?"...":"")+"</div><span class=\"product-tag\">"+p.cat+"</span></div></div></td><td class=\"price\">"+p.price+" <small>/ $"+(priceNum*0.14).toFixed(2)+"</small></td><td class='"+soldClass+"'>"+p.sold.toLocaleString()+" 件</td><td>"+p.repurchase+"</td><td class=\"info\"><strong>"+p.shop+"</strong></td><td class=\"info\">"+p.location+"</td></tr>";
   }).join("");
   document.getElementById("pageInfo").textContent="显示 "+(total>0?start+1:"0")+"-"+end+" / "+total+" 条";
   const btns=document.getElementById("pageButtons");
