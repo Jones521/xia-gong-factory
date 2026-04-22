@@ -7,18 +7,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--primary:#2563EB;--dark:#0F172A;--gray:#64748B;--light:#F1F5F9;--white:#FFFFFF;--yw:#D97706;}
+:root{--primary:#2563EB;--dark:#0F172A;--gray:#64748B;--light:#F1F5F9;--white:#FFFFFF;}
 body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--light);min-height:100vh;}
 nav{padding:16px 24px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;}
 .logo{font-size:18px;font-weight:800;color:white;}
 .logo span{color:var(--primary);}
 nav a{color:white;text-decoration:none;font-size:13px;font-weight:600;}
 .container{max-width:1100px;margin:0 auto;padding:24px;}
-.hero{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 100%);color:white;padding:60px 0;text-align:center;border-radius:24px;margin-bottom:32px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
-.hero h1{font-size:36px;font-weight:800;margin-bottom:12px;position:relative;}
-.hero p{font-size:18px;opacity:0.9;position:relative;}
-.hero .badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:6px 16px;font-size:13px;margin-top:16px;position:relative;}
+.hero{background:linear-gradient(135deg,#1E3A8A 0%,#2563EB 100%);color:white;padding:60px 0;text-align:center;border-radius:24px;margin-bottom:32px;}
+.hero h1{font-size:36px;font-weight:800;margin-bottom:12px;}
+.hero p{font-size:18px;opacity:0.9;}
+.hero .badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:6px 16px;font-size:13px;margin-top:16px;}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;}
 .stat-card{background:white;padding:24px;border-radius:16px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
 .stat-card .number{font-size:32px;font-weight:800;color:var(--primary);}
@@ -26,8 +25,8 @@ nav a{color:white;text-decoration:none;font-size:13px;font-weight:600;}
 .section{background:white;border-radius:20px;padding:28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
 .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;}
 .section-title{font-size:20px;font-weight:700;}
-.section-badge{background:#DCFCE7;color:#166534;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;}
-.section-badge.yw{background:#FEF3C7;color:#92400E;}
+.badge-green{background:#DCFCE7;color:#166534;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;}
+.badge-amber{background:#FEF3C7;color:#92400E;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
 .tab{padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;background:var(--light);color:var(--gray);border:none;transition:all 0.2s;}
 .tab:hover{background:#E2E8F0;}
@@ -40,18 +39,17 @@ tr:hover{background:#FAFBFF;}
 .product-cell{display:flex;align-items:center;gap:12px;}
 .product-icon{width:44px;height:44px;background:var(--light);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
 .product-name{font-weight:600;margin-bottom:2px;max-width:300px;line-height:1.3;}
-.product-tag{display:inline-block;background:#EFF6FF;color:var(--primary);padding:2px 8px;border-radius:4px;font-size:10px;margin-top:4px;}
-.source-tag{display:inline-block;padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;}
-.source-tag.yw{background:#FEF3C7;color:#92400E;}
+.cat-tag{display:inline-block;background:#EFF6FF;color:var(--primary);padding:2px 8px;border-radius:4px;font-size:10px;margin-top:4px;}
+.src-tag{display:inline-block;background:#FEF3C7;color:#92400E;padding:2px 6px;border-radius:4px;font-size:10px;margin-left:4px;}
 .price{font-weight:700;white-space:nowrap;}
-.price small{font-size:11px;color:var(--gray);font-weight:400;}
+.price small{font-size:11px;color:var(--gray);font-weight:400;margin-left:4px;}
 .moq{font-size:12px;color:var(--gray);}
-.sold-high{color:#166534;font-weight:700;}
-.sold-medium{color:#92400E;font-weight:700;}
-.sold-low{color:#475569;}
+.sold-hi{color:#166534;font-weight:700;}
+.sold-med{color:#92400E;font-weight:700;}
+.sold-lo{color:#475569;}
 .info{font-size:12px;color:var(--gray);}
-.info strong{color:var(--dark);display:block;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.location{font-size:11px;color:#94A3B8;margin-top:2px;}
+.info strong{color:var(--dark);display:block;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.loc{font-size:11px;color:#94A3B8;margin-top:2px;}
 .pagination{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:16px;border-top:1px solid #E2E8F0;flex-wrap:wrap;gap:12px;}
 .pagination-info{font-size:13px;color:var(--gray);}
 .pagination-buttons{display:flex;gap:8px;flex-wrap:wrap;}
@@ -59,16 +57,16 @@ tr:hover{background:#FAFBFF;}
 .pagination-buttons button:hover:not(:disabled){border-color:var(--primary);color:var(--primary);}
 .pagination-buttons button:disabled{opacity:0.4;cursor:not-allowed;}
 .pagination-buttons button.active{background:var(--primary);color:white;border-color:var(--primary);}
-.cta-section{background:var(--dark);color:white;border-radius:20px;padding:40px;text-align:center;margin-top:32px;}
-.cta-section h2{font-size:28px;margin-bottom:12px;}
-.cta-section p{opacity:0.7;margin-bottom:24px;}
+.cta{background:var(--dark);color:white;border-radius:20px;padding:40px;text-align:center;margin-top:32px;}
+.cta h2{font-size:28px;margin-bottom:12px;}
+.cta p{opacity:0.7;margin-bottom:24px;}
 .cta-box{display:inline-block;background:rgba(255,255,255,0.1);border-radius:16px;padding:24px;}
 .cta-box img{width:160px;height:160px;border-radius:8px;display:block;margin:0 auto 12px;}
 .cta-box p{font-size:14px;margin-bottom:4px;}
 .cta-box small{opacity:0.5;font-size:12px;}
+.note{background:#FEF3C7;border:1px solid #FDE68A;border-radius:12px;padding:16px;margin-bottom:24px;font-size:13px;color:#92400E;}
+.note strong{color:#78350F;}
 footer{text-align:center;padding:32px;color:var(--gray);font-size:12px;}
-.data-note{background:#FEF3C7;border:1px solid #FDE68A;border-radius:12px;padding:16px;margin-bottom:24px;font-size:13px;color:#92400E;}
-.data-note strong{color:#78350F;}
 @media(max-width:768px){.stats{grid-template-columns:repeat(2,1fr);}.hero h1{font-size:28px;}}
 </style>
 </head>
@@ -89,15 +87,15 @@ footer{text-align:center;padding:32px;color:var(--gray);font-size:12px;}
     <div class="stat-card"><div class="number">50,000+</div><div class="label">品类总量</div></div>
     <div class="stat-card"><div class="number">145,170</div><div class="label">可采集数据</div></div>
   </div>
-  <div class="data-note">
+  <div class="note">
     <strong>💡 数据说明：</strong>当前展示52条代表性样本，涵盖义乌购<strong>小家电（58,346种）</strong>和<strong>电讯器材（86,824种）</strong>等核心品类。支持按品类筛选，可导出完整数据报告。
   </div>
   <div class="section">
     <div class="section-header">
       <div><h2 class="section-title">📊 义乌购热销产品数据</h2></div>
       <div style="display:flex;gap:8px;align-items:center;">
-        <span class="section-badge">✅ 真实数据</span>
-        <span class="section-badge yw">🏠 义乌货源</span>
+        <span class="badge-green">✅ 真实数据</span>
+        <span class="badge-amber">🏠 义乌货源</span>
       </div>
     </div>
     <div class="tabs">
@@ -125,7 +123,7 @@ footer{text-align:center;padding:32px;color:var(--gray);font-size:12px;}
   </div>
 </div>
 <div class="container">
-  <div class="cta-section" id="contact">
+  <div class="cta" id="contact">
     <h2>需要完整数据报告？</h2>
     <p>全品类调研、竞品监控、选品分析，联系获取定制数据</p>
     <div class="cta-box">
@@ -137,7 +135,7 @@ footer{text-align:center;padding:32px;color:var(--gray);font-size:12px;}
 </div>
 <footer>DataHunter · 义乌购跨境选品数据 · 已覆盖145,170+产品<br><small>数据来源：义乌购 yiwugo.com | 更新：2026-04</small></footer>
 <script>
-var _p = [{&quot;title&quot;: &quot;工厂直销爆款A6S E6S E7S无线迷你耳机续航入耳新款无线蓝牙耳机&quot;, &quot;price&quot;: &quot;¥10.44~37.20&quot;, &quot;price_cny&quot;: 10.44, &quot;sold&quot;: 51, &quot;moq&quot;: &quot;10套起购&quot;, &quot;shop&quot;: &quot;昊宇贸易&quot;, &quot;location&quot;: &quot;浙江金华义乌&quot;, &quot;cat&quot;: &quot;耳机&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;复古做旧美式棒球帽男女潮百搭韩版青年街头洗水磨毛破洞鸭舌帽子&quot;, &quot;price&quot;: &quot;¥7.80&quot;, &quot;price_cny&quot;: 7.8, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;1200个起购&quot;, &quot;shop&quot;: &quot;义乌市美晨帽业&quot;, &quot;location&quot;: &quot;义乌国际商贸城四区&quot;, &quot;cat&quot;: &quot;其他&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;新款黑胶帽檐防晒衣女夏季冰丝透气连帽遮阳外套防紫外线防晒服&quot;, &quot;price&quot;: &quot;¥28.20~38.40&quot;, &quot;price_cny&quot;: 28.2, &quot;sold&quot;: 14, &quot;moq&quot;: &quot;1件起购&quot;, &quot;shop&quot;: &quot;木棉小百货&quot;, &quot;location&quot;: &quot;浙江金华义乌&quot;, &quot;cat&quot;: &quot;服装&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;气质印花收腰连衣裙欧美跨境亚马逊优雅长裙出口外贸高端女装&quot;, &quot;price&quot;: &quot;¥32.00&quot;, &quot;price_cny&quot;: 32.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;1200个起购&quot;, &quot;shop&quot;: &quot;明涛服饰&quot;, &quot;location&quot;: &quot;义乌国际商贸城四区&quot;, &quot;cat&quot;: &quot;服装&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;新款夏季薄款短袖衬衫男商务休闲修身男士衬衣中青年男装&quot;, &quot;price&quot;: &quot;¥48.00~52.00&quot;, &quot;price_cny&quot;: 48.0, &quot;sold&quot;: 18, &quot;moq&quot;: &quot;2件起购&quot;, &quot;shop&quot;: &quot;兴华服饰&quot;, &quot;location&quot;: &quot;义乌篁园服装市场&quot;, &quot;cat&quot;: &quot;服装&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;品牌十三行女装杂款清仓直播走份秋冬品牌毛衣小香风外套尾货批发&quot;, &quot;price&quot;: &quot;¥8.00~9.90&quot;, &quot;price_cny&quot;: 8.0, &quot;sold&quot;: 1400, &quot;moq&quot;: &quot;200件起购&quot;, &quot;shop&quot;: &quot;工厂服装货源批发&quot;, &quot;location&quot;: &quot;广州黄埔&quot;, &quot;cat&quot;: &quot;服装&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;外贸定制经典飞织鞋运动休闲鞋男女同款&quot;, &quot;price&quot;: &quot;¥35.00&quot;, &quot;price_cny&quot;: 35.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;1080双起购&quot;, &quot;shop&quot;: &quot;大地鞋业&quot;, &quot;location&quot;: &quot;义乌国际商贸城四区&quot;, &quot;cat&quot;: &quot;运动鞋&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;跨境供应亚马逊速卖通270运动鞋透气网面休闲鞋外贸大码男鞋&quot;, &quot;price&quot;: &quot;¥129.00&quot;, &quot;price_cny&quot;: 129.0, &quot;sold&quot;: 48, &quot;moq&quot;: &quot;1双起购&quot;, &quot;shop&quot;: &quot;大地鞋业&quot;, &quot;location&quot;: &quot;义乌国际商贸城四区&quot;, &quot;cat&quot;: &quot;运动鞋&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;四季居家用厚底棉麻凉拖鞋女夏卡通小奶牛浴室漏水拖&quot;, &quot;price&quot;: &quot;¥13.00~13.50&quot;, &quot;price_cny&quot;: 13.0, &quot;sold&quot;: 430, &quot;moq&quot;: &quot;100对起购&quot;, &quot;shop&quot;: &quot;稳泰鞋厂&quot;, &quot;location&quot;: &quot;义乌国际商贸城四区&quot;, &quot;cat&quot;: &quot;运动鞋&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;外贸新款猫爪浴室漏水拖女夏季室内洗澡镂空静音防臭凉拖鞋&quot;, &quot;price&quot;: &quot;¥4.20~4.50&quot;, &quot;price_cny&quot;: 4.2, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;9000双起购&quot;, &quot;shop&quot;: &quot;琪琪鞋业&quot;, &quot;location&quot;: &quot;义乌国际商贸城四区&quot;, &quot;cat&quot;: &quot;运动鞋&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;欧美热卖嘻哈HipHop细威尼斯项链ins男女同款锁骨毛衣链&quot;, &quot;price&quot;: &quot;¥2.00~2.40&quot;, &quot;price_cny&quot;: 2.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;60条起购&quot;, &quot;shop&quot;: &quot;雯丽饰链&quot;, &quot;location&quot;: &quot;义乌国际商贸城一区&quot;, &quot;cat&quot;: &quot;其他&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;简约时尚高级感铜合金镀18k金色流星吊坠锁骨链甜美项链&quot;, &quot;price&quot;: &quot;¥11.00~12.20&quot;, &quot;price_cny&quot;: 11.0, &quot;sold&quot;: 1, &quot;moq&quot;: &quot;1条起购&quot;, &quot;shop&quot;: &quot;旭平首饰&quot;, &quot;location&quot;: &quot;义乌国际商贸城一区&quot;, &quot;cat&quot;: &quot;其他&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;跨境爆款Magsafe实标10000mah磁吸无线充电宝大容量便携移动电源&quot;, &quot;price&quot;: &quot;¥24.00~49.00&quot;, &quot;price_cny&quot;: 24.0, &quot;sold&quot;: 245, &quot;moq&quot;: &quot;5套起购&quot;, &quot;shop&quot;: &quot;泰冲跨境选品中心&quot;, &quot;location&quot;: &quot;浙江金华义乌&quot;, &quot;cat&quot;: &quot;充电宝&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;男袜秋冬新款彩棉袜子中筒袜休闲运动棉袜彩棉女袜地摊袜厂家批发&quot;, &quot;price&quot;: &quot;¥1.39~1.80&quot;, &quot;price_cny&quot;: 1.39, &quot;sold&quot;: 50000, &quot;moq&quot;: &quot;10双起购&quot;, &quot;shop&quot;: &quot;剑鹏袜业&quot;, &quot;location&quot;: &quot;义乌国际商贸城四区&quot;, &quot;cat&quot;: &quot;其他&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;跨境爆款手持小风扇大风力usb充电便携式桌面迷你风扇礼品批发&quot;, &quot;price&quot;: &quot;¥4.99&quot;, &quot;price_cny&quot;: 4.99, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;1台起购&quot;, &quot;shop&quot;: &quot;&quot;, &quot;location&quot;: &quot;&quot;, &quot;cat&quot;: &quot;其他&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;跨境新品水果手持小风扇带底座支架迷你便携儿童广告礼品&quot;, &quot;price&quot;: &quot;¥3.90~4.20&quot;, &quot;price_cny&quot;: 3.9, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;144个起购&quot;, &quot;shop&quot;: &quot;义乌市利宏家居&quot;, &quot;location&quot;: &quot;义乌国际商贸城一区&quot;, &quot;cat&quot;: &quot;其他&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;地摊盲盒夜市摆摊网红幸运盒10元15元模式高端彩色盲盒货&quot;, &quot;price&quot;: &quot;¥3.50~4.50&quot;, &quot;price_cny&quot;: 3.5, &quot;sold&quot;: 6770, &quot;moq&quot;: &quot;100盒起购&quot;, &quot;shop&quot;: &quot;义乌优品购小商品批发&quot;, &quot;location&quot;: &quot;浙江金华义乌&quot;, &quot;cat&quot;: &quot;其他&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;小学生奖励小礼品迷你小盲袋微缩仿真动物盲盒玩具小物品礼物奖品&quot;, &quot;price&quot;: &quot;¥0.06~6.88&quot;, &quot;price_cny&quot;: 0.06, &quot;sold&quot;: 40000, &quot;moq&quot;: &quot;1个起购&quot;, &quot;shop&quot;: &quot;义乌伍尊玩具&quot;, &quot;location&quot;: &quot;义乌国际商贸城六区&quot;, &quot;cat&quot;: &quot;其他&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;宠物眼镜狗狗墨镜批发新品潮酷外出防晒防风个性猫咪眼镜&quot;, &quot;price&quot;: &quot;¥4.60&quot;, &quot;price_cny&quot;: 4.6, &quot;sold&quot;: 78, &quot;moq&quot;: &quot;2个起购&quot;, &quot;shop&quot;: &quot;胜利小狗&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;其他&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;毛绒狗狗法国斗牛犬耐咬球绳发声玩具水果卡通动物猫宠物用品&quot;, &quot;price&quot;: &quot;¥1.00~5.50&quot;, &quot;price_cny&quot;: 1.0, &quot;sold&quot;: 88, &quot;moq&quot;: &quot;2个起购&quot;, &quot;shop&quot;: &quot;杉蒂宠物用品&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;其他&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;2L不锈钢电热水壶家用烧水壶欧规外贸厂家批发&quot;, &quot;price&quot;: &quot;¥11.30~12.00&quot;, &quot;price_cny&quot;: 11.3, &quot;sold&quot;: 70, &quot;moq&quot;: &quot;160个起购&quot;, &quot;shop&quot;: &quot;义乌市环厨电器&quot;, &quot;location&quot;: &quot;浙江金华义乌&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;卡通草莓蝴蝶结狗狗糖果少女包包挂件新款挂链可爱多元素钥匙扣&quot;, &quot;price&quot;: &quot;¥15.00~18.00&quot;, &quot;price_cny&quot;: 15.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;2个起购&quot;, &quot;shop&quot;: &quot;粉呼呼包包挂件&quot;, &quot;location&quot;: &quot;义乌国际商贸城一区&quot;, &quot;cat&quot;: &quot;其他&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;跨境高速吹风机11万转高速吹风筒高浓度负离子恒温不伤发&quot;, &quot;price&quot;: &quot;¥78.00~85.00&quot;, &quot;price_cny&quot;: 78.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;2套起购&quot;, &quot;shop&quot;: &quot;楼洁百货&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;跨境沙冰机商用奶茶店沙冰家用榨汁机豆浆碎冰搅拌料理破壁机&quot;, &quot;price&quot;: &quot;¥155.00~190.00&quot;, &quot;price_cny&quot;: 155.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;100台起购&quot;, &quot;shop&quot;: &quot;密斯顿小家电&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;新款剃须刀1168液晶数显全身水洗理发鼻毛剃须三合一电动刮胡刀&quot;, &quot;price&quot;: &quot;¥31.50~35.00&quot;, &quot;price_cny&quot;: 31.5, &quot;sold&quot;: 387, &quot;moq&quot;: &quot;2个起购&quot;, &quot;shop&quot;: &quot;义乌市馨铖电器&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;家用蒸汽电熨斗手持式迷你电烫斗小型便携式烫衣服熨烫机&quot;, &quot;price&quot;: &quot;¥34.00~42.00&quot;, &quot;price_cny&quot;: 34.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;1台起购&quot;, &quot;shop&quot;: &quot;义乌市RAF电器&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;VGR972跨境黑武士数显电推剪T9推白雕刻小推子发廊专业电动理发器&quot;, &quot;price&quot;: &quot;¥55.00~70.00&quot;, &quot;price_cny&quot;: 55.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;40个起购&quot;, &quot;shop&quot;: &quot;义乌格美电器&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;RAF欧规跨境空气炸锅大容量多功能智能家用数显电炸锅7L无油烟&quot;, &quot;price&quot;: &quot;¥188.50~215.00&quot;, &quot;price_cny&quot;: 188.5, &quot;sold&quot;: 111, &quot;moq&quot;: &quot;2台起购&quot;, &quot;shop&quot;: &quot;义乌市RAF电器&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;宿舍必备康夫3152 800W可折叠吹风机&quot;, &quot;price&quot;: &quot;¥50.00~65.00&quot;, &quot;price_cny&quot;: 50.0, &quot;sold&quot;: 143, &quot;moq&quot;: &quot;1个起购&quot;, &quot;shop&quot;: &quot;康夫电器&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;DSP/丹松榨汁机家用小型多功能水果奶昔杯炸果汁机榨汁杯&quot;, &quot;price&quot;: &quot;¥125.00~144.00&quot;, &quot;price_cny&quot;: 125.0, &quot;sold&quot;: 5, &quot;moq&quot;: &quot;2台起购&quot;, &quot;shop&quot;: &quot;义乌市丹松电器&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;JAMAKY原汁机渣汁分离家用多功能榨汁机慢磨小型榨汁机&quot;, &quot;price&quot;: &quot;¥77.00~88.00&quot;, &quot;price_cny&quot;: 77.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;2台起购&quot;, &quot;shop&quot;: &quot;义乌市丹松电器&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;升级款铸铁手动榨汁机家用商用橙子石榴柠檬西瓜水果榨汁器&quot;, &quot;price&quot;: &quot;¥100.00&quot;, &quot;price_cny&quot;: 100.0, &quot;sold&quot;: 50, &quot;moq&quot;: &quot;10个起购&quot;, &quot;shop&quot;: &quot;浙江航懋榨汁机&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;一次性橡胶手柄不锈钢3层剃须刀酒店浴室用品&quot;, &quot;price&quot;: &quot;¥0.36&quot;, &quot;price_cny&quot;: 0.36, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;8640个起购&quot;, &quot;shop&quot;: &quot;MiyaRazor米亚剃须刀&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;跨境新款XHP90+COB多光源数字显示强光可拆卸手提灯多功能手电筒&quot;, &quot;price&quot;: &quot;¥73.00~75.00&quot;, &quot;price_cny&quot;: 73.0, &quot;sold&quot;: 30, &quot;moq&quot;: &quot;30个起购&quot;, &quot;shop&quot;: &quot;阿兰手电筒五金电器&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;一拖三6A超级快充数据线 适用苹果安卓三合一金属编织快充神器&quot;, &quot;price&quot;: &quot;¥3.80&quot;, &quot;price_cny&quot;: 3.8, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;360件起购&quot;, &quot;shop&quot;: &quot;丁丁通讯&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;数据线&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;华为6A超级快充数据线OPPO小米66W超级快充线&quot;, &quot;price&quot;: &quot;¥1.50~7.99&quot;, &quot;price_cny&quot;: 1.5, &quot;sold&quot;: 2023, &quot;moq&quot;: &quot;2个起购&quot;, &quot;shop&quot;: &quot;义乌市益量电子&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;数据线&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;跨境汽车应急启动电源充气泵一体机12V便携搭电宝户外电源&quot;, &quot;price&quot;: &quot;¥160.00&quot;, &quot;price_cny&quot;: 160.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;1套起购&quot;, &quot;shop&quot;: &quot;洛高数码配件&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;充电宝&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;新款20000毫安数显镜面充电宝 大容量便携移动电源&quot;, &quot;price&quot;: &quot;¥31.24~35.90&quot;, &quot;price_cny&quot;: 31.24, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;100台起购&quot;, &quot;shop&quot;: &quot;和顺电子&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;充电宝&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;KIN-KL31新款水滴真无线TWS运动睡眠蓝牙耳机超长续航&quot;, &quot;price&quot;: &quot;¥16.00~18.00&quot;, &quot;price_cny&quot;: 16.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;120件起购&quot;, &quot;shop&quot;: &quot;KM凯米科技&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;耳机&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;工厂现货P9MAX PRO高配版头戴式蓝牙耳机5.3重低音游戏无线耳机&quot;, &quot;price&quot;: &quot;¥11.00~16.00&quot;, &quot;price_cny&quot;: 11.0, &quot;sold&quot;: 100, &quot;moq&quot;: &quot;100条起购&quot;, &quot;shop&quot;: &quot;义乌市讯音电子&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;耳机&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;包邮特价清仓无线蓝牙挂脖式运动耳机入耳式重低音可插卡&quot;, &quot;price&quot;: &quot;¥35.00&quot;, &quot;price_cny&quot;: 35.0, &quot;sold&quot;: 2, &quot;moq&quot;: &quot;1个起购&quot;, &quot;shop&quot;: &quot;广东爱曼电子厂&quot;, &quot;location&quot;: &quot;广东&quot;, &quot;cat&quot;: &quot;耳机&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;A6S蓝牙耳机跨境爆款马卡龙蓝牙5.2无线TWS耳塞运动迷你耳机&quot;, &quot;price&quot;: &quot;¥8.00~8.50&quot;, &quot;price_cny&quot;: 8.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;100个起购&quot;, &quot;shop&quot;: &quot;翔盈电子&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;耳机&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;PM860跨境爆款头戴式蓝牙耳机RGB发光灯渐变色游戏电竞耳麦&quot;, &quot;price&quot;: &quot;¥25.00~27.00&quot;, &quot;price_cny&quot;: 25.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;120条起购&quot;, &quot;shop&quot;: &quot;义乌市韵音数码科技&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;耳机&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;尼龙一拖三充电线 适用苹果安卓usb快充手机数据线可定制批发&quot;, &quot;price&quot;: &quot;¥2.90~3.70&quot;, &quot;price_cny&quot;: 2.9, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;500条起购&quot;, &quot;shop&quot;: &quot;和顺电子&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;数据线&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;跨境新款二代Air39 透明数显耳机超长续航无线蓝牙运动入耳式&quot;, &quot;price&quot;: &quot;¥7.50~8.40&quot;, &quot;price_cny&quot;: 7.5, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;100条起购&quot;, &quot;shop&quot;: &quot;义乌市讯音电子&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;耳机&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;82ms科学计算器考试专用函数大学生考研多功能学生用&quot;, &quot;price&quot;: &quot;¥7.50~8.20&quot;, &quot;price_cny&quot;: 7.5, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;200个起购&quot;, &quot;shop&quot;: &quot;佳丰电子&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;STN-28猫耳头戴式蓝牙耳机闪动发光5.0无线运动休闲插卡折叠&quot;, &quot;price&quot;: &quot;¥10.80~11.50&quot;, &quot;price_cny&quot;: 10.8, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;80套起购&quot;, &quot;shop&quot;: &quot;兴兴电子耳机&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;耳机&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;C2236头戴式蓝牙耳机5.3适用于苹果手机无线运动游戏耳机&quot;, &quot;price&quot;: &quot;¥11.50~14.50&quot;, &quot;price_cny&quot;: 11.5, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;500条起购&quot;, &quot;shop&quot;: &quot;义乌市韵音数码科技&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;耳机&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;新款旗舰typeC接口入耳式线控耳机适用于小米华为耳机k歌&quot;, &quot;price&quot;: &quot;¥8.00~8.50&quot;, &quot;price_cny&quot;: 8.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;200个起购&quot;, &quot;shop&quot;: &quot;翔盈电子&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;耳机&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;跨境高颜值迷你透明小可爱计算器掌上口袋便携式糖果色&quot;, &quot;price&quot;: &quot;¥2.20~3.00&quot;, &quot;price_cny&quot;: 2.2, &quot;sold&quot;: 16, &quot;moq&quot;: &quot;2个起购&quot;, &quot;shop&quot;: &quot;凯宜电子&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;新款私模M10跨境TWS蓝牙耳机入耳塞式大屏数显触摸运动双通话&quot;, &quot;price&quot;: &quot;¥7.90~9.20&quot;, &quot;price_cny&quot;: 7.9, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;100条起购&quot;, &quot;shop&quot;: &quot;兴兴电子耳机&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;耳机&quot;, &quot;source&quot;: &quot;义乌购&quot;}, {&quot;title&quot;: &quot;跨境沙冰机商用奶茶店沙冰家用榨汁机豆浆碎冰料理专用破壁机&quot;, &quot;price&quot;: &quot;¥155.00~190.00&quot;, &quot;price_cny&quot;: 155.0, &quot;sold&quot;: 0, &quot;moq&quot;: &quot;100台起购&quot;, &quot;shop&quot;: &quot;MIXDOR-密斯顿&quot;, &quot;location&quot;: &quot;义乌国际商贸城二区&quot;, &quot;cat&quot;: &quot;小家电&quot;, &quot;source&quot;: &quot;义乌购&quot;}];
+var _p = [{"title": "工厂直销爆款A6S E6S E7S无线迷你耳机续航入耳新款无线蓝牙耳机", "price": "¥10.44~37.20", "moq": "10套起购", "sold": 51, "shop": "昊宇贸易", "location": "浙江金华义乌", "cat": "耳机", "source": "义乌购"}, {"title": "复古做旧美式棒球帽男女潮百搭韩版青年街头洗水磨毛破洞鸭舌帽子", "price": "¥7.80", "moq": "1200个起购", "sold": 0, "shop": "义乌市美晨帽业", "location": "义乌国际商贸城四区", "cat": "其他", "source": "义乌购"}, {"title": "新款黑胶帽檐防晒衣女夏季冰丝透气连帽遮阳外套防紫外线防晒服", "price": "¥28.20~38.40", "moq": "1件起购", "sold": 14, "shop": "木棉小百货", "location": "浙江金华义乌", "cat": "服装", "source": "义乌购"}, {"title": "气质印花收腰连衣裙欧美跨境亚马逊优雅长裙出口外贸高端女装", "price": "¥32.00", "moq": "1200个起购", "sold": 0, "shop": "明涛服饰", "location": "义乌国际商贸城四区", "cat": "服装", "source": "义乌购"}, {"title": "新款夏季薄款短袖衬衫男商务休闲修身男士衬衣中青年男装", "price": "¥48.00~52.00", "moq": "2件起购", "sold": 18, "shop": "兴华服饰", "location": "义乌篁园服装市场", "cat": "服装", "source": "义乌购"}, {"title": "品牌十三行女装杂款清仓直播走份秋冬品牌毛衣小香风外套尾货批发", "price": "¥8.00~9.90", "moq": "200件起购", "sold": 1400, "shop": "工厂服装货源批发", "location": "广州黄埔", "cat": "服装", "source": "义乌购"}, {"title": "外贸定制经典飞织鞋运动休闲鞋男女同款", "price": "¥35.00", "moq": "1080双起购", "sold": 0, "shop": "大地鞋业", "location": "义乌国际商贸城四区", "cat": "运动鞋", "source": "义乌购"}, {"title": "跨境供应亚马逊速卖通270运动鞋透气网面休闲鞋外贸大码男鞋", "price": "¥129.00", "moq": "1双起购", "sold": 48, "shop": "大地鞋业", "location": "义乌国际商贸城四区", "cat": "运动鞋", "source": "义乌购"}, {"title": "四季居家用厚底棉麻凉拖鞋女夏卡通小奶牛浴室漏水拖", "price": "¥13.00~13.50", "moq": "100对起购", "sold": 430, "shop": "稳泰鞋厂", "location": "义乌国际商贸城四区", "cat": "运动鞋", "source": "义乌购"}, {"title": "外贸新款猫爪浴室漏水拖女夏季室内洗澡镂空静音防臭凉拖鞋", "price": "¥4.20~4.50", "moq": "9000双起购", "sold": 0, "shop": "琪琪鞋业", "location": "义乌国际商贸城四区", "cat": "运动鞋", "source": "义乌购"}, {"title": "欧美热卖嘻哈HipHop细威尼斯项链ins男女同款锁骨毛衣链", "price": "¥2.00~2.40", "moq": "60条起购", "sold": 0, "shop": "雯丽饰链", "location": "义乌国际商贸城一区", "cat": "其他", "source": "义乌购"}, {"title": "简约时尚高级感铜合金镀18k金色流星吊坠锁骨链甜美项链", "price": "¥11.00~12.20", "moq": "1条起购", "sold": 1, "shop": "旭平首饰", "location": "义乌国际商贸城一区", "cat": "其他", "source": "义乌购"}, {"title": "跨境爆款Magsafe实标10000mah磁吸无线充电宝大容量便携移动电源", "price": "¥24.00~49.00", "moq": "5套起购", "sold": 245, "shop": "泰冲跨境选品中心", "location": "浙江金华义乌", "cat": "充电宝", "source": "义乌购"}, {"title": "男袜秋冬新款彩棉袜子中筒袜休闲运动棉袜彩棉女袜地摊袜厂家批发", "price": "¥1.39~1.80", "moq": "10双起购", "sold": 50000, "shop": "剑鹏袜业", "location": "义乌国际商贸城四区", "cat": "其他", "source": "义乌购"}, {"title": "跨境爆款手持小风扇大风力usb充电便携式桌面迷你风扇礼品批发", "price": "¥4.99", "moq": "1台起购", "sold": 0, "shop": "", "location": "", "cat": "其他", "source": "义乌购"}, {"title": "跨境新品水果手持小风扇带底座支架迷你便携儿童广告礼品", "price": "¥3.90~4.20", "moq": "144个起购", "sold": 0, "shop": "义乌市利宏家居", "location": "义乌国际商贸城一区", "cat": "其他", "source": "义乌购"}, {"title": "地摊盲盒夜市摆摊网红幸运盒10元15元模式高端彩色盲盒货", "price": "¥3.50~4.50", "moq": "100盒起购", "sold": 6770, "shop": "义乌优品购小商品批发", "location": "浙江金华义乌", "cat": "其他", "source": "义乌购"}, {"title": "小学生奖励小礼品迷你小盲袋微缩仿真动物盲盒玩具小物品礼物奖品", "price": "¥0.06~6.88", "moq": "1个起购", "sold": 40000, "shop": "义乌伍尊玩具", "location": "义乌国际商贸城六区", "cat": "其他", "source": "义乌购"}, {"title": "宠物眼镜狗狗墨镜批发新品潮酷外出防晒防风个性猫咪眼镜", "price": "¥4.60", "moq": "2个起购", "sold": 78, "shop": "胜利小狗", "location": "义乌国际商贸城二区", "cat": "其他", "source": "义乌购"}, {"title": "毛绒狗狗法国斗牛犬耐咬球绳发声玩具水果卡通动物猫宠物用品", "price": "¥1.00~5.50", "moq": "2个起购", "sold": 88, "shop": "杉蒂宠物用品", "location": "义乌国际商贸城二区", "cat": "其他", "source": "义乌购"}, {"title": "2L不锈钢电热水壶家用烧水壶欧规外贸厂家批发", "price": "¥11.30~12.00", "moq": "160个起购", "sold": 70, "shop": "义乌市环厨电器", "location": "浙江金华义乌", "cat": "小家电", "source": "义乌购"}, {"title": "卡通草莓蝴蝶结狗狗糖果少女包包挂件新款挂链可爱多元素钥匙扣", "price": "¥15.00~18.00", "moq": "2个起购", "sold": 0, "shop": "粉呼呼包包挂件", "location": "义乌国际商贸城一区", "cat": "其他", "source": "义乌购"}, {"title": "跨境高速吹风机11万转高速吹风筒高浓度负离子恒温不伤发", "price": "¥78.00~85.00", "moq": "2套起购", "sold": 0, "shop": "楼洁百货", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "跨境沙冰机商用奶茶店沙冰家用榨汁机豆浆碎冰搅拌料理破壁机", "price": "¥155.00~190.00", "moq": "100台起购", "sold": 0, "shop": "密斯顿小家电", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "新款剃须刀1168液晶数显全身水洗理发鼻毛剃须三合一电动刮胡刀", "price": "¥31.50~35.00", "moq": "2个起购", "sold": 387, "shop": "义乌市馨铖电器", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "家用蒸汽电熨斗手持式迷你电烫斗小型便携式烫衣服熨烫机", "price": "¥34.00~42.00", "moq": "1台起购", "sold": 0, "shop": "义乌市RAF电器", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "VGR972跨境黑武士数显电推剪T9推白雕刻小推子发廊专业电动理发器", "price": "¥55.00~70.00", "moq": "40个起购", "sold": 0, "shop": "义乌格美电器", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "RAF欧规跨境空气炸锅大容量多功能智能家用数显电炸锅7L无油烟", "price": "¥188.50~215.00", "moq": "2台起购", "sold": 111, "shop": "义乌市RAF电器", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "宿舍必备康夫3152 800W可折叠吹风机", "price": "¥50.00~65.00", "moq": "1个起购", "sold": 143, "shop": "康夫电器", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "DSP/丹松榨汁机家用小型多功能水果奶昔杯炸果汁机榨汁杯", "price": "¥125.00~144.00", "moq": "2台起购", "sold": 5, "shop": "义乌市丹松电器", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "JAMAKY原汁机渣汁分离家用多功能榨汁机慢磨小型榨汁机", "price": "¥77.00~88.00", "moq": "2台起购", "sold": 0, "shop": "义乌市丹松电器", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "升级款铸铁手动榨汁机家用商用橙子石榴柠檬西瓜水果榨汁器", "price": "¥100.00", "moq": "10个起购", "sold": 50, "shop": "浙江航懋榨汁机", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "一次性橡胶手柄不锈钢3层剃须刀酒店浴室用品", "price": "¥0.36", "moq": "8640个起购", "sold": 0, "shop": "MiyaRazor米亚剃须刀", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "跨境新款XHP90+COB多光源数字显示强光可拆卸手提灯多功能手电筒", "price": "¥73.00~75.00", "moq": "30个起购", "sold": 30, "shop": "阿兰手电筒五金电器", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "一拖三6A超级快充数据线 适用苹果安卓三合一金属编织快充神器", "price": "¥3.80", "moq": "360件起购", "sold": 0, "shop": "丁丁通讯", "location": "义乌国际商贸城二区", "cat": "数据线", "source": "义乌购"}, {"title": "华为6A超级快充数据线OPPO小米66W超级快充线", "price": "¥1.50~7.99", "moq": "2个起购", "sold": 2023, "shop": "义乌市益量电子", "location": "义乌国际商贸城二区", "cat": "数据线", "source": "义乌购"}, {"title": "跨境汽车应急启动电源充气泵一体机12V便携搭电宝户外电源", "price": "¥160.00", "moq": "1套起购", "sold": 0, "shop": "洛高数码配件", "location": "义乌国际商贸城二区", "cat": "充电宝", "source": "义乌购"}, {"title": "新款20000毫安数显镜面充电宝 大容量便携移动电源", "price": "¥31.24~35.90", "moq": "100台起购", "sold": 0, "shop": "和顺电子", "location": "义乌国际商贸城二区", "cat": "充电宝", "source": "义乌购"}, {"title": "KIN-KL31新款水滴真无线TWS运动睡眠蓝牙耳机超长续航", "price": "¥16.00~18.00", "moq": "120件起购", "sold": 0, "shop": "KM凯米科技", "location": "义乌国际商贸城二区", "cat": "耳机", "source": "义乌购"}, {"title": "工厂现货P9MAX PRO高配版头戴式蓝牙耳机5.3重低音游戏无线耳机", "price": "¥11.00~16.00", "moq": "100条起购", "sold": 100, "shop": "义乌市讯音电子", "location": "义乌国际商贸城二区", "cat": "耳机", "source": "义乌购"}, {"title": "包邮特价清仓无线蓝牙挂脖式运动耳机入耳式重低音可插卡", "price": "¥35.00", "moq": "1个起购", "sold": 2, "shop": "广东爱曼电子厂", "location": "广东", "cat": "耳机", "source": "义乌购"}, {"title": "A6S蓝牙耳机跨境爆款马卡龙蓝牙5.2无线TWS耳塞运动迷你耳机", "price": "¥8.00~8.50", "moq": "100个起购", "sold": 0, "shop": "翔盈电子", "location": "义乌国际商贸城二区", "cat": "耳机", "source": "义乌购"}, {"title": "PM860跨境爆款头戴式蓝牙耳机RGB发光灯渐变色游戏电竞耳麦", "price": "¥25.00~27.00", "moq": "120条起购", "sold": 0, "shop": "义乌市韵音数码科技", "location": "义乌国际商贸城二区", "cat": "耳机", "source": "义乌购"}, {"title": "尼龙一拖三充电线 适用苹果安卓usb快充手机数据线可定制批发", "price": "¥2.90~3.70", "moq": "500条起购", "sold": 0, "shop": "和顺电子", "location": "义乌国际商贸城二区", "cat": "数据线", "source": "义乌购"}, {"title": "跨境新款二代Air39 透明数显耳机超长续航无线蓝牙运动入耳式", "price": "¥7.50~8.40", "moq": "100条起购", "sold": 0, "shop": "义乌市讯音电子", "location": "义乌国际商贸城二区", "cat": "耳机", "source": "义乌购"}, {"title": "82ms科学计算器考试专用函数大学生考研多功能学生用", "price": "¥7.50~8.20", "moq": "200个起购", "sold": 0, "shop": "佳丰电子", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "STN-28猫耳头戴式蓝牙耳机闪动发光5.0无线运动休闲插卡折叠", "price": "¥10.80~11.50", "moq": "80套起购", "sold": 0, "shop": "兴兴电子耳机", "location": "义乌国际商贸城二区", "cat": "耳机", "source": "义乌购"}, {"title": "C2236头戴式蓝牙耳机5.3适用于苹果手机无线运动游戏耳机", "price": "¥11.50~14.50", "moq": "500条起购", "sold": 0, "shop": "义乌市韵音数码科技", "location": "义乌国际商贸城二区", "cat": "耳机", "source": "义乌购"}, {"title": "新款旗舰typeC接口入耳式线控耳机适用于小米华为耳机k歌", "price": "¥8.00~8.50", "moq": "200个起购", "sold": 0, "shop": "翔盈电子", "location": "义乌国际商贸城二区", "cat": "耳机", "source": "义乌购"}, {"title": "跨境高颜值迷你透明小可爱计算器掌上口袋便携式糖果色", "price": "¥2.20~3.00", "moq": "2个起购", "sold": 16, "shop": "凯宜电子", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}, {"title": "新款私模M10跨境TWS蓝牙耳机入耳塞式大屏数显触摸运动双通话", "price": "¥7.90~9.20", "moq": "100条起购", "sold": 0, "shop": "兴兴电子耳机", "location": "义乌国际商贸城二区", "cat": "耳机", "source": "义乌购"}, {"title": "跨境沙冰机商用奶茶店沙冰家用榨汁机豆浆碎冰料理专用破壁机", "price": "¥155.00~190.00", "moq": "100台起购", "sold": 0, "shop": "MIXDOR-密斯顿", "location": "义乌国际商贸城二区", "cat": "小家电", "source": "义乌购"}];
 var PAGE_SIZE = 20;
 var currentCat = 'all';
 var currentPage = 1;
@@ -160,12 +158,11 @@ function renderTable() {
   tbody.innerHTML = '';
 
   pageItems.forEach(function(p) {
-    var soldClass = p.sold > 10000 ? 'sold-high' : p.sold > 1000 ? 'sold-medium' : 'sold-low';
+    var soldCls = p.sold > 10000 ? 'sold-hi' : p.sold > 1000 ? 'sold-med' : 'sold-lo';
     var priceNum = parseFloat(p.price.replace(/[^0-9.]/g, '')) || 0;
 
     var tr = document.createElement('tr');
 
-    // TD1: product
     var td1 = document.createElement('td');
     var cell = document.createElement('div');
     cell.className = 'product-cell';
@@ -179,46 +176,39 @@ function renderTable() {
     var nameEl = document.createElement('div');
     nameEl.className = 'product-name';
     nameEl.textContent = p.title.length > 38 ? p.title.substring(0, 38) + '...' : p.title;
-
     var tagWrap = document.createElement('div');
     var catTag = document.createElement('span');
-    catTag.className = 'product-tag';
+    catTag.className = 'cat-tag';
     catTag.textContent = p.cat;
     var srcTag = document.createElement('span');
-    srcTag.className = 'source-tag yw';
+    srcTag.className = 'src-tag';
     srcTag.textContent = '义乌';
     tagWrap.appendChild(catTag);
     tagWrap.appendChild(srcTag);
-
     infoDiv.appendChild(nameEl);
     infoDiv.appendChild(tagWrap);
     cell.appendChild(infoDiv);
     td1.appendChild(cell);
     tr.appendChild(td1);
 
-    // TD2: price
     var td2 = document.createElement('td');
     td2.className = 'price';
-    var small = document.createElement('small');
-    small.style.cssText = 'font-size:11px;color:#64748B;font-weight:400;margin-left:4px;';
-    small.textContent = ' $' + (priceNum * 0.14).toFixed(2);
+    var sm = document.createElement('small');
+    sm.textContent = ' $' + (priceNum * 0.14).toFixed(2);
     td2.textContent = p.price;
-    td2.appendChild(small);
+    td2.appendChild(sm);
     tr.appendChild(td2);
 
-    // TD3: sold
     var td3 = document.createElement('td');
-    td3.className = soldClass;
+    td3.className = soldCls;
     td3.textContent = p.sold > 0 ? p.sold.toLocaleString() : '-';
     tr.appendChild(td3);
 
-    // TD4: moq
     var td4 = document.createElement('td');
     td4.className = 'moq';
     td4.textContent = p.moq || '-';
     tr.appendChild(td4);
 
-    // TD5: shop
     var td5 = document.createElement('td');
     td5.className = 'info';
     var strong = document.createElement('strong');
@@ -227,20 +217,17 @@ function renderTable() {
     td5.appendChild(strong);
     tr.appendChild(td5);
 
-    // TD6: location
     var td6 = document.createElement('td');
-    td6.className = 'location';
+    td6.className = 'loc';
     td6.textContent = p.location || '-';
     tr.appendChild(td6);
 
     tbody.appendChild(tr);
   });
 
-  // Page info
   var pageInfo = document.getElementById('pageInfo');
   pageInfo.textContent = '显示 ' + (total > 0 ? start + 1 : 0) + '-' + end + ' / ' + total + ' 条';
 
-  // Pagination buttons
   var btns = document.getElementById('pageButtons');
   btns.innerHTML = '';
 
